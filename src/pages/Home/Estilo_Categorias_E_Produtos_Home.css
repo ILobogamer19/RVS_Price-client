@@ -1,0 +1,35 @@
+.Categorias {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Categorias h1 {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.Produtos {
+  display: flex;
+  width: 99vw;
+  overflow: hidden;
+}
+.Produtos:hover {
+  overflow-x: scroll;
+}
+.Produtos div {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Produtos div img {
+  width: 10vw;
+  height: 20vh;
+}
+.Produtos div h3 {
+  margin: 0px;
+  text-align: center;
+  width: 250px;
+}
+.Produtos div p {
+  margin: 0px;
+}

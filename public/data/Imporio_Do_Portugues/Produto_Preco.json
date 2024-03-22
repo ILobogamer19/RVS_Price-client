@@ -1,0 +1,1370 @@
+[
+  {
+    "Produto": "Bala",
+    "Valor": "R$ 0,15"
+  },
+  {
+    "Produto": "Absorvente Higiênicos com Abas Cotton Line",
+    "Valor": "R$ 4,75"
+  },
+  {
+    "Produto": "Absorvente Higiênicos sem Abas Cotton Line",
+    "Valor": "R$ 4,75"
+  },
+  {
+    "Produto": "Achocolatado Orsi 400g",
+    "Valor": "R$ 6,22"
+  },
+  {
+    "Produto": "Açúcar Cristal Certano Doce Grão 5kg",
+    "Valor": "R$ 20,00"
+  },
+  {
+    "Produto": "Açúcar Cristal Moido Extra Fino Caiobá 1kg",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Agua de Coco Puro Coco 1L",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Agua de Coco Quadrado Sabor Maracujá 200ml",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Agua Mineral Natural Cristalina do Monte sem Gas",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Agua Mineral Natural Leve sem Gás",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Agua Sanitária Olimpo Alveja e Desinfeta 1L",
+    "Valor": "R$ 3,99"
+  },
+  {
+    "Produto": "Algodão Hidrófilo Cotton Bom",
+    "Valor": "R$ 4,67"
+  },
+  {
+    "Produto": "Aluguel de Jogo de Mesas com 4 cadeiras",
+    "Valor": "R$ 15,00"
+  },
+  {
+    "Produto": "Amaciante Toque de Amor Look Limp 2l",
+    "Valor": "R$ 8,40"
+  },
+  {
+    "Produto": "Cerveja Antartica Litrão 1L",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Cerveja Antartica Garrafinha 300ml",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Cerveja Antartica Lata 350ml",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Cerveja Antartica Garrafa 600ml",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Cerveja Original Garrafinha 300ml",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Cerveja Original Lata 350ml",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Cerveja Original Litrão 1L",
+    "Valor": "R$ 13,00"
+  },
+  {
+    "Produto": "Arroz Castelão Tipo 1",
+    "Valor": "R$ 23,54"
+  },
+  {
+    "Produto": "Arroz Castelão Tipo 1 Série Ouro",
+    "Valor": "R$ 27,00"
+  },
+  {
+    "Produto": "Arroz Castelão Tipo 2",
+    "Valor": "R$ 31,63"
+  },
+  {
+    "Produto": "Arroz Castelão Tipo 3",
+    "Valor": "R$ 27,57"
+  },
+  {
+    "Produto": "Arroz Valle Branco Extra Premium Tipo 1",
+    "Valor": "R$ 30,14"
+  },
+  {
+    "Produto": "Esponja de Aço Assolan Ype 8 unidades",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Azeite de Oliva Extra Virgem Morixe",
+    "Valor": "R$ 28,00"
+  },
+  {
+    "Produto": "Azeite de Oliva Tradicional Castelo",
+    "Valor": "R$ 28,00"
+  },
+  {
+    "Produto": "Babalu Poosh",
+    "Valor": "R$ 0,35"
+  },
+  {
+    "Produto": "Bala de Cereja",
+    "Valor": "R$ 0,15"
+  },
+  {
+    "Produto": "Bala de Hortelã",
+    "Valor": "R$ 0,15"
+  },
+  {
+    "Produto": "Barra Chocolate ao Leite Garoto",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Barra Chocolate ao Leite Lacta",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Barra Diamante Negro Lacta",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Barril de Chop Heinik 5l",
+    "Valor": "R$ 101,66"
+  },
+  {
+    "Produto": "Batata Ondulada Galeto Kigesto",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Batata Ondulada Churrasco Kigesto",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Salgadinho Cebola Keleck",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Salgadinho Churrasco Keleck",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Salgadinho Presunto Keleck",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Batata Ondulada Cebola e Salsa Kigesto",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Batata Ondulada Costelinha com Limão Kigesto",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Batata Ondulada Natural Kigesto",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Baton Leite",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Beg Tradição Nata com Morango",
+    "Valor": "R$ 9,90"
+  },
+  {
+    "Produto": "Beg Tradição Flocos",
+    "Valor": "R$ 9,90"
+  },
+  {
+    "Produto": "Beg Sundae Chocolate",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Beg Sundae Morango",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Beg Sundae Unicornio",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Beg Sundae Flocos",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Beg + Leitinho Trufado",
+    "Valor": "R$ 10,90"
+  },
+  {
+    "Produto": "Beg Pote 1,5L Creme",
+    "Valor": "R$ 24,90"
+  },
+  {
+    "Produto": "Beg Pote 1,5L Flocos",
+    "Valor": "R$ 24,90"
+  },
+  {
+    "Produto": "Beg Pote 1,5L Morango",
+    "Valor": "R$ 24,90"
+  },
+  {
+    "Produto": "Beg + Napolitano",
+    "Valor": "R$ 10,90"
+  },
+  {
+    "Produto": "Beg Desejo Pote Biscoito 2L",
+    "Valor": "R$ 32,90"
+  },
+  {
+    "Produto": "Beg Desejo Pote Chocomaltino 2L",
+    "Valor": "R$ 32,90"
+  },
+  {
+    "Produto": "Beg Desejo Pote Trufadinho de Chocolate 2L",
+    "Valor": "R$ 32,90"
+  },
+  {
+    "Produto": "Beg Desejo Pote Bombom 2L",
+    "Valor": "R$ 32,90"
+  },
+  {
+    "Produto": "Beg Desejo Pote Ninho Trufado 2L",
+    "Valor": "R$ 32,90"
+  },
+  {
+    "Produto": "Beg Tradicao Abacaxi",
+    "Valor": "R$ 9,90"
+  },
+  {
+    "Produto": "Beguetinho",
+    "Valor": "R$ 1,25"
+  },
+  {
+    "Produto": "Bic Barbear",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Bic Chama",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Bis Chocolate",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Bis Oreo",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Biscoito Povilho",
+    "Valor": "R$ 5,85"
+  },
+  {
+    "Produto": "Bolacha Recheada Luanitos Chocolate",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Bolacha Recheada Luanitos Morango",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Bolacha Recheada Luanitos Floresta Negra",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Bolacha Triunfo Tortini Chocolate",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Bolacha Triunfo Tortini Trufa",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Bolas de Algodão Use It",
+    "Valor": "R$ 4,67"
+  },
+  {
+    "Produto": "Bolinha de Chocolate",
+    "Valor": "R$ 0,40"
+  },
+  {
+    "Produto": "Brahma Litrão 1L",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Brahma Garrafinha 300ml",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Brahma Garrafa 600ml",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Brahma sem Alcool Lata 350ml",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Escova Oval de Madeira",
+    "Valor": "R$ 3,69"
+  },
+  {
+    "Produto": "Bucha de Louça Select",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Budweisem sem Alcool Lata 350ml",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Budweisem sem Alcool Long Neck 330ml",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Budweiser Latinha 269 ml",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Budweiser Garrafinha 300ml",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Budweiser Lata 350ml",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Cabo de Internet Azul Reforçado",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Café Caboclo 250g",
+    "Valor": "R$ 9,00"
+  },
+  {
+    "Produto": "Café Caboclo 500g",
+    "Valor": "R$ 18,00"
+  },
+  {
+    "Produto": "Café Fort 500g",
+    "Valor": "R$ 18,00"
+  },
+  {
+    "Produto": "Café Paulista 250g.",
+    "Valor": "R$ 8,75"
+  },
+  {
+    "Produto": "Café Paulista 500g",
+    "Valor": "R$ 17,50"
+  },
+  {
+    "Produto": "Caixa de Bombom Garoto",
+    "Valor": "R$ 15,80"
+  },
+  {
+    "Produto": "Caixa de Bombom Lacta",
+    "Valor": "R$ 15,80"
+  },
+  {
+    "Produto": "Caixa de Bombom Nestle",
+    "Valor": "R$ 15,80"
+  },
+  {
+    "Produto": "Caneta Azul",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Caneta Preta",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Caneta Vermelha",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Carvão Duabrão 4kg",
+    "Valor": "R$ 22,00"
+  },
+  {
+    "Produto": "Carvão Vegetal 2,5kg",
+    "Valor": "R$ 16,00"
+  },
+  {
+    "Produto": "Carvão Taquarí 3kg",
+    "Valor": "R$ 16,00"
+  },
+  {
+    "Produto": "Carvão Grande Saco Preto",
+    "Valor": "R$ 35,00"
+  },
+  {
+    "Produto": "Amido de Milho MaisCerta Neilar",
+    "Valor": "R$ 5,36"
+  },
+  {
+    "Produto": "Vinagre de Alcool Castelo 5L",
+    "Valor": "R$ 23,00"
+  },
+  {
+    "Produto": "Cerveja Amstel lata 350ml",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Bramha Latinha 265ml",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Heinekem Latinha 250ml",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Chesterfield Original Blue",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Chesterfield Remix Blossom",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Chesterfield Terras Brasileiras",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Chesterfil Remix Beats",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Chiclete BigBig Hortelã",
+    "Valor": "R$ 0,20"
+  },
+  {
+    "Produto": "Chiclete BigBig Tutti-Frutti",
+    "Valor": "R$ 0,20"
+  },
+  {
+    "Produto": "Chiclete brinq Hortelã",
+    "Valor": "R$ 0,20"
+  },
+  {
+    "Produto": "Chiclete brinq Morango",
+    "Valor": "R$ 0,20"
+  },
+  {
+    "Produto": "Chiclete Brinq Tutti-Frutti",
+    "Valor": "R$ 0,20"
+  },
+  {
+    "Produto": "Chip Telefone",
+    "Valor": "R$ 14,00"
+  },
+  {
+    "Produto": "Chopp de Vinho Draf",
+    "Valor": "R$ 10,67"
+  },
+  {
+    "Produto": "Cigarro Solto",
+    "Valor": "R$ 0,50"
+  },
+  {
+    "Produto": "Coca Cola de Garrafa 1L",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Coca Cola Pet 2L",
+    "Valor": "R$ 9,50"
+  },
+  {
+    "Produto": "Coca cola Pet 200ml",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Coca cola Pet 3L",
+    "Valor": "R$ 13,00"
+  },
+  {
+    "Produto": "Coca Cola Lata 350ml",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Cocada Branca",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Cocada Queimada",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Conquista Cola 2L",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Conquista Guarana 2L",
+    "Valor": "R$ 5,50"
+  },
+  {
+    "Produto": "Conquista Laranja 2L",
+    "Valor": "R$ 5,50"
+  },
+  {
+    "Produto": "Conti Lata 350ml",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Copia de Chave",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Cotonete de Hastes Flexíveis com Pontas de Algodão Azul Antigerme Cotton Line",
+    "Valor": "R$ 2,75"
+  },
+  {
+    "Produto": "Cotonete de Hastes Flexíveis com Pontas de Algodão Rosa Antigerme Cotton Line",
+    "Valor": "R$ 2,75"
+  },
+  {
+    "Produto": "Cunhaque de Mel",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Cup Noodles Cheddar",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Cup Noodles Curry",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Cup Noodles Feijoada",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Cup Noodles Frango Teriyaki",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Cup Noodles Galinha Caipira",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Cup Noodles Yakissoba",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Detergente Ypê Clear",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Detergente Ype Capim-Limão",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Detergente Ype Limão",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Detergente Ype Maça",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Detergente Ypê Coco",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Doce de Abobora Pingo Bom",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Doce de Batata Pingo Bom",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Dose",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Egipt Blue Premiere",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Egipt Vermelho",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Energetico Fera 2L",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Fanta Garrafa 1L",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Fanta Pet 2L",
+    "Valor": "R$ 7,20"
+  },
+  {
+    "Produto": "Fanta Lata 350ml",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Farinha de Milho Alambari 1kg",
+    "Valor": "R$ 7,80"
+  },
+  {
+    "Produto": "Farinha de Trigo Tradicional Anniela",
+    "Valor": "R$ 6,50"
+  },
+  {
+    "Produto": "Feijoada em Latada Bordon",
+    "Valor": "R$ 14,00"
+  },
+  {
+    "Produto": "Filtro",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Filtro de Papel Brigitta",
+    "Valor": "R$ 4,80"
+  },
+  {
+    "Produto": "Papel Higiênico Folha Dupla Neutro Fofinho 12 rolos",
+    "Valor": "R$ 20,57"
+  },
+  {
+    "Produto": "Papel Higiênico Folha Dupla Sirius Premier 12 rolos",
+    "Valor": "R$ 14,00"
+  },
+  {
+    "Produto": "Papel Higiênico Bob Neutro 4 rolos",
+    "Valor": "R$ 4,20"
+  },
+  {
+    "Produto": "Filtro de Papel Certano",
+    "Valor": "R$ 4,80"
+  },
+  {
+    "Produto": "Fini Tubes Azedinho Morango",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Fini Tubes Azedinho Morango e Laranja",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Fini Tubes Azedinho Tutti-Frutti",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Fini Tubes Azedinho Twister",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Fini Tubes Azedinho Uva",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Fluido de Freio Varga 200ml",
+    "Valor": "R$ 13,00"
+  },
+  {
+    "Produto": "Fluido de Freio Dot 3 500ml",
+    "Valor": "R$ 28,00"
+  },
+  {
+    "Produto": "Fluido para Radiador Concentrado Paraflu",
+    "Valor": "R$ 28,75"
+  },
+  {
+    "Produto": "Fluido para Radiador Orgânico Paraflu",
+    "Valor": "R$ 20,00"
+  },
+  {
+    "Produto": "Fosforo Pinheiro",
+    "Valor": "R$ 5,75"
+  },
+  {
+    "Produto": "Fosforo",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Frango a Passarinho",
+    "Valor": "R$ 16,00"
+  },
+  {
+    "Produto": "FreeDent 50g",
+    "Valor": "R$ 0,77"
+  },
+  {
+    "Produto": "Fumo Peão Tradicional",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Galão Agua Soft 20lt.",
+    "Valor": "R$ 12,00"
+  },
+  {
+    "Produto": "Gaz Azul",
+    "Valor": "R$ 115,00"
+  },
+  {
+    "Produto": "Gaz Branco",
+    "Valor": "R$ 95,00"
+  },
+  {
+    "Produto": "Gelo Saco Cubo 8kg",
+    "Valor": "R$ 18,00"
+  },
+  {
+    "Produto": "Gel Fixador Dismapp",
+    "Valor": "R$ 6,20"
+  },
+  {
+    "Produto": "Gel Higienizador para as Mãos Dismapp",
+    "Valor": "R$ 17,38"
+  },
+  {
+    "Produto": "Gelo Triturado saco 10kg",
+    "Valor": "R$ 20,00"
+  },
+  {
+    "Produto": "Gibi com Cobertura de Chocolate",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Gibi Pequeno",
+    "Valor": "R$ 0,75"
+  },
+  {
+    "Produto": "Gibi Pingo Bom",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Gilete",
+    "Valor": "R$ 0,83"
+  },
+  {
+    "Produto": "Guarana Kuait 2l",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Guardanapo 50 unidades",
+    "Valor": "R$ 2,15"
+  },
+  {
+    "Produto": "Halls Cereja",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Halls Extra Forte",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Halls Melancia",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Halls Menta",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Halls Menta Prata",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Halls Morango",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Heineck Garrafa 600ml",
+    "Valor": "R$ 13,00"
+  },
+  {
+    "Produto": "Heineken Lata 350ml",
+    "Valor": "R$ 8,91"
+  },
+  {
+    "Produto": "Impressao Xerox",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Jogo de Mesa com 4 cadeiras",
+    "Valor": "R$ 15,00"
+  },
+  {
+    "Produto": "Ketchup Predilecta 400g",
+    "Valor": "R$ 6,82"
+  },
+  {
+    "Produto": "KitKat",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "L&M First Cut",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Lampada Ouro Lux Super Led 9W",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Lapis",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Leite Condensado",
+    "Valor": "R$ 7,90"
+  },
+  {
+    "Produto": "Leite Pantalat",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Lixa de Unha",
+    "Valor": "R$ 0,50"
+  },
+  {
+    "Produto": "M&M Chocolate ao Leite 30g",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Marlboro",
+    "Valor": "R$ 12,00"
+  },
+  {
+    "Produto": "Marlboro Gold",
+    "Valor": "R$ 12,00"
+  },
+  {
+    "Produto": "Marlboro Gold Selection",
+    "Valor": "R$ 12,00"
+  },
+  {
+    "Produto": "Marlboro Melancia",
+    "Valor": "R$ 15,00"
+  },
+  {
+    "Produto": "Marlboro Red Selection",
+    "Valor": "R$ 12,00"
+  },
+  {
+    "Produto": "Milho de Pipoca Monsil",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Milho de Pipoca Pinduca",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Milho de Pipoca Yoki",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Miojo Carne Apti",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Torrada Multigrãos Visconti",
+    "Valor": "R$ 4,10"
+  },
+  {
+    "Produto": "Miojo Galinha Caipira Apti",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Miojo Galinha Caipira Nissim",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Molho de Tomate Tradicional Fugini",
+    "Valor": "R$ 1,99"
+  },
+  {
+    "Produto": "Monster Energy Ultra Lata 473ml",
+    "Valor": "R$ 11,00"
+  },
+  {
+    "Produto": "Monster Energy Lata 473ml",
+    "Valor": "R$ 11,00"
+  },
+  {
+    "Produto": "Nescau 400g.",
+    "Valor": "R$ 16,95"
+  },
+  {
+    "Produto": "Oleo de Soja Vitaliv",
+    "Valor": "R$ 7,00"
+  },
+  {
+    "Produto": "Oleo de Soja Coamo",
+    "Valor": "R$ 7,00"
+  },
+  {
+    "Produto": "Oleo de Soja Liza",
+    "Valor": "R$ 7,00"
+  },
+  {
+    "Produto": "Paçoca Moreninha do Rio",
+    "Valor": "R$ 0,75"
+  },
+  {
+    "Produto": "Paleta Mexicana",
+    "Valor": "R$ 4,50"
+  },
+  {
+    "Produto": "Papel Alominio Grande 4m",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Papel Alominio Pequeno 4m",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Papel Peão",
+    "Valor": "R$ 1,00"
+  },
+  {
+    "Produto": "Papel Toalha Cisne",
+    "Valor": "R$ 5,50"
+  },
+  {
+    "Produto": "Bolacha PassaTempo Leite",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Pasta de Dente Colgate Máxima Proteção Anticáries 180g",
+    "Valor": "R$ 4,12"
+  },
+  {
+    "Produto": "Pasta de Dente Oral-B Anti-Cáries 70g",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Pasta de Dente Sorriso Tripla limpeza Completa 70g",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Pé de Moça com Cobertura de Chocolate",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Picolito Pinta Lingua Azul",
+    "Valor": "R$ 1,75"
+  },
+  {
+    "Produto": "Picolito Groselha",
+    "Valor": "R$ 1,75"
+  },
+  {
+    "Produto": "Beg Fruta Limão",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Beg Fruta Uva",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Beg Fruta Abacaxi",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Beg Leite Chocolate",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Beg Leite Coco",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Beg Leite Leite Condensado",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Beg Leite Milho Verde",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Beg Leite Napolitano",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Beg Leitinho",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Picole Choco Bianco com Amendoas",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Picole Cream Cookies Premium",
+    "Valor": "R$ 9,90"
+  },
+  {
+    "Produto": "Picole Brownie",
+    "Valor": "R$ 9,90"
+  },
+  {
+    "Produto": "Beg Croc",
+    "Valor": "R$ 6,75"
+  },
+  {
+    "Produto": "Beg Casquitto Crocante",
+    "Valor": "R$ 9,50"
+  },
+  {
+    "Produto": "Beg Casquitto Sensação",
+    "Valor": "R$ 9,50"
+  },
+  {
+    "Produto": "Beg Casquitto Chocolate",
+    "Valor": "R$ 9,50"
+  },
+  {
+    "Produto": "Picole Choco Avelã",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Beg Bueno",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Picole Choco Maltino",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Paleta Mexicana Ninho com Trufa de Avelã",
+    "Valor": "R$ 7,50"
+  },
+  {
+    "Produto": "Beguetinho",
+    "Valor": "R$ 1,25"
+  },
+  {
+    "Produto": "Picole Camafeu com Nozes",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Picole Brigadeiro",
+    "Valor": "R$ 6,50"
+  },
+  {
+    "Produto": "Picole Skimo",
+    "Valor": "R$ 6,25"
+  },
+  {
+    "Produto": "Beg Master",
+    "Valor": "R$ 9,90"
+  },
+  {
+    "Produto": "Picole Grande Trufetto",
+    "Valor": "R$ 8,50"
+  },
+  {
+    "Produto": "Pinga Cavalinho",
+    "Valor": "R$ 7,00"
+  },
+  {
+    "Produto": "Pinga 51",
+    "Valor": "R$ 15,00"
+  },
+  {
+    "Produto": "Pinga Velho Barreiro",
+    "Valor": "R$ 16,00"
+  },
+  {
+    "Produto": "Pinga Vila Velha",
+    "Valor": "R$ 7,00"
+  },
+  {
+    "Produto": "Pipoca Doce Sorriso",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Pirulito do Coração Morango",
+    "Valor": "R$ 0,25"
+  },
+  {
+    "Produto": "Pirulito Lolly Gum",
+    "Valor": "R$ 0,50"
+  },
+  {
+    "Produto": "Pizza Lombinho Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Pizza 4 Queijo Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Pizza Calabresa com Cebola Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Pizza Moda da Casa Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Pizza Brocolis Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Pizza Calabresa sem Cebola Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Pizza Frango com Catupiri Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Pizza Portuguesa Congelada",
+    "Valor": "R$ 25,00"
+  },
+  {
+    "Produto": "Plutonita",
+    "Valor": "R$ 0,35"
+  },
+  {
+    "Produto": "Beg Pote Pamonha 1,5L",
+    "Valor": "R$ 29,90"
+  },
+  {
+    "Produto": "Prestobarba Gillete 3",
+    "Valor": "R$ 4,80"
+  },
+  {
+    "Produto": "Prestobarba Ultra Grip",
+    "Valor": "R$ 4,80"
+  },
+  {
+    "Produto": "Red Bull Energy Drink",
+    "Valor": "R$ 11,00"
+  },
+  {
+    "Produto": "Rodo 30 Duplo",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Rodo 40 Duplo",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Rolhão com Cobertura de Chocolate",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Rolhão Manabel",
+    "Valor": "R$ 1,50"
+  },
+  {
+    "Produto": "Sabonete Flor de Ypê Agua de Coco e Alecrim",
+    "Valor": "R$ 3,52"
+  },
+  {
+    "Produto": "Sabonete Flor de Ypê Flor de Baunilha e Amêndoas",
+    "Valor": "R$ 3,52"
+  },
+  {
+    "Produto": "Sabonete Flor de Ypê Flor de Laranjeira e Damasco",
+    "Valor": "R$ 3,52"
+  },
+  {
+    "Produto": "Sabonete Flor de Ypê Flor de Maçã e Framboesa",
+    "Valor": "R$ 3,52"
+  },
+  {
+    "Produto": "Sabonete Flor de Ypê Frésia e Pêssego",
+    "Valor": "R$ 3,52"
+  },
+  {
+    "Produto": "Pururuca Kigesto",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Sabonete Liquido Marsalla Dismapp 500ml",
+    "Valor": "R$ 6,90"
+  },
+  {
+    "Produto": "Sabonete Liquido Morango Dismapp 500ml com dispensor",
+    "Valor": "R$ 8,83"
+  },
+  {
+    "Produto": "Saco de Lixo 15L Prismalimp",
+    "Valor": "R$ 5,50"
+  },
+  {
+    "Produto": "Saco de Lixo 30L Prismalimp",
+    "Valor": "R$ 5,50"
+  },
+  {
+    "Produto": "Saco Papel",
+    "Valor": "R$ 0,10"
+  },
+  {
+    "Produto": "Sal Marinho 1k",
+    "Valor": "R$ 2,99"
+  },
+  {
+    "Produto": "Sal Marlin Fino 1kg",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Sal Marlin Grosso 1kg",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Sazon",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Espiral Repelente Pirisa",
+    "Valor": "R$ 5,50"
+  },
+  {
+    "Produto": "Multi Inseticida Poderoso 400ml",
+    "Valor": "R$ 13,00"
+  },
+  {
+    "Produto": "Shampoo Anticaspa cont da Coceira Zero Caspa",
+    "Valor": "R$ 8,41"
+  },
+  {
+    "Produto": "Skol Litrão 1L",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Skol Garrafinha 300ml",
+    "Valor": "R$ 3,50"
+  },
+  {
+    "Produto": "Skol Garrafa 600ml",
+    "Valor": "R$ 8,00"
+  },
+  {
+    "Produto": "Skol Lata 350ml",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Snicker",
+    "Valor": "R$ 4,00"
+  },
+  {
+    "Produto": "Salgadinho Bacon Kigesto 35g",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Salgadinho Bacon Kigesto 80g",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Tang Abacaxi",
+    "Valor": "R$ 1,20"
+  },
+  {
+    "Produto": "Tang goiaba",
+    "Valor": "R$ 1,20"
+  },
+  {
+    "Produto": "Tang Laranja",
+    "Valor": "R$ 1,20"
+  },
+  {
+    "Produto": "Tang Limao",
+    "Valor": "R$ 1,20"
+  },
+  {
+    "Produto": "Tang Manga",
+    "Valor": "R$ 1,20"
+  },
+  {
+    "Produto": "Tang Tangerina",
+    "Valor": "R$ 1,20"
+  },
+  {
+    "Produto": "Three Bond",
+    "Valor": "R$ 3,00"
+  },
+  {
+    "Produto": "Tixan Maciez Ypê 800g",
+    "Valor": "R$ 12,60"
+  },
+  {
+    "Produto": "Tixan Primavera Ypê 800g",
+    "Valor": "R$ 12,60"
+  },
+  {
+    "Produto": "Toddy Original 400g.",
+    "Valor": "R$ 10,57"
+  },
+  {
+    "Produto": "Tody Liquido",
+    "Valor": "R$ 2,00"
+  },
+  {
+    "Produto": "Trident Canela",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Trident Hortelã",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Trident Menta",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Trident Morango",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Trident Tutti-Frutti",
+    "Valor": "R$ 2,50"
+  },
+  {
+    "Produto": "Desinfetante Tradicional Pinho Urca 2L",
+    "Valor": "R$ 1,24"
+  },
+  {
+    "Produto": "Us Fox Blue",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Vassora Capim",
+    "Valor": "R$ 12,00"
+  },
+  {
+    "Produto": "Vassora Naylon Preferida",
+    "Valor": "R$ 10,00"
+  },
+  {
+    "Produto": "Desengordurante Multiuso Uau",
+    "Valor": "R$ 5,35"
+  },
+  {
+    "Produto": "Vila Rica Box Azul",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Vila Rica Box Vermelho",
+    "Valor": "R$ 6,00"
+  },
+  {
+    "Produto": "Vila Rica Masso Azul",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Vila Rica Masso Vermelho",
+    "Valor": "R$ 5,00"
+  },
+  {
+    "Produto": "Vinho Tinto Dom Bosco",
+    "Valor": "R$ 3,38"
+  }
+]

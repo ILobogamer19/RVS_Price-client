@@ -1,0 +1,106 @@
+{
+  "Essenciais": [
+    {
+      "Produto": "Arroz Valle Branco Extra Premium Tipo 1",
+      "Nomes_Alternativos": ["Arroz", "Arros"],
+      "Imagem": "img/Produtos/Arroz_Valle_Branco_Extra_Premium_Tipo_1.png",
+      "Marca": "Valle Branco",
+      "Preco": 50.0
+    },
+    {
+      "Produto": "Oleo de Soja Liza",
+      "Nomes_Alternativos": ["Feijao", "Feijao Marrom"],
+      "Imagem": "img/Produtos/Oleo_de_Soja_Liza.png",
+      "Marca": "Carioquinha",
+      "Preco": 7
+    },
+    {
+      "Produto": "Açucar Cristal Certano Doce Grão 5kg",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "img/Produtos/Açucar_Cristal_Certano_Doce_Grão_5kg.png",
+      "Marca": "Orsi",
+      "Preco": 20
+    },
+    {
+      "Produto": "Papel Higiênico Bob Neutro 4 rolos",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "img/Produtos/Papel_Higiênico_Bob_Neutro_4_rolos.png",
+      "Marca": "Orsi",
+      "Preco": 4.2
+    },
+    {
+      "Produto": "Café Cabloco Tradicional 500g",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "img/Produtos/Café_Cabloco_Tradicional_500g.png",
+      "Marca": "Orsi",
+      "Preco": 18
+    },
+    {
+      "Produto": "Sal Marlin Fino 1kg",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "img/Produtos/Sal_Marlin_Fino_1kg.png",
+      "Marca": "Orsi",
+      "Preco": 3
+    },
+    {
+      "Produto": "Miojo Carne Apti",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "img/Produtos/Miojo_Carne_Apti.png",
+      "Marca": "Orsi",
+      "Preco": 2
+    },
+    {
+      "Produto": "Sabonete Flor de Ypê Flor de Baunilha e Amêndoas",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "img/Produtos/Sabonete_Flor_de_Ypê_Flor_de_Baunilha_e_Amêndoas.png",
+      "Marca": "Orsi",
+      "Preco": 3.52
+    }
+  ],
+  "Doces": [
+    {
+      "Produto": "Barra de Chocolate",
+      "Nomes_Alternativos": ["Arroz", "Arros"],
+      "Imagem": "",
+      "Marca": "Lacta",
+      "Preco": 10.0
+    },
+    {
+      "Produto": "Doce de Leite",
+      "Nomes_Alternativos": ["Feijao", "Feijao Marrom"],
+      "Imagem": "",
+      "Marca": "Nestle",
+      "Preco": 8.99
+    },
+    {
+      "Produto": "Nutella",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "",
+      "Marca": "Nestle",
+      "Preco": 29.99
+    }
+  ],
+  "Limpeza": [
+    {
+      "Produto": "Veja",
+      "Nomes_Alternativos": ["Arroz", "Arros"],
+      "Imagem": "",
+      "Marca": "Veja",
+      "Preco": 8.0
+    },
+    {
+      "Produto": "Q Boa",
+      "Nomes_Alternativos": ["Feijao", "Feijao Marrom"],
+      "Imagem": "",
+      "Marca": "Q Boa",
+      "Preco": 4.0
+    },
+    {
+      "Produto": "Limpol",
+      "Nomes_Alternativos": ["Espaquete", "Macarrao"],
+      "Imagem": "",
+      "Marca": "Limpol",
+      "Preco": 1.99
+    }
+  ]
+}
