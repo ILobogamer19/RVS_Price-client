@@ -13,7 +13,10 @@ export default function Categoria_Com_Produto_Inicial() {
           <h1 key={Categoria + 1}>{Categoria}</h1>
           <div className="Produtos">
             {Categoria_Produto_Objeto[Categoria].map((Categoria) => (
-              <div className={"Produto_" + Categoria.Produto}>
+              <div
+                className={"Produto_" + Categoria.Produto}
+                key={Categoria.Produto}
+              >
                 <img src={Categoria.Imagem} />
                 <h3>{Categoria.Produto}</h3>
                 <p>R$ {Categoria.Preco.toFixed(2)}</p>

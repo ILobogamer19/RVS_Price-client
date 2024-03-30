@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Link": "",
+    "Imagem": "img/Cadastre_Seu_Mercado.png",
+    "Texto": "Cadastre seu Mercado"
+  },
+  {
+    "Id": 2,
+    "Link": "",
+    "Imagem": "img/Menor_Preco.png",
+    "Texto": "Menor Preço"
+  },
+  {
+    "Id": 3,
+    "Link": "",
+    "Imagem": "img/Mercados.png",
+    "Texto": "Mercados"
+  },
+  {
+    "Id": 4,
+    "Link": "",
+    "Imagem": "img/Promocoes.png",
+    "Texto": "Promoções"
+  },
+  {
+    "Id": 5,
+    "Link": "",
+    "Imagem": "img/Carrinho.png",
+    "Texto": "Seu Carrinho"
+  }
+]

@@ -4,15 +4,15 @@ const Imagens_de_Slide_Json = await fetch("./data/Slides_Apresentacao.json");
 
 const Imagens_de_Slide = await Imagens_de_Slide_Json.json();
 
+const Quantia_De_Imagens_Existentes = Object.keys(Imagens_de_Slide).length;
+const Slide_Ocupacao = Math.ceil(100 / Quantia_De_Imagens_Existentes);
+
+const Div_Slide = styled.div`
+  width: ${Slide_Ocupacao}%;
+  transition: 0.6s;
+`;
+
 export default function Imagens_Do_Slide() {
-  const Quantia_De_Imagens_Existentes = Object.keys(Imagens_de_Slide).length;
-  const Slide_Ocupacao = Math.ceil(100 / Quantia_De_Imagens_Existentes);
-
-  const Div_Slide = styled.div`
-    width: ${Slide_Ocupacao}%;
-    transition: 0.6s;
-  `;
-
   return (
     <>
       {Imagens_de_Slide.map((item) => {

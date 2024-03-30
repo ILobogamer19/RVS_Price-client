@@ -7,17 +7,17 @@ import styled from "styled-components";
 const Imagens_de_Slide_Json = await fetch("./data/Slides_Apresentacao.json");
 const Imagens_de_Slide = await Imagens_de_Slide_Json.json();
 
+const Quantia_De_Imagens_Existentes = Object.keys(Imagens_de_Slide).length;
+
+const Tamanho_Total_De_Largura = Quantia_De_Imagens_Existentes * 100;
+
+const Div_Slides = styled.div`
+  display: flex;
+  width: ${Tamanho_Total_De_Largura}%;
+  height: 100%;
+`;
+
 export default function Banner_Apresentacoes() {
-  const Quantia_De_Imagens_Existentes = Object.keys(Imagens_de_Slide).length;
-
-  const Tamanho_Total_De_Largura = Quantia_De_Imagens_Existentes * 100;
-
-  const Div_Slides = styled.div`
-    display: flex;
-    width: ${Tamanho_Total_De_Largura}%;
-    height: 100%;
-  `;
-
   return (
     <>
       <div className="Imagens_De_Apresentacoes">

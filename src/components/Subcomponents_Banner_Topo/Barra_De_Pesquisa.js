@@ -1,5 +1,6 @@
 import Logo from "../../img/RVS_Price.png";
 import Lupa from "../../img/Lupa.png";
+import Login from "./Login";
 
 export default function Barra_De_Pesquisa() {
   return (
@@ -16,22 +17,7 @@ export default function Barra_De_Pesquisa() {
         className="Img_Lupa"
         onClick={() => document.querySelector("#Input_De_Pesquisa").focus()}
       />
-      <div className="Login">
-        <div>
-          <label htmlFor="Input_De_Login_User">User:</label>
-          <input type="text" placeholder="User" id="Input_De_Login_User" />
-        </div>
-        <div>
-          <label>Senha:</label>
-          <input
-            type="password"
-            placeholder="Senha"
-            id="Input_De_Login_Senha"
-          />
-        </div>
-        <hr />
-        <button className="Botao_De_Logar_User_Senha">Logar</button>
-      </div>
+      <Login />
     </div>
   );
 }

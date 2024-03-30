@@ -1,52 +1,62 @@
-import Cadastre_Seu_Mercado from "../../img/Cadastre_Seu_Mercado.png";
-import Menor_Preco from "../../img/Menor_Preco.png";
-import Mercados from "../../img/Mercados.png";
-import Promocoes from "../../img/Promocoes.png";
-import Carrinho from "../../img/Carrinho.png";
+import Admin_Painel from "../../img/Admin_Painel.png";
+import { useState, useEffect } from "react";
+
+const Menu_Link_Imagem_Texto_Json = await fetch("./data/Menu.json");
+const Menu_Link_Imagem_Texto = await Menu_Link_Imagem_Texto_Json.json();
 
 export default function Menu() {
+  const [Ver_Admin_Painel, setVer_Admin_Painel] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setVer_Admin_Painel(true);
+    } else {
+      setVer_Admin_Painel(false);
+    }
+  }, []);
+
   return (
     <div className="Links_Navegacao">
-      <a href="" className="Link_De_Navegacao_Com_Imagem">
-        <img src={Cadastre_Seu_Mercado} className="Imagem_Inicial" />
-        Registre seu Mercado
-      </a>
-      <p className="Separacao_Links_Navegacao">
-        <span>|</span>
-        <span>|</span>
-        <span>|</span>
-      </p>
-      <a href="" className="Link_De_Navegacao_Com_Imagem">
-        <img src={Menor_Preco} className="Imagem_Inicial" />
-        Menor Preço
-      </a>
-      <p className="Separacao_Links_Navegacao">
-        <span>|</span>
-        <span>|</span>
-        <span>|</span>
-      </p>
-      <a href="" className="Link_De_Navegacao_Com_Imagem">
-        <img src={Mercados} className="Imagem_Inicial" />
-        Mercados
-      </a>
-      <p className="Separacao_Links_Navegacao">
-        <span>|</span>
-        <span>|</span>
-        <span>|</span>
-      </p>
-      <a href="" className="Link_De_Navegacao_Com_Imagem">
-        <img src={Promocoes} className="Imagem_Inicial" />
-        Promoções
-      </a>
-      <p className="Separacao_Links_Navegacao">
-        <span>|</span>
-        <span>|</span>
-        <span>|</span>
-      </p>
-      <a href="" className="Link_De_Navegacao_Com_Imagem">
-        <img src={Carrinho} className="Imagem_Inicial" />
-        Carrinho de compras
-      </a>
+      {Menu_Link_Imagem_Texto.map((item) => {
+        return (
+          <div key={item.Id + item.Link}>
+            <a
+              href={item.Link}
+              className="Link_De_Navegacao_Com_Imagem"
+              key={item.Link}
+            >
+              <img
+                src={item.Imagem}
+                className="Imagem_Inicial"
+                key={item.Imagem}
+              />
+              {item.Texto}
+            </a>
+            {item.Id !== 5 && (
+              <p className="Separacao_Links_Navegacao" key={item.Id}>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+              </p>
+            )}
+          </div>
+        );
+      })}
+      {
+        /*localStorage.getItem("token")*/ Ver_Admin_Painel && (
+          <div>
+            <p className="Separacao_Links_Navegacao">
+              <span>|</span>
+              <span>|</span>
+              <span>|</span>
+            </p>
+            <a href="/admin-painel" className="Link_De_Navegacao_Com_Imagem">
+              <img src={Admin_Painel} className="Imagem_Inicial" />
+              Painel Admin
+            </a>
+          </div>
+        )
+      }
     </div>
   );
 }
