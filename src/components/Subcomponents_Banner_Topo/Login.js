@@ -34,21 +34,21 @@ export default function Login() {
           },
         }
       ).then((Resposta) => {
-        // console.log("Usuário valido: " + Resposta.data.permitir);
+        console.log("Usuário valido: " + Resposta.data.permitir);
         if (Resposta.data.token) {
           var token = Resposta.data.token;
           localStorage.setItem("token", token);
           setVisibilidade(false);
           window.location.reload();
-          //   console.log("Token: " + token);
+          console.log("Token: " + token);
           alert("Logado com sucesso");
         } else {
           alert("Falha no login");
-          //   console.log("User: " + Input_User);
-          //   console.log("Senha: " + Input_Senha);
+          console.log("User: " + Input_User);
+          console.log("Senha: " + Input_Senha);
         }
       });
-      //   console.log("Finalizado");
+      console.log("Finalizado");
     }, 1000);
   }
   return (
