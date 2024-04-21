@@ -1,7 +1,7 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import HomePage from "../pages/Home/HomePage";
 
-export default function Rota_Privada({ children }) {
+export default function Rota_Privada() {
   function Ir_Para_Pagina_Inicial() {
     alert("Você não está logado");
     return <Navigate to="/" />;
@@ -13,5 +13,5 @@ export default function Rota_Privada({ children }) {
     Acesso_Admin = true;
   }
 
-  return Acesso_Admin ? children : Ir_Para_Pagina_Inicial();
+  return Acesso_Admin ? <Outlet /> : Ir_Para_Pagina_Inicial();
 }

@@ -1,0 +1,32 @@
+body {
+  background-color: white;
+}
+.Painel_Admin_Central {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.Titulo_Painel_Admin {
+  font-size: 5vw;
+}
+.Opcoes_Administrativas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  flex-wrap: wrap;
+}
+.Opcoes_Administrativas button {
+  margin: 0.2vw;
+  width: 20vw;
+  height: 15vw;
+  font-size: 4vw;
+  border: 0.2vw solid black;
+  background-color: lightblue;
+}
+.Opcoes_Administrativas button:hover {
+  background-color: rgb(0, 175, 233);
+  cursor: pointer;
+}
