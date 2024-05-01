@@ -184,25 +184,26 @@ export default function Cadastro_Produto() {
       return <img src={Logo_TCA} className="Logo_Mercado_Pre_Cadastro" />;
     } else if (Nome_Mercado == "Super_M") {
       return <img src={Logo_Super_M} className="Logo_Mercado_Pre_Cadastro" />;
-    } else if (Nome_Mercado == "Santa_Teresinha") {
-      return (
-        <img src={Logo_Santa_Teresinha} className="Logo_Mercado_Pre_Cadastro" />
-      );
-    } else if (Nome_Mercado == "Emporio_Do_Portugues") {
-      return (
-        <img
-          src={Logo_Emporio_Do_Portugues}
-          className="Logo_Mercado_Pre_Cadastro"
-        />
-      );
-    } else if (Nome_Mercado == "Mercadinho_Do_Hospital") {
-      return (
-        <img
-          src={Logo_Mercadinho_Do_Hospital}
-          className="Logo_Mercado_Pre_Cadastro"
-        />
-      );
     }
+    // } else if (Nome_Mercado == "Santa_Teresinha") {
+    //   return (
+    //     <img src={Logo_Santa_Teresinha} className="Logo_Mercado_Pre_Cadastro" />
+    //   );
+    // } else if (Nome_Mercado == "Emporio_Do_Portugues") {
+    //   return (
+    //     <img
+    //       src={Logo_Emporio_Do_Portugues}
+    //       className="Logo_Mercado_Pre_Cadastro"
+    //     />
+    //   );
+    // } else if (Nome_Mercado == "Mercadinho_Do_Hospital") {
+    //   return (
+    //     <img
+    //       src={Logo_Mercadinho_Do_Hospital}
+    //       className="Logo_Mercado_Pre_Cadastro"
+    //     />
+    //   );
+    // }
   };
   //#endregion
 
