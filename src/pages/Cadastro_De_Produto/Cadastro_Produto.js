@@ -29,6 +29,10 @@ export default function Cadastro_Produto() {
   var Outros_Nomes_Escolhido = Cookies.get("Outros_Nomes");
   //#endregion
 
+  if (Valor_Escolhido == "undefined") {
+    Valor_Escolhido = "R$";
+  }
+
   //#region Criando variaveis para receber os valores dos inputs
   const [Imagem_Produto, setImagem_Produto] = useState(
     Imagem_Escolhido ? Imagem_Escolhido : Sem_Imagem
