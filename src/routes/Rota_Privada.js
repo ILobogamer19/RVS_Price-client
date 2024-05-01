@@ -1,5 +1,4 @@
 import { Navigate, Outlet } from "react-router-dom";
-import HomePage from "../pages/Home/HomePage";
 
 export default function Rota_Privada() {
   function Ir_Para_Pagina_Inicial() {
@@ -9,7 +8,7 @@ export default function Rota_Privada() {
 
   var Token = localStorage.getItem("token");
   var Acesso_Admin;
-  if (Token == "3MqUWY6LRqV8660067c81cf74") {
+  if (Token === "3MqUWY6LRqV8660067c81cf74") {
     Acesso_Admin = true;
   }
 

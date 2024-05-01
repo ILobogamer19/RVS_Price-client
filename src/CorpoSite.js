@@ -11,13 +11,13 @@ export default function CorpoSite() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/*" element={<HomePage />} />
-        <Route path="/admin-painel" element={<Rota_Privada />}>
-          <Route index element={<Admin_Painel />}></Route>
+        <Route path="admin-painel" element={<Rota_Privada />}>
+          <Route index element={<Admin_Painel />} />
         </Route>
-        <Route
-          path="/admin-painel/cadastrar-produto"
-          element={<Cadastro_Produto />}
-        />
+        <Route path="/cadastrar-produto" element={<Rota_Privada />}>
+          <Route index element={<Cadastro_Produto />} />
+          <Route path="/cadastrar-produto" element={<Cadastro_Produto />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

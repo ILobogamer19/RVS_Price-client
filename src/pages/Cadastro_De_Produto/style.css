@@ -1,0 +1,135 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: black; */
+}
+
+/* Vizualização de pré cadastro */
+.Painel_Pre_Cadastro {
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  height: 400px;
+  top: 10%;
+  left: 5%;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Pre_Produto_Cadastrado_Informacoes {
+  border: 1px solid black;
+  padding: 5px;
+}
+.Imagem_Do_Pre_Produto_Cadastrado {
+  height: 20vh;
+  width: 10vw;
+}
+.Nome_Do_Pre_Produto_Cadastrado {
+  margin: 0;
+  text-align: center;
+  width: 250px;
+}
+.Valor_Do_Pre_Produto_Cadastrado {
+  margin: 0;
+}
+.Logo_Mercado_Pre_Cadastro {
+  position: absolute;
+  top: 31%;
+  left: 31%;
+  width: 50px;
+}
+
+/* Cadastre o Produto */
+.Painel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  padding: 0 25px 0 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.Painel input,
+.Painel select {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.Caixa_De_Input_De_Imagem {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+.Input_De_Imagem {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.Input_De_Imagem_Borda {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid black;
+  margin: 0 0 15px 0;
+}
+.Div_Imagem_Do_Produto {
+  max-width: 100%;
+  max-height: 100%;
+  width: 405px;
+  height: 405px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.Diminuidor_De_Tamanho {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.Imagem_Do_Produto {
+  max-width: 100%;
+  height: auto;
+}
+.Botao_De_Cadastro {
+  margin: 5px 0 0 0;
+}
+.Controle_De_Tamanho {
+  height: 100vh;
+  background-color: black;
+}
+input {
+  margin: 5px 0 5px 0;
+}
+
+/* Ultimo Cadastro */
+.Painel_Ultimo_Cadastro {
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  height: 400px;
+  top: 10%;
+  right: 5%;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Imagem_Do_Ultimo_Produto_Cadastrado {
+  height: 20vh;
+  width: 10vw;
+}
+.Nome_Do_Ultimo_Produto_Cadastrado {
+  margin: 0;
+  text-align: center;
+  width: 250px;
+}
+.Valor_Do_Ultimo_Produto_Cadastrado {
+  margin: 0;
+}

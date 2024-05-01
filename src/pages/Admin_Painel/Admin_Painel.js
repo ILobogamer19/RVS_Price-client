@@ -7,28 +7,32 @@ export default function Admin_Painel() {
       <div className="Opcoes_Administrativas">
         <button
           onClick={() => {
-            window.location.href = "/admin-painel/cadastrar-produto";
+            // window.location.href = "/admin-painel/cadastrar-produto";
+            window.location.href = "/cadastrar-produto";
           }}
         >
           Cadastro de Produtos
         </button>
         <button
           onClick={() => {
-            window.location.href = "/admin-painel/pesquisar-produto";
+            // window.location.href = "/admin-painel/pesquisar-produto";
+            window.location.href = "/pesquisar-produto";
           }}
         >
           Pesquisa de Produtos
         </button>
         <button
           onClick={() => {
-            window.location.href = "/admin-painel/promocao-produto";
+            // window.location.href = "/admin-painel/promocao-produto";
+            window.location.href = "/promocao-produto";
           }}
         >
           Promoção de Produtos
         </button>
         <button
           onClick={() => {
-            window.location.href = "/admin-painel/excluir-produto";
+            // window.location.href = "/admin-painel/excluir-produto";
+            window.location.href = "/excluir-produto";
           }}
         >
           Remoção de Produtos
