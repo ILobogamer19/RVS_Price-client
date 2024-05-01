@@ -148,21 +148,41 @@ export default function Cadastro_Produto() {
   //#region Função que testa se existem casas decimais
   const Testador_De_Casas_Decimais = (Valores) => {
     var Valores_Sem_Texto;
-    var Valores_Com_Ponto = Valores_Sem_Texto;
 
-    if (Valores.includes("R$")) {
+    console.log(Valores);
+
+    if (Valores == "R$" || Valores == "R" || Valores === undefined) {
+      return;
+    } else if (Valores.includes("R$")) {
       Valores_Sem_Texto = Valores.replace("R$", "");
     }
 
+    if (Valores_Sem_Texto === NaN || Valores_Sem_Texto == "NaN") {
+      return;
+    }
+
+    var Valores_Com_Ponto = Valores_Sem_Texto;
+
     if (Valores.includes(",")) {
       Valores_Com_Ponto = Valores_Sem_Texto.replace(",", ".");
+    }
+
+    if (Valores_Com_Ponto === NaN || Valores_Com_Ponto == "NaN") {
+      return;
     }
 
     var Valores_Em_Formato_Numerico = parseFloat(Valores_Com_Ponto);
 
     var Valores_Final_Com_Decimal = Valores_Em_Formato_Numerico.toFixed(2);
 
-    return "R$" + Valores_Final_Com_Decimal.replace(".", ",");
+    if (
+      Valores_Final_Com_Decimal === NaN ||
+      Valores_Final_Com_Decimal == "NaN"
+    ) {
+      return;
+    } else {
+      return "R$" + Valores_Final_Com_Decimal.replace(".", ",");
+    }
   };
 
   //#endregion
@@ -242,6 +262,7 @@ export default function Cadastro_Produto() {
                   if (e.target.files[0]) {
                     Leitor_De_File.readAsDataURL(e.target.files[0]);
                   }
+                  setValor_Produto(Testador_De_Casas_Decimais(Valor_Produto));
                 }}
               />
             </div>
@@ -260,6 +281,7 @@ export default function Cadastro_Produto() {
             ref={Input_De_Referencia_Nome_Produto}
             onChange={(e) => {
               setNome_Produto(e.target.value);
+              setValor_Produto(Testador_De_Casas_Decimais(Valor_Produto));
             }}
           />
           <br />
@@ -291,6 +313,7 @@ export default function Cadastro_Produto() {
             ref={Input_De_Referencia_Mercado}
             onChange={(e) => {
               setNome_Mercado(e.target.value);
+              setValor_Produto(Testador_De_Casas_Decimais(Valor_Produto));
             }}
           >
             {!Mercado_Escolhido && <option value=""></option>}
@@ -313,6 +336,7 @@ export default function Cadastro_Produto() {
             ref={Input_De_Referencia_Categoria}
             onChange={(e) => {
               setCategoria(e.target.value);
+              setValor_Produto(Testador_De_Casas_Decimais(Valor_Produto));
             }}
           />
           <br />
@@ -324,6 +348,7 @@ export default function Cadastro_Produto() {
             ref={Input_De_Referencia_Informacoes}
             onChange={(e) => {
               setInformacoes_Adicionais(e.target.value);
+              setValor_Produto(Testador_De_Casas_Decimais(Valor_Produto));
             }}
           />
           <br />
@@ -335,6 +360,7 @@ export default function Cadastro_Produto() {
             ref={Input_De_Referencia_Outros_Nomes}
             onChange={(e) => {
               setOutros_Nomes(e.target.value);
+              setValor_Produto(Testador_De_Casas_Decimais(Valor_Produto));
             }}
           />
 
