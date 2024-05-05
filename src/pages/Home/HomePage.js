@@ -1,4 +1,5 @@
 import "./style.css";
+import "./Estilo_Logo_Nos_Produtos.css";
 import "./Estilo_Banner_De_Slides.css";
 import "./Estilo_Categorias_E_Produtos_Home.css";
 import Banner_Topo from "../../components/Banner_Topo";

@@ -1,14 +1,57 @@
+//#region Importações de estilização
 import "./style.css";
+//#endregion
+
+//#region Importações de imagem
 import Sem_Imagem from "../../img/Sem_Imagem.png";
-import Logo_Correia from "../../img/Logo_Correia.png";
-import Logo_Bom_Jesus from "../../img/Logo_Bom_Jesus.png";
-import Logo_TCA from "../../img/Logo_TCA.png";
-import Logo_Super_M from "../../img/Logo_Super_M.png";
+//#endregion
+
+//#region Importações de bibliotecas
 import Axios from "axios";
 import Cookies from "js-cookie";
 import React, { useState, useEffect, useRef } from "react";
+//#endregion
+
+//#region Importações de componentes
+import Inserir_Etiqueta_Do_Mercado from "../../components/Inserir_Etiqueta_Do_Mercado";
+import Opcoes_De_Cadastro_De_Mercados from "../../components/Opcoes_De_Cadastro_De_Mercados";
+//#endregion
 
 export default function Cadastro_Produto() {
+  var Dados_Cadastrados = {};
+
+  //#region Envio de cadastro para o servidor
+  function Enviar_Dados_De_Cadastro_Para_Servidor() {
+    console.log("Enviando para servidor");
+    setTimeout(() => {
+      Axios.post("http://localhost:5000/cadastrar", Dados_Cadastrados, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((Resposta) => {
+        console.log("Cadastro realizado: " + Resposta.data.cadastro_realizado);
+        if (Resposta.data.cadastro_realizado) {
+          alert("Cadastrado com sucesso");
+        } else {
+          alert("Falha no cadastro");
+          if (Resposta.data.imagem) {
+            console.log("imagem: " + Resposta.data.imagem);
+          } else if (Resposta.data.nome) {
+            console.log("nome: " + Resposta.data.nome);
+          } else if (Resposta.data.valor) {
+            console.log("valor: " + Resposta.data.valor);
+          } else if (Resposta.data.mercado) {
+            console.log("mercado: " + Resposta.data.mercado);
+          } else if (Resposta.data.categoria) {
+            console.log("categoria: " + Resposta.data.categoria);
+          }
+        }
+      });
+      console.log("Finalizado");
+    }, 1000);
+  }
+  //#endregion
+
   //#region Referencias de Inputs
   const Input_De_Referencia_Imagem = useRef(null);
   const Input_De_Referencia_Nome_Produto = useRef(null);
@@ -29,9 +72,11 @@ export default function Cadastro_Produto() {
   var Outros_Nomes_Escolhido = Cookies.get("Outros_Nomes");
   //#endregion
 
+  //#region Definindo o valor de Valor_Escolhido para R$ se for undefined
   if (Valor_Escolhido == "undefined") {
     Valor_Escolhido = "R$";
   }
+  //#endregion
 
   //#region Criando variaveis para receber os valores dos inputs
   const [Imagem_Produto, setImagem_Produto] = useState(
@@ -122,7 +167,7 @@ export default function Cadastro_Produto() {
 
     var Valor_Produto_Formatado = Testador_De_Casas_Decimais(Valor_Produto);
 
-    var Dados_Cadastrados = {
+    Dados_Cadastrados = {
       Imagem_Produto,
       Nome_Produto,
       Valor_Produto_Formatado,
@@ -142,10 +187,9 @@ export default function Cadastro_Produto() {
     setCategoria("");
     setInformacoes_Adicionais("");
     setOutros_Nomes("");
-
     Produto_Cadastrado = true;
 
-    alert("Produto Cadastrado!");
+    Enviar_Dados_De_Cadastro_Para_Servidor();
   };
   //#endregion
 
@@ -191,7 +235,9 @@ export default function Cadastro_Produto() {
 
   //#endregion
 
+  //#region Criando um leitor de arquivos para converter input file para imagem
   const Leitor_De_File = new FileReader();
+  //#endregion
 
   //#region Configurações da pré vizualização de cadastro
   var Produto_Cadastrado = false;
@@ -199,51 +245,48 @@ export default function Cadastro_Produto() {
     Imagem_Produto !== "/static/media/Sem_Imagem.60408411369fbfea2d38.png"
       ? Imagem_Produto
       : "";
-  const Imagem_Da_Logo_Escolhida = () => {
-    if (Nome_Mercado == "Correia") {
-      return <img src={Logo_Correia} className="Logo_Mercado_Pre_Cadastro" />;
-    } else if (Nome_Mercado == "Bom_Jesus") {
-      return <img src={Logo_Bom_Jesus} className="Logo_Mercado_Pre_Cadastro" />;
-    } else if (Nome_Mercado == "TCA") {
-      return <img src={Logo_TCA} className="Logo_Mercado_Pre_Cadastro" />;
-    } else if (Nome_Mercado == "Super_M") {
-      return <img src={Logo_Super_M} className="Logo_Mercado_Pre_Cadastro" />;
-    }
-    // } else if (Nome_Mercado == "Santa_Teresinha") {
-    //   return (
-    //     <img src={Logo_Santa_Teresinha} className="Logo_Mercado_Pre_Cadastro" />
-    //   );
-    // } else if (Nome_Mercado == "Emporio_Do_Portugues") {
-    //   return (
-    //     <img
-    //       src={Logo_Emporio_Do_Portugues}
-    //       className="Logo_Mercado_Pre_Cadastro"
-    //     />
-    //   );
-    // } else if (Nome_Mercado == "Mercadinho_Do_Hospital") {
-    //   return (
-    //     <img
-    //       src={Logo_Mercadinho_Do_Hospital}
-    //       className="Logo_Mercado_Pre_Cadastro"
-    //     />
-    //   );
-    // }
+
+  //#endregion
+
+  //#region Excluir produto pré cadastrado
+  const Excluir_Pre_Cadastro = () => {
+    Mercado_Escolhido = false;
+    setImagem_Produto(Sem_Imagem);
+    setNome_Produto("");
+    setValor_Produto("R$");
+    setNome_Mercado("");
+    setCategoria("");
+    setInformacoes_Adicionais("");
+    setOutros_Nomes("");
   };
   //#endregion
 
+  //#region Retorno em JSX
   return (
     <>
       <div className="Controle_De_Tamanho">
         <div className="Painel_Pre_Cadastro">
           <h1>Vizualização de pré cadastro</h1>
-          <div className="Pre_Produto_Cadastrado_Informacoes">
+          <div
+            className="Pre_Produto_Cadastrado_Informacoes"
+            title={
+              Informacoes_Adicionais !== ""
+                ? Informacoes_Adicionais
+                : "Sem informações adicionais"
+            }
+          >
             <img
               src={Imagem_Produto_Pre_Cadastro}
               className="Imagem_Do_Pre_Produto_Cadastrado"
             />
-            {Imagem_Da_Logo_Escolhida()}
+            {Inserir_Etiqueta_Do_Mercado(
+              Nome_Mercado,
+              "Logo_Mercado_Pre_Cadastro"
+            )}
             <h3 className="Nome_Do_Pre_Produto_Cadastrado">{Nome_Produto}</h3>
-            <p className="Valor_Do_Pre_Produto_Cadastrado">{Valor_Produto}</p>
+            <p className="Valor_Do_Pre_Produto_Cadastrado">
+              {Valor_Produto !== "R$" ? Valor_Produto : ""}
+            </p>
           </div>
         </div>
 
@@ -320,16 +363,8 @@ export default function Cadastro_Produto() {
               setValor_Produto(Testador_De_Casas_Decimais(Valor_Produto));
             }}
           >
-            {!Mercado_Escolhido && <option value=""></option>}
-            <option value="Correia">Correia</option>
-            <option value="Bom_Jesus">Bom Jesus</option>
-            <option value="TCA">TCA</option>
-            <option value="Super_M">Super M</option>
-            <option value="Santa_Teresinha">Santa Teresinha</option>
-            <option value="Emporio_Do_Portugues">Empório do Portugues</option>
-            <option value="Mercadinho_Do_Hospital">
-              Mercadinho do Hospital
-            </option>
+            {!Mercado_Escolhido ? <option value=""></option> : ""}
+            <Opcoes_De_Cadastro_De_Mercados />
           </select>
           <br />
           <label>Categoria: </label>
@@ -374,6 +409,8 @@ export default function Cadastro_Produto() {
           >
             Cadastrar
           </button>
+          <br />
+          <button onClick={Excluir_Pre_Cadastro}>Excluir</button>
         </div>
         {Produto_Cadastrado && (
           <div className="Painel_Ultimo_Cadastro">
@@ -393,4 +430,5 @@ export default function Cadastro_Produto() {
       </div>
     </>
   );
+  //#endregion
 }
