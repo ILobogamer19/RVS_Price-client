@@ -25,7 +25,7 @@ export default function Categoria_Com_Produto_Inicial() {
     console.log(Categoria_Pesquisada);
 
     Axios.post(
-      "http://localhost:5000/pesquisa-categoria-produto",
+      "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
       { Categoria_Para_Pesquisa: Categoria_Pesquisada },
       {
         headers: {

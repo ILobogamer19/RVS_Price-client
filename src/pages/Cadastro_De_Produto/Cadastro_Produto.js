@@ -24,11 +24,15 @@ export default function Cadastro_Produto() {
   function Enviar_Dados_De_Cadastro_Para_Servidor() {
     console.log("Enviando para servidor");
     setTimeout(() => {
-      Axios.post("http://localhost:5000/cadastrar", Dados_Cadastrados, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((Resposta) => {
+      Axios.post(
+        "https://rvsprice-server.vercel.app/cadastrar",
+        Dados_Cadastrados,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((Resposta) => {
         console.log("Cadastro realizado: " + Resposta.data.cadastro_realizado);
         if (Resposta.data.cadastro_realizado) {
           alert("Cadastrado com sucesso");
