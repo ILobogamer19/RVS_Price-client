@@ -26,6 +26,7 @@ export default function Cadastro_Produto() {
     setTimeout(() => {
       Axios.post(
         "https://rvsprice-server.vercel.app/cadastrar",
+        // "http://localhost:5000/cadastrar",
         Dados_Cadastrados,
         {
           headers: {

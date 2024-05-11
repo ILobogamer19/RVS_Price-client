@@ -26,6 +26,7 @@ export default function Categoria_Com_Produto_Inicial() {
 
     Axios.post(
       "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
+      // "http://localhost:5000/pesquisa-categoria-produto",
       { Categoria_Para_Pesquisa: Categoria_Pesquisada },
       {
         headers: {
@@ -33,6 +34,7 @@ export default function Categoria_Com_Produto_Inicial() {
         },
       }
     ).then((Resposta) => {
+      console.log("Resposta: ");
       console.log(Resposta.data.produtos_achados);
 
       if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {

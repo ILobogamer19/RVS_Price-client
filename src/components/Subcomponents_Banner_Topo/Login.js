@@ -24,6 +24,7 @@ export default function Login() {
     setTimeout(() => {
       Axios.post(
         "https://rvsprice-server.vercel.app/validar",
+        // "http://localhost:5000/validar",
         {
           User: Input_User,
           Senha: Input_Senha,

@@ -4,6 +4,11 @@ body {
   background-color: black; */
 }
 /* Itens do Banner em Geral */
+.Parte_Superior_Do_Site {
+  display: block;
+  align-items: center;
+}
+
 .Banner_Topo {
   border: 0.2vw solid black;
   display: flex;
@@ -80,6 +85,9 @@ body {
 }
 
 /* Links para navegar no site */
+.Links_Navegacao {
+  filter: invert(100%);
+}
 .Links_Navegacao a {
   margin: 0.2vw;
   color: black;
@@ -105,4 +113,5 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
 }

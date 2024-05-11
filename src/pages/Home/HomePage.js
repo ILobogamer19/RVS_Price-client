@@ -2,6 +2,7 @@ import "./style.css";
 import "./Estilo_Logo_Nos_Produtos.css";
 import "./Estilo_Banner_De_Slides.css";
 import "./Estilo_Categorias_E_Produtos_Home.css";
+import "./Estilo_Mudar_Tema.css";
 import Banner_Topo from "../../components/Banner_Topo";
 import Banner_Apresentacoes from "../../components/Banner_Apresentacoes";
 import Categoria_Com_Produto_Inicial from "../../components/Categoria_Com_Produto_Inicial";

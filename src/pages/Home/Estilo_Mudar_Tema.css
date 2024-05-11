@@ -1,0 +1,42 @@
+:root {
+  --Cor_Do_Fundo: yellow;
+  /* --Cor_Do_Fundo_Site: white; */
+}
+
+body {
+  background-color: white;
+}
+
+.Div_Do_Trocador_De_Tema {
+  position: absolute;
+  width: 50px;
+}
+.Agrupador_De_Botao_E_Bola {
+  position: relative;
+  top: -40px;
+  left: 15px;
+}
+.Botao_De_Ativacao_De_Troca_De_Tema {
+  /* Proporções 5/3 */
+  width: 60px;
+  height: 36px;
+  border-radius: 20px 20px;
+}
+.Bola_De_Tema {
+  background-color: var(--Cor_Do_Fundo);
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s ease;
+}
+#Input_De_Checagem_Para_Tema {
+  position: absolute;
+  z-index: -1;
+}
+#Input_De_Checagem_Para_Tema:checked ~ .Bola_De_Tema {
+  --Cor_Do_Fundo: blue;
+  transform: translateX(25px);
+}
+/* #Input_De_Checagem_Para_Tema:checked ~ :root {
+  --Cor_Do_Fundo_Site: black;
+} */
