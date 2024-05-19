@@ -28,7 +28,7 @@ export default function Mudar_Tema_Do_Site_Funcao() {
     Botao_De_Alteracao_De_Tema: "rgb(0,0,0)",
     Letras_Do_Site: "rgb(255,255,255)",
     Linha_De_Separacao: "rgb(113,113,113)",
-    Opacidade_Itens: "0.8",
+    Opacidade_Itens: "0.7",
   };
 
   const Tema_Claro = {
