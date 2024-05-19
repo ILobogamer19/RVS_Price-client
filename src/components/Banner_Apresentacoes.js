@@ -20,7 +20,7 @@ const Div_Slides = styled.div`
 export default function Banner_Apresentacoes() {
   return (
     <>
-      <div className="Imagens_De_Apresentacoes">
+      <div className="Imagens_De_Apresentacoes Opacidade_De_Itens_Para_Temas">
         <Div_Slides>
           <Input_Tipo_Radio />
           <Imagens_Do_Slide />

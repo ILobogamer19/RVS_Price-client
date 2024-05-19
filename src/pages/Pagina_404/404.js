@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Cookies from "js-cookie";
+import "./style.css";
 
 var Contador_De_Vezes = 0;
+export default function Error_404_Pagina_Nao_Encontrada() {
+  const url = useNavigate();
 
-export default function Mudar_Tema_Do_Site_Funcao() {
   //#region Puxando Cookies
   var Busca_De_Tema_Ja_Escolhido = Cookies.get("Tema_Escolhido");
   //#endregion
@@ -28,7 +31,6 @@ export default function Mudar_Tema_Do_Site_Funcao() {
     Botao_De_Alteracao_De_Tema: "rgb(0,0,0)",
     Letras_Do_Site: "rgb(255,255,255)",
     Linha_De_Separacao: "rgb(113,113,113)",
-    Opacidade_Itens: "0.8",
   };
 
   const Tema_Claro = {
@@ -41,7 +43,6 @@ export default function Mudar_Tema_Do_Site_Funcao() {
     Botao_De_Alteracao_De_Tema: "rgb(255,255,255)",
     Letras_Do_Site: "rgb(0,0,0)",
     Linha_De_Separacao: "rgb(0,0,0)",
-    Opacidade_Itens: "1",
   };
   //#endregion
 
@@ -59,8 +60,6 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       Tema_Escolhido.Links_De_Navegacao;
     document.querySelector("body").style.backgroundColor =
       Tema_Escolhido.Fundo_Site;
-    document.querySelector("body").style.opacity =
-      Tema_Escolhido.Opacidade_Itens;
     document.querySelector(
       ".Botao_De_Ativacao_De_Troca_De_Tema"
     ).style.backgroundColor = Tema_Escolhido.Botao_De_Alteracao_De_Tema;
@@ -70,11 +69,6 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       .forEach((item) => {
         item.style.borderColor = Tema_Escolhido.Linha_De_Separacao;
       });
-    // document
-    //   .querySelectorAll(".Opacidade_De_Itens_Para_Temas")
-    //   .forEach((item) => {
-    //     item.style.opacity = Tema_Escolhido.Opacidade_Itens;
-    //   });
   };
   //#endregion
 
@@ -115,24 +109,34 @@ export default function Mudar_Tema_Do_Site_Funcao() {
   //#endregion
 
   return (
-    <div className="Div_Do_Trocador_De_Tema">
-      <div className="Agrupador_De_Botao_E_Bola">
-        <button
-          className="Botao_De_Ativacao_De_Troca_De_Tema"
-          onClick={() => {
-            setValor_Checado_Ou_Nao_Do_Input(!Valor_Checado_Ou_Nao_Do_Input);
-            Alterador_De_Tema_Do_Site();
-            Cookies.set("Tema_Escolhido", Valor_Checado_Ou_Nao_Do_Input);
-          }}
-        >
-          <input
-            type="checkbox"
-            id="Input_De_Checagem_Para_Tema"
-            checked={Valor_Checado_Ou_Nao_Do_Input}
-          />
-          <div className="Bola_De_Tema"></div>
-        </button>
-      </div>
+    <div className="Erro_404_Div">
+      <h1
+        style={{
+          margin: "0px",
+          padding: "3px",
+        }}
+      >
+        Pagina não encontrada
+      </h1>
+      <h5
+        style={{
+          margin: "5px",
+          padding: "0px",
+        }}
+      >
+        Error 404
+      </h5>
+      <button
+        onClick={() => {
+          setTimeout(() => {
+            window.location.reload();
+          }, 1);
+
+          url("");
+        }}
+      >
+        Home
+      </button>
     </div>
   );
 }

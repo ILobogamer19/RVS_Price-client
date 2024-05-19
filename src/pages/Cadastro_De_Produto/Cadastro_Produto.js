@@ -22,11 +22,11 @@ export default function Cadastro_Produto() {
 
   //#region Envio de cadastro para o servidor
   function Enviar_Dados_De_Cadastro_Para_Servidor() {
-    console.log("Enviando para servidor");
     setTimeout(() => {
       Axios.post(
-        "https://rvsprice-server.vercel.app/cadastrar",
+        // "https://rvsprice-server.vercel.app/cadastrar",
         // "http://localhost:5000/cadastrar",
+        "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
         Dados_Cadastrados,
         {
           headers: {
@@ -34,25 +34,23 @@ export default function Cadastro_Produto() {
           },
         }
       ).then((Resposta) => {
-        console.log("Cadastro realizado: " + Resposta.data.cadastro_realizado);
         if (Resposta.data.cadastro_realizado) {
           alert("Cadastrado com sucesso");
         } else {
           alert("Falha no cadastro");
           if (Resposta.data.imagem) {
-            console.log("imagem: " + Resposta.data.imagem);
+            console.error("imagem: " + Resposta.data.imagem);
           } else if (Resposta.data.nome) {
-            console.log("nome: " + Resposta.data.nome);
+            console.error("nome: " + Resposta.data.nome);
           } else if (Resposta.data.valor) {
-            console.log("valor: " + Resposta.data.valor);
+            console.error("valor: " + Resposta.data.valor);
           } else if (Resposta.data.mercado) {
-            console.log("mercado: " + Resposta.data.mercado);
+            console.error("mercado: " + Resposta.data.mercado);
           } else if (Resposta.data.categoria) {
-            console.log("categoria: " + Resposta.data.categoria);
+            console.error("categoria: " + Resposta.data.categoria);
           }
         }
       });
-      console.log("Finalizado");
     }, 1000);
   }
   //#endregion
@@ -182,8 +180,6 @@ export default function Cadastro_Produto() {
       Outros_Nomes,
     };
 
-    console.log(Dados_Cadastrados);
-
     Mercado_Escolhido = undefined;
     setImagem_Produto(Sem_Imagem);
     setNome_Produto("");
@@ -201,8 +197,6 @@ export default function Cadastro_Produto() {
   //#region Função que testa se existem casas decimais
   const Testador_De_Casas_Decimais = (Valores) => {
     var Valores_Sem_Texto;
-
-    console.log(Valores);
 
     if (Valores == "R$" || Valores == "R" || Valores === undefined) {
       return;

@@ -1,10 +1,10 @@
 :root {
   --Cor_Do_Fundo: yellow;
-  /* --Cor_Do_Fundo_Site: white; */
+  --Imagem_De_Fundo: url("../../img/Tema_Claro_Sol.png");
 }
 
 body {
-  background-color: white;
+  transition: 0.5s ease;
 }
 
 .Div_Do_Trocador_De_Tema {
@@ -24,9 +24,14 @@ body {
 }
 .Bola_De_Tema {
   background-color: var(--Cor_Do_Fundo);
+  background-image: var(--Imagem_De_Fundo);
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 100%;
-  width: 20px;
-  height: 20px;
+  width: 23.5px;
+  height: 23.5px;
+  z-index: 99;
+  box-shadow: 0px 0px 15px var(--Cor_Do_Fundo);
   transition: transform 0.5s ease;
 }
 #Input_De_Checagem_Para_Tema {
@@ -35,8 +40,6 @@ body {
 }
 #Input_De_Checagem_Para_Tema:checked ~ .Bola_De_Tema {
   --Cor_Do_Fundo: blue;
-  transform: translateX(25px);
+  --Imagem_De_Fundo: url("../../img/Tema_Escuro_Lua.png");
+  transform: translateX(20px);
 }
-/* #Input_De_Checagem_Para_Tema:checked ~ :root {
-  --Cor_Do_Fundo_Site: black;
-} */

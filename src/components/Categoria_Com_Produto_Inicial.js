@@ -20,13 +20,10 @@ export default function Categoria_Com_Produto_Inicial() {
     Categoria_Pesquisada,
     Numero_Categoria
   ) => {
-    console.log("Enviando para servidor");
-    console.log(Numero_Categoria);
-    console.log(Categoria_Pesquisada);
-
     Axios.post(
-      "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
+      // "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
       // "http://localhost:5000/pesquisa-categoria-produto",
+      "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
       { Categoria_Para_Pesquisa: Categoria_Pesquisada },
       {
         headers: {
@@ -34,18 +31,12 @@ export default function Categoria_Com_Produto_Inicial() {
         },
       }
     ).then((Resposta) => {
-      console.log("Resposta: ");
-      console.log(Resposta.data.produtos_achados);
-
       if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {
-        console.log("Adicionando valor: " + Numero_Categoria);
         setProdutos_Da_Categoria_Selecionada((prevState) => ({
           ...prevState,
           [Numero_Categoria]: Resposta.data.produtos_achados,
         }));
-        console.log(Produtos_Da_Categoria_Selecionada);
       } else {
-        console.error("Ja tem valor dentro: " + Numero_Categoria);
         setProdutos_Da_Categoria_Selecionada((prevState) => ({
           ...prevState,
           [Numero_Categoria]: [
@@ -53,30 +44,22 @@ export default function Categoria_Com_Produto_Inicial() {
             Resposta.data.produtos_achados,
           ],
         }));
-        console.log(Produtos_Da_Categoria_Selecionada);
       }
 
       return Resposta.data.produtos_achados;
     });
-    console.log("Finalizado");
   };
   //#endregion
 
   useEffect(() => {
     Categoria_Produto.map((item, index) => {
-      console.log(item.Categoria);
-      console.log(index);
       Enviar_Dados_De_Cadastro_Para_Servidor(item.Categoria, index);
     });
-
-    console.log(Categoria_Produto);
   }, []);
 
   return (
     <>
       {Categoria_Produto.map((item, index) => {
-        console.log("Produtos: Tentativa: " + index);
-        console.log(Produtos_Da_Categoria_Selecionada[index]);
         return (
           <div
             className={"Categorias Categoria_" + item.Categoria}
@@ -86,9 +69,6 @@ export default function Categoria_Com_Produto_Inicial() {
             <div className="Produtos">
               {Produtos_Da_Categoria_Selecionada[index]
                 ? Produtos_Da_Categoria_Selecionada[index].map((Categoria) => {
-                    // console.log(Categoria.Imagem);
-
-                    console.log(Categoria.Imagem);
                     return (
                       <div
                         className={"Produto_" + Categoria.Id_Produtos}
@@ -103,7 +83,7 @@ export default function Categoria_Com_Produto_Inicial() {
                           className="Imagem_Do_Produto_Home"
                         />
                         <h3>{Categoria.Nome}</h3>
-                        <p>R$ {Categoria.Preco}</p>
+                        <p>{Categoria.Preco}</p>
                       </div>
                     );
                   })

@@ -83,7 +83,6 @@ export default function Navegacao_Entre_Slides() {
 
   useEffect(() => {
     if (Temporizador_Para_Troca_Automatica === 0) {
-      console.log("Slide sendo avançado...");
       document.getElementById("Botao_De_Avancar_Para_O_Proximo_Slide").click();
       if (Temporizador_Para_Troca_Automatica === 0) {
         setTemporizador_Para_Troca_Automatica(10);

@@ -20,11 +20,12 @@ export default function Login() {
     setInput_User("");
     setInput_Senha("");
 
-    console.log("Enviando para servidor");
     setTimeout(() => {
       Axios.post(
-        "https://rvsprice-server.vercel.app/validar",
+        // "https://rvsprice-server.vercel.app/validar",
         // "http://localhost:5000/validar",
+        "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
+
         {
           User: Input_User,
           Senha: Input_Senha,
@@ -35,21 +36,16 @@ export default function Login() {
           },
         }
       ).then((Resposta) => {
-        console.log("Usuário valido: " + Resposta.data.permitir);
         if (Resposta.data.token) {
           var token = Resposta.data.token;
           localStorage.setItem("token", token);
           setVisibilidade(false);
           window.location.reload();
-          console.log("Token: " + token);
           alert("Logado com sucesso");
         } else {
           alert("Falha no login");
-          console.log("User: " + Input_User);
-          console.log("Senha: " + Input_Senha);
         }
       });
-      console.log("Finalizado");
     }, 1000);
   }
   return (

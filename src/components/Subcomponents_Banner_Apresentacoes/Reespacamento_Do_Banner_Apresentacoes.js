@@ -10,14 +10,13 @@ const Div_Espacamento = styled.div`
 const Hr_Marcacao_Limite = styled.hr`
   display: block;
   width: 98vw;
-  border-top: 1vh solid black;
-  border-bottom: 1vh solid black;
+  border-top: 0.5vh solid black;
 `;
 
 export default function Reespacamento_Do_Banner_Apresentacoes() {
   return (
     <Div_Espacamento>
-      <Hr_Marcacao_Limite id="Hr_Demarcacao_De_Separacao_Banners_Produtos" />
+      <Hr_Marcacao_Limite className="Hr_Demarcacao_De_Separacao_Banners_Produtos" />
     </Div_Espacamento>
   );
 }

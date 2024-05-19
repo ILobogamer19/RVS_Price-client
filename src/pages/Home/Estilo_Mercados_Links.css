@@ -1,0 +1,13 @@
+.Mercados_Juntos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.Mercados_Juntos:hover {
+  overflow-x: scroll;
+}
+.Div_Mercado_Individual {
+  display: flex;
+  flex-direction: column;
+}
