@@ -1,5 +1,6 @@
 //#region Importações de estilização
 import "./style.css";
+import "./Estilo_Responsivo_Geral.css";
 //#endregion
 
 //#region Importações de imagem

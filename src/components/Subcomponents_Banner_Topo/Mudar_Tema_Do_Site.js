@@ -57,6 +57,8 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       Tema_Escolhido.Borda_Do_Header;
     document.querySelector(".Links_Navegacao").style.filter =
       Tema_Escolhido.Links_De_Navegacao;
+    document.querySelector(".Menu_Responsivo_Para_Telas_Menores").style.filter =
+      Tema_Escolhido.Links_De_Navegacao;
     document.querySelector("body").style.backgroundColor =
       Tema_Escolhido.Fundo_Site;
     document.querySelector("body").style.opacity =
@@ -129,6 +131,9 @@ export default function Mudar_Tema_Do_Site_Funcao() {
             type="checkbox"
             id="Input_De_Checagem_Para_Tema"
             checked={Valor_Checado_Ou_Nao_Do_Input}
+            onChange={(event) => {
+              setValor_Checado_Ou_Nao_Do_Input(event.target.checked);
+            }}
           />
           <div className="Bola_De_Tema"></div>
         </button>

@@ -1,4 +1,5 @@
 import "./style.css";
+import "./Estilo_Responsivo_Geral.css";
 
 export default function Admin_Painel() {
   return (

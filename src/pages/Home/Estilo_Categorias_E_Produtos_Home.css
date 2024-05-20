@@ -10,7 +10,7 @@
 .Produtos {
   display: flex;
   width: 99vw;
-  overflow: hidden;
+  overflow: auto;
 }
 .Produtos:hover {
   overflow-x: scroll;
@@ -22,7 +22,7 @@
   align-items: center;
 }
 .Produtos div .Imagem_Do_Produto_Home {
-  width: 10vw;
+  width: auto;
   height: 20vh;
 }
 .Produtos div h3 {

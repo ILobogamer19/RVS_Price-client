@@ -6,8 +6,6 @@ const Mercados_Json = await fetch("./data/Mercados.json");
 
 const Mercados = await Mercados_Json.json();
 
-console.log(Mercados);
-
 const Hr_Marcacao_Limite = styled.hr`
   display: block;
   width: 98vw;
@@ -27,6 +25,7 @@ export default function Marcados_Pagina_Propria() {
               onClick={() => {
                 url("/" + item.Mercado);
               }}
+              key={item.Mercado}
             >
               {Verificar_Qual_Mercado_Pertence_O_Produto(
                 item.Mercado,

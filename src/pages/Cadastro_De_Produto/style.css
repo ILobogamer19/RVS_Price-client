@@ -24,10 +24,10 @@ body {
 }
 .Imagem_Do_Pre_Produto_Cadastrado {
   height: 20vh;
-  width: 10vw;
+  width: auto;
 }
 .Nome_Do_Pre_Produto_Cadastrado {
-  margin: 0;
+  margin: auto;
   text-align: center;
   width: 250px;
 }
@@ -84,7 +84,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: auto;
 }
 .Diminuidor_De_Tamanho {
   max-width: 100%;
@@ -98,10 +98,7 @@ body {
 .Botao_De_Cadastro {
   margin: 5px 0 0 0;
 }
-.Controle_De_Tamanho {
-  height: 101.09vh;
-  background-color: black;
-}
+
 input {
   margin: 5px 0 5px 0;
 }

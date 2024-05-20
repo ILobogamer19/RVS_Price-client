@@ -15,7 +15,7 @@ const Hr_Marcacao_Limite = styled.hr`
 
 export default function Reespacamento_Do_Banner_Apresentacoes() {
   return (
-    <Div_Espacamento>
+    <Div_Espacamento className="Div_Espacamento_Entre_Linha">
       <Hr_Marcacao_Limite className="Hr_Demarcacao_De_Separacao_Banners_Produtos" />
     </Div_Espacamento>
   );

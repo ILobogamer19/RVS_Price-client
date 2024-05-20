@@ -4,7 +4,7 @@ import Login from "./Login";
 
 export default function Barra_De_Pesquisa() {
   return (
-    <div>
+    <div className="Barra_De_Pesquisa_Logo_Pesquisa">
       <img src={Logo} className="Logo_Site" />
       <input
         type="text"

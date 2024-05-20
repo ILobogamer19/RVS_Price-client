@@ -1,0 +1,16 @@
+@media (max-width: 450px) {
+  .Opcoes_Administrativas {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: auto;
+  }
+  .Titulo_Painel_Admin {
+    font-size: 10vw;
+  }
+  .Opcoes_Administrativas button {
+    margin: 0 0 0.5vw 0;
+    width: 80vw;
+    height: 60vw;
+    font-size: 15vw;
+  }
+}
