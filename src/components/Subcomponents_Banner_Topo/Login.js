@@ -24,7 +24,7 @@ export default function Login() {
       Axios.post(
         // "https://rvsprice-server.vercel.app/validar",
         // "http://localhost:5000/validar",
-        "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
+        "https://zvfmwc2c-5000.brs.devtunnels.ms/validar",
 
         {
           User: Input_User,
@@ -48,6 +48,7 @@ export default function Login() {
           console.log("Enviados: " + Input_User + " , " + Input_Senha);
           console.log(Resposta.data);
           console.log("Data extratida: " + Resposta.data);
+          console.log("Permissão: " + Resposta.data.permitir);
           alert("Falha no login");
         }
       });
