@@ -44,7 +44,9 @@ export default function Login() {
           alert("Logado com sucesso");
         } else {
           console.log("Erro: " + Resposta);
+          console.log(Resposta);
           console.log("Enviados: " + Input_User + " , " + Input_Senha);
+          console.log(Resposta.data);
           console.log("Data extratida: " + Resposta.data);
           alert("Falha no login");
         }
