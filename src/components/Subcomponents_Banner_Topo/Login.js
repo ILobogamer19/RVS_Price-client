@@ -43,6 +43,9 @@ export default function Login() {
           window.location.reload();
           alert("Logado com sucesso");
         } else {
+          console.log("Erro: " + Resposta);
+          console.log("Enviados: " + Input_User + " , " + Input_Senha);
+          console.log("Data extratida: " + Resposta.data);
           alert("Falha no login");
         }
       });
