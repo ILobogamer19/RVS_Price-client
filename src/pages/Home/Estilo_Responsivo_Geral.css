@@ -1,6 +1,9 @@
 .Menu_Responsivo_Para_Telas_Menores {
   display: none;
 }
+.Links_Navegacao_Responsivel {
+  display: none;
+}
 
 @media (max-width: 1030px) {
   .Login_Botao {
@@ -31,8 +34,8 @@
   .Login_Botao {
     display: none;
   }
-  .Login {
-    display: none !important;
+  .Banner_Topo .Login {
+    display: none;
   }
   .Links_Navegacao > div {
     display: none;
@@ -47,9 +50,10 @@
     display: block;
   }
   .Banner_Topo div {
-    margin: 10px 0 0 0;
     zoom: 2;
+    margin: 4px 0 0 0;
   }
+
   .Menu_Responsivo_Para_Telas_Menores {
     zoom: 2.5;
     display: flex;
@@ -77,10 +81,20 @@
   .Mercados_Juntos {
     zoom: 0.6;
   }
+  .Links_Navegacao_Responsivel div div button {
+    zoom: 0.15;
+    bottom: -550px;
+    left: 15px;
+  }
 }
 @media (max-width: 550px) {
-  .Menu_Responsivo_Para_Telas_Menores {
-    right: 10px;
+  .Links_Navegacao_Responsivel div div button {
+    zoom: 0.15;
+    bottom: -565px;
+    left: 15px;
+  }
+  .Links_Navegacao_Responsivel div div button {
+    bottom: -550px;
   }
 }
 @media (max-width: 528px) {
@@ -96,6 +110,15 @@
   .Banner_Topo div {
     zoom: 1.5;
   }
+  .Links_Navegacao_Responsivel div div button {
+    zoom: 0.2;
+    bottom: -493px;
+    left: 42px;
+  }
+  .Links_Navegacao_Responsivel {
+    top: 15px;
+    zoom: 3.2;
+  }
 }
 @media (max-width: 400px) {
   .Menu_Responsivo_Para_Telas_Menores {
@@ -105,6 +128,21 @@
   .Banner_Topo div {
     zoom: 1;
   }
+  .Tela_De_Login_Geral div .Login {
+    zoom: 1.1;
+  }
+  .Botao_De_Fechar_Login {
+    width: 250px;
+  }
+  .Links_Navegacao_Responsivel div div button {
+    zoom: 0.29;
+    bottom: -464px;
+    left: 75px;
+  }
+  .Links_Navegacao_Responsivel {
+    zoom: 4.5;
+    top: 7px;
+  }
 }
 @media (max-width: 270px) {
   .Menu_Responsivo_Para_Telas_Menores {
@@ -113,5 +151,8 @@
   }
   .Banner_Topo div {
     zoom: 1;
+  }
+  .Links_Navegacao_Responsivel div div button {
+    bottom: -475px;
   }
 }

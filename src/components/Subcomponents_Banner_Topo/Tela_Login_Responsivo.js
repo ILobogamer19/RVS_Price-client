@@ -1,18 +1,9 @@
 import Axios from "axios";
 import React, { useState, useEffect } from "react";
 
-export default function Login() {
+export default function Tela_Login_Responsivo() {
   const [Input_User, setInput_User] = useState("");
   const [Input_Senha, setInput_Senha] = useState("");
-  const [Visibilidade, setVisibilidade] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setVisibilidade(false);
-    } else {
-      setVisibilidade(true);
-    }
-  }, []);
 
   function Enviar_Dados_Para_Permissao(event) {
     event.preventDefault();
@@ -41,7 +32,6 @@ export default function Login() {
         if (Resposta.data.token) {
           var token = Resposta.data.token;
           localStorage.setItem("token", token);
-          setVisibilidade(false);
           window.location.reload();
           alert("Logado com sucesso");
         } else {
@@ -56,26 +46,46 @@ export default function Login() {
       });
     }, 1000);
   }
+
   return (
-    <>
-      {Visibilidade && (
-        <div className="Login">
+    <div className="Tela_De_Login_Geral">
+      <div
+        style={{
+          margin: "0",
+        }}
+      >
+        <div
+          className="Login"
+          style={{
+            margin: "0",
+          }}
+        >
           <form>
-            <div>
-              <label htmlFor="Input_De_Login_User">User:</label>
+            <div
+              style={{
+                fontSize: "16px",
+                margin: "0",
+              }}
+            >
+              <label htmlFor="Input_De_Login_User_Tela">User:</label>
               <input
                 type="text"
                 placeholder="User"
-                id="Input_De_Login_User"
-                name="Input_De_Login_User"
+                id="Input_De_Login_User_Tela"
+                name="Input_De_Login_User_Tela"
                 value={Input_User}
                 onChange={(e) => {
                   setInput_User(e.target.value);
                 }}
               />
             </div>
-            <div>
-              <label>Senha:</label>
+            <div
+              style={{
+                fontSize: "16px",
+                margin: "0",
+              }}
+            >
+              <label htmlFor="Input_De_Login_Senha">Senha:</label>
               <input
                 type="password"
                 placeholder="Senha"
@@ -94,21 +104,21 @@ export default function Login() {
             >
               Logar
             </button>
+            <button
+              className="Botao_De_Fechar_Login"
+              onClick={(event) => {
+                event.preventDefault();
+
+                document.querySelector(
+                  ".Tela_De_Login_Ativa_Desativa"
+                ).style.display = "none";
+              }}
+            >
+              Fechar
+            </button>
           </form>
         </div>
-      )}
-      {!Visibilidade && (
-        <button
-          className="Login_Botao"
-          onClick={() => {
-            localStorage.removeItem("token");
-            setVisibilidade(true);
-            window.location.reload();
-          }}
-        >
-          Loggout
-        </button>
-      )}
-    </>
+      </div>
+    </div>
   );
 }

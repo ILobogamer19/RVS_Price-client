@@ -1,0 +1,22 @@
+.Tela_De_Login_Geral {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(128, 128, 128);
+  border: 1px solid black;
+  z-index: 99999999999999;
+}
+.Tela_De_Login_Geral div .Login {
+  display: flex;
+  zoom: 0.3;
+  position: inherit;
+  width: inherit;
+  margin: 0;
+}
+.Botao_De_Fechar_Login {
+  width: 90px;
+  font-family: "consolas";
+  padding: 4px 0 4px 0;
+}

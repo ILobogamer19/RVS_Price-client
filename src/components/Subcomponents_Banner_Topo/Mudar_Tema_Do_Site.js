@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 
 var Contador_De_Vezes = 0;
+var Teste_De_Modo = 0;
 
 export default function Mudar_Tema_Do_Site_Funcao() {
   //#region Puxando Cookies
@@ -63,15 +64,18 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       Tema_Escolhido.Fundo_Site;
     document.querySelector("body").style.opacity =
       Tema_Escolhido.Opacidade_Itens;
-    document.querySelector(
-      ".Botao_De_Ativacao_De_Troca_De_Tema"
-    ).style.backgroundColor = Tema_Escolhido.Botao_De_Alteracao_De_Tema;
+    document
+      .querySelectorAll(".Botao_De_Ativacao_De_Troca_De_Tema")
+      .forEach((item) => {
+        item.style.backgroundColor = Tema_Escolhido.Botao_De_Alteracao_De_Tema;
+      });
     document.querySelector("body").style.color = Tema_Escolhido.Letras_Do_Site;
     document
       .querySelectorAll(".Hr_Demarcacao_De_Separacao_Banners_Produtos")
       .forEach((item) => {
         item.style.borderColor = Tema_Escolhido.Linha_De_Separacao;
       });
+
     // document
     //   .querySelectorAll(".Opacidade_De_Itens_Para_Temas")
     //   .forEach((item) => {
@@ -82,10 +86,21 @@ export default function Mudar_Tema_Do_Site_Funcao() {
 
   //#region Função de modificar tema e alterar as cores do site
   const Alterador_De_Tema_Do_Site = () => {
-    if (Valor_Checado_Ou_Nao_Do_Input) {
+    if (Valor_Checado_Ou_Nao_Do_Input || Teste_De_Modo == 2) {
+      if (!Valor_Checado_Ou_Nao_Do_Input && Teste_De_Modo == 2) {
+        document
+          .querySelectorAll(".Botao_De_Ativacao_De_Troca_De_Tema")
+          .forEach((item) => {
+            setTimeout(() => {
+              item.click();
+            }, 0);
+          });
+      }
       Tema_Escolhido = Tema_Claro;
+      Teste_De_Modo = 1;
     } else {
       Tema_Escolhido = Tema_Escuro;
+      Teste_De_Modo = 2;
     }
 
     Itens_Para_Modificacao();
@@ -102,6 +117,11 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       if (document.querySelector(".Banner_Topo")) {
         setValor_Checado_Ou_Nao_Do_Input(Busca_De_Tema_Ja_Escolhido);
         Alterador_De_Tema_Do_Site();
+        document
+          .querySelectorAll(".Input_De_Checagem_Para_Tema")
+          .forEach((item) => {
+            item.checked = !Valor_Checado_Ou_Nao_Do_Input;
+          });
         setValor_Checado_Ou_Nao_Do_Input(!Valor_Checado_Ou_Nao_Do_Input);
       }
     }, 1);
@@ -111,6 +131,11 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       Tema_Escolhido = Tema_Claro;
       if (document.querySelector(".Banner_Topo")) {
         Itens_Para_Modificacao();
+        document
+          .querySelectorAll(".Input_De_Checagem_Para_Tema")
+          .forEach((item) => {
+            item.checked = Valor_Checado_Ou_Nao_Do_Input;
+          });
       }
     }, 1);
   }
@@ -124,12 +149,18 @@ export default function Mudar_Tema_Do_Site_Funcao() {
           onClick={() => {
             setValor_Checado_Ou_Nao_Do_Input(!Valor_Checado_Ou_Nao_Do_Input);
             Alterador_De_Tema_Do_Site();
+            document
+              .querySelectorAll(".Input_De_Checagem_Para_Tema")
+              .forEach((item) => {
+                item.checked = !Valor_Checado_Ou_Nao_Do_Input;
+              });
             Cookies.set("Tema_Escolhido", Valor_Checado_Ou_Nao_Do_Input);
           }}
         >
           <input
             type="checkbox"
             id="Input_De_Checagem_Para_Tema"
+            className="Input_De_Checagem_Para_Tema"
             checked={Valor_Checado_Ou_Nao_Do_Input}
             onChange={(event) => {
               setValor_Checado_Ou_Nao_Do_Input(event.target.checked);

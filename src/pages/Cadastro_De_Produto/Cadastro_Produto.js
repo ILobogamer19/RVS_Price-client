@@ -27,7 +27,7 @@ export default function Cadastro_Produto() {
       Axios.post(
         // "https://rvsprice-server.vercel.app/cadastrar",
         // "http://localhost:5000/cadastrar",
-        "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
+        "https://zvfmwc2c-5000.brs.devtunnels.ms/cadastrar",
         Dados_Cadastrados,
         {
           headers: {
