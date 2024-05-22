@@ -120,6 +120,7 @@
     zoom: 3.2;
   }
 }
+
 @media (max-width: 400px) {
   .Menu_Responsivo_Para_Telas_Menores {
     zoom: 1.5;

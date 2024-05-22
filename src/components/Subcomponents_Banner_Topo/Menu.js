@@ -98,8 +98,18 @@ export default function Menu() {
           );
         })}
 
-        <div style={{ display: Ver_Admin_Painel ? "flex" : "none" }}>
-          <a href="/admin-painel" className="Link_De_Navegacao_Com_Imagem">
+        <div
+          style={{
+            display: Ver_Admin_Painel ? "flex" : "none",
+            width: "58.38",
+            height: "29.7",
+          }}
+        >
+          <a
+            href="/admin-painel"
+            className="Link_De_Navegacao_Com_Imagem"
+            style={{}}
+          >
             <img src={Admin_Painel} className="Imagem_Inicial" />
             Painel Admin
           </a>
