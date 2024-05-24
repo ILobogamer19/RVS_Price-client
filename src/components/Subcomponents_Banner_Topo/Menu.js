@@ -19,7 +19,7 @@ export default function Menu() {
   }, []);
 
   return (
-    <>
+    <nav>
       <div className="Links_Navegacao">
         {Menu_Link_Imagem_Texto.map((item) => {
           return (
@@ -169,6 +169,6 @@ export default function Menu() {
       >
         <Tela_Login_Responsivo />
       </div>
-    </>
+    <nav/>
   );
 }
