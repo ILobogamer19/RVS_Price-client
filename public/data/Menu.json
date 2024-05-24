@@ -2,31 +2,31 @@
   {
     "Id": 1,
     "Link": "",
-    "Imagem": "img/Cadastre_Seu_Mercado.png",
+    "Imagem": "img/Cadastre_Seu_Mercado.webp",
     "Texto": "Cadastre seu Mercado"
   },
   {
     "Id": 2,
     "Link": "",
-    "Imagem": "img/Menor_Preco.png",
+    "Imagem": "img/Menor_Preco.webp",
     "Texto": "Menor Preço"
   },
   {
     "Id": 3,
     "Link": "",
-    "Imagem": "img/Mercados.png",
+    "Imagem": "img/Mercados.webp",
     "Texto": "Mercados"
   },
   {
     "Id": 4,
     "Link": "",
-    "Imagem": "img/Promocoes.png",
+    "Imagem": "img/Promocoes.webp",
     "Texto": "Promoções"
   },
   {
     "Id": 5,
     "Link": "",
-    "Imagem": "img/Carrinho.png",
+    "Imagem": "img/Carrinho.webp",
     "Texto": "Seu Carrinho"
   }
 ]

@@ -4,7 +4,7 @@ import "./Estilo_Responsivo_Geral.css";
 //#endregion
 
 //#region Importações de imagem
-import Sem_Imagem from "../../img/Sem_Imagem.png";
+import Sem_Imagem from "../../img/Sem_Imagem.webp";
 //#endregion
 
 //#region Importações de bibliotecas
@@ -138,11 +138,50 @@ export default function Cadastro_Produto() {
   }, [Outros_Nomes]);
   //#endregion
 
+  //#region Conversor de Arquivo base64 do tipo png para WebP(Recomendado pelo Google)
+  function Conversor_De_Base_64_Png_Para_WebP(Base64_Recebida) {
+    console.log("Função executada");
+    console.log("");
+    return new Promise((resolve, reject) => {
+      console.log("Promise Executada");
+      console.log("");
+
+      var Imagem_Com_Base_64_Png = new Image();
+      Imagem_Com_Base_64_Png.src = Base64_Recebida;
+
+      Imagem_Com_Base_64_Png.onload = () => {
+        console.log("Imagem onload");
+
+        var Elemento_Canva_No_Document = document.createElement("canvas");
+        Elemento_Canva_No_Document.width = Imagem_Com_Base_64_Png.width;
+        Elemento_Canva_No_Document.height = Imagem_Com_Base_64_Png.height;
+
+        var Desenho_No_Canva_2d = Elemento_Canva_No_Document.getContext("2d");
+        Desenho_No_Canva_2d.drawImage(Imagem_Com_Base_64_Png, 0, 0);
+
+        var WebP_Imagem_Url =
+          Elemento_Canva_No_Document.toDataURL("image/webp");
+        console.log("Executado o toDataURL");
+        resolve(WebP_Imagem_Url);
+      };
+
+      Imagem_Com_Base_64_Png.onerror = (error) => {
+        console.log("Erro: ");
+        console.log(error);
+        reject(error);
+      };
+
+      console.log("Promise terminada");
+      console.log("");
+    });
+  }
+  //#endregion
+
   //#region Função de envio e limpeza de cadastro
   const Envio_E_Limpeza_De_Cadastro = () => {
     if (
       !Imagem_Produto ||
-      Imagem_Produto == "/static/media/Sem_Imagem.60408411369fbfea2d38.png"
+      Imagem_Produto == "/static/media/Sem_Imagem.60408411369fbfea2d38.webp"
     ) {
       alert("Está faltando colocar a imagem");
       Input_De_Referencia_Imagem.current.click();
@@ -171,15 +210,19 @@ export default function Cadastro_Produto() {
 
     var Valor_Produto_Formatado = Testador_De_Casas_Decimais(Valor_Produto);
 
-    Dados_Cadastrados = {
-      Imagem_Produto,
-      Nome_Produto,
-      Valor_Produto_Formatado,
-      Nome_Mercado,
-      Categoria,
-      Informacoes_Adicionais,
-      Outros_Nomes,
-    };
+    Conversor_De_Base_64_Png_Para_WebP(Imagem_Produto).then(
+      (WebP_Imagem_Url) => {
+        Dados_Cadastrados = {
+          WebP_Imagem_Url,
+          Nome_Produto,
+          Valor_Produto_Formatado,
+          Nome_Mercado,
+          Categoria,
+          Informacoes_Adicionais,
+          Outros_Nomes,
+        };
+      }
+    );
 
     Mercado_Escolhido = undefined;
     setImagem_Produto(Sem_Imagem);
@@ -242,7 +285,7 @@ export default function Cadastro_Produto() {
   //#region Configurações da pré vizualização de cadastro
   var Produto_Cadastrado = false;
   var Imagem_Produto_Pre_Cadastro =
-    Imagem_Produto !== "/static/media/Sem_Imagem.60408411369fbfea2d38.png"
+    Imagem_Produto !== "/static/media/Sem_Imagem.60408411369fbfea2d38.webp"
       ? Imagem_Produto
       : "";
 

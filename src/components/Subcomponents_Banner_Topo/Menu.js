@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Admin_Painel from "../../img/Admin_Painel.png";
-import Mais_Opcoes from "../../img/Mais_Opcoes.png";
+import Admin_Painel from "../../img/Admin_Painel.webp";
+import Mais_Opcoes from "../../img/Mais_Opcoes.webp";
 import Mudar_Tema_Do_Site from "../Subcomponents_Banner_Topo/Mudar_Tema_Do_Site";
 import Tela_Login_Responsivo from "./Tela_Login_Responsivo";
 

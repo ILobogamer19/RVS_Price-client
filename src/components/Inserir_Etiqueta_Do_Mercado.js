@@ -1,9 +1,9 @@
 //#region Importações de imagens
-import Logo_Sem_Imagem from "../img/Logo_Sem_Imagem.png";
-import Logo_Correia from "../img/Logo_Correia.png";
-import Logo_Bom_Jesus from "../img/Logo_Bom_Jesus.png";
-import Logo_TCA from "../img/Logo_TCA.png";
-import Logo_Super_M from "../img/Logo_Super_M.png";
+import Logo_Sem_Imagem from "../img/Logo_Sem_Imagem.webp";
+import Logo_Correia from "../img/Logo_Correia.webp";
+import Logo_Bom_Jesus from "../img/Logo_Bom_Jesus.webp";
+import Logo_TCA from "../img/Logo_TCA.webp";
+import Logo_Super_M from "../img/Logo_Super_M.webp";
 //#endregion
 
 export default function Verificar_Qual_Mercado_Pertence_O_Produto(

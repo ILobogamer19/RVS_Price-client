@@ -1,5 +1,5 @@
-import Logo from "../../img/RVS_Price.png";
-import Lupa from "../../img/Lupa.png";
+import Logo from "../../img/RVS_Price.webp";
+import Lupa from "../../img/Lupa.webp";
 import Login from "./Login";
 
 export default function Barra_De_Pesquisa() {

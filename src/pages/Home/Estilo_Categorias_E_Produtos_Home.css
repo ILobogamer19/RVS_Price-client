@@ -9,7 +9,7 @@
 }
 .Produtos {
   display: flex;
-  width: 99vw;
+  width: 98vw;
   overflow: auto;
 }
 .Produtos:hover {

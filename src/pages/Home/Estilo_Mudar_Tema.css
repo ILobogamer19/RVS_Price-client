@@ -1,6 +1,6 @@
 :root {
   --Cor_Do_Fundo: yellow;
-  --Imagem_De_Fundo: url("../../img/Tema_Claro_Sol.png");
+  --Imagem_De_Fundo: url("../../img/Tema_Claro_Sol.webp");
 }
 
 body {
@@ -40,6 +40,6 @@ body {
 }
 #Input_De_Checagem_Para_Tema:checked ~ .Bola_De_Tema {
   --Cor_Do_Fundo: blue;
-  --Imagem_De_Fundo: url("../../img/Tema_Escuro_Lua.png");
+  --Imagem_De_Fundo: url("../../img/Tema_Escuro_Lua.webp");
   transform: translateX(20px);
 }
