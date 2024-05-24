@@ -21,9 +21,7 @@ export default function HomePage() {
       <div className="Secao_Categorias_Com_Produtos Opacidade_De_Itens_Para_Temas">
         <Categoria_Com_Produto_Inicial />
       </div>
-      <div className="Direitos_Autorais_RVS">
-        <p>© 2024 RVS Price. Todos os direitos reservados.</p>
-      </div>
+     
     </div>
   );
 }
