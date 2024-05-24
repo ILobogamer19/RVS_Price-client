@@ -25,7 +25,7 @@ export default function HomePage() {
       <div className="Direitos_Autorais_RVS">
         <p>© 2024 RVS Price. Todos os direitos reservados.</p>
       </div>
-    <footer>
+    </footer>
     </div>
   );
 }
