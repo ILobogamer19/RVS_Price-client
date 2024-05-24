@@ -101,6 +101,7 @@ export default function Tela_Login_Responsivo() {
             <button
               className="Botao_De_Logar_User_Senha"
               onClick={Enviar_Dados_Para_Permissao}
+              aria-label="Botão de Login"
             >
               Logar
             </button>
@@ -113,6 +114,7 @@ export default function Tela_Login_Responsivo() {
                   ".Tela_De_Login_Ativa_Desativa"
                 ).style.display = "none";
               }}
+              aria-label="Botão de Fechar menu de opções"
             >
               Fechar
             </button>

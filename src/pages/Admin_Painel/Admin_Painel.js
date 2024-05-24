@@ -11,6 +11,7 @@ export default function Admin_Painel() {
             // window.location.href = "/admin-painel/cadastrar-produto";
             window.location.href = "/cadastrar-produto";
           }}
+          aria-label="Botão de Cadastro de Produtos"
         >
           Cadastro de Produtos
         </button>
@@ -19,6 +20,7 @@ export default function Admin_Painel() {
             // window.location.href = "/admin-painel/pesquisar-produto";
             window.location.href = "/pesquisar-produto";
           }}
+          aria-label="Botão de Pesquisa de Produtos"
         >
           Pesquisa de Produtos
         </button>
@@ -27,6 +29,7 @@ export default function Admin_Painel() {
             // window.location.href = "/admin-painel/promocao-produto";
             window.location.href = "/promocao-produto";
           }}
+          aria-label="Botão de Promoção de Produtos"
         >
           Promoção de Produtos
         </button>
@@ -35,6 +38,7 @@ export default function Admin_Painel() {
             // window.location.href = "/admin-painel/excluir-produto";
             window.location.href = "/excluir-produto";
           }}
+          aria-label="Botão de Remoção de Produtos"
         >
           Remoção de Produtos
         </button>
@@ -42,6 +46,7 @@ export default function Admin_Painel() {
           onClick={() => {
             window.location.href = "/";
           }}
+          aria-label="Botão de Home de Produtos"
         >
           Home
         </button>

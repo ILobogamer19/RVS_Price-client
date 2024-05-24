@@ -454,11 +454,12 @@ export default function Cadastro_Produto() {
           <button
             className="Botao_De_Cadastro"
             onClick={Envio_E_Limpeza_De_Cadastro}
+            aria-label="Cadastrar Produto"
           >
             Cadastrar
           </button>
           <br />
-          <button onClick={Excluir_Pre_Cadastro}>Excluir</button>
+          <button onClick={Excluir_Pre_Cadastro} aria-label="Excluir dados do produto salvo">Excluir</button>
         </div>
         {Produto_Cadastrado && (
           <div className="Painel_Ultimo_Cadastro">

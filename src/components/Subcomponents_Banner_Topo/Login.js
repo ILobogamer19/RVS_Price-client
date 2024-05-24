@@ -91,6 +91,7 @@ export default function Login() {
             <button
               className="Botao_De_Logar_User_Senha"
               onClick={Enviar_Dados_Para_Permissao}
+              aria-label="Botão de Login"
             >
               Logar
             </button>
@@ -105,6 +106,7 @@ export default function Login() {
             setVisibilidade(true);
             window.location.reload();
           }}
+          aria-label="Botão de Loggout"
         >
           Loggout
         </button>

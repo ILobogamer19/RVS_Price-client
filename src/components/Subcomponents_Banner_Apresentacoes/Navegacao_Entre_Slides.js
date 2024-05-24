@@ -94,7 +94,7 @@ export default function Navegacao_Entre_Slides() {
   //#region Retorno JSX
   return (
     <div className="Navegacao_Entre_Slides">
-      <button onClick={Voltar_Slide} className="Botao_Slide_Anterior">
+      <button onClick={Voltar_Slide} className="Botao_Slide_Anterior" aria-label="Botão de voltar slide">
         {"<"}
       </button>
       {Imagens_de_Slide.map((item) => {
@@ -136,6 +136,7 @@ export default function Navegacao_Entre_Slides() {
         onClick={Avancar_Slide}
         className="Botao_Proximo_Slide"
         id="Botao_De_Avancar_Para_O_Proximo_Slide"
+        aria-label="Botão de avançar slide"
       >
         {">"}
       </button>

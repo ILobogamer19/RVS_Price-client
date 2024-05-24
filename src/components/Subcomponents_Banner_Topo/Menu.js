@@ -130,6 +130,7 @@ export default function Menu() {
               localStorage.removeItem("token");
               window.location.reload();
             }}
+            aria-label="Botão de Loggout"
           >
             Loggout
           </button>
@@ -152,6 +153,7 @@ export default function Menu() {
 
               document.querySelector("#Input_De_Login_User_Tela").focus();
             }}
+            aria-label="Botão de Login"
           >
             Login
           </button>

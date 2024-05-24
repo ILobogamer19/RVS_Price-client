@@ -134,6 +134,7 @@ export default function Error_404_Pagina_Nao_Encontrada() {
 
           url("");
         }}
+        aria-label="Voltar para a home"
       >
         Home
       </button>

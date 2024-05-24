@@ -156,6 +156,7 @@ export default function Mudar_Tema_Do_Site_Funcao() {
               });
             Cookies.set("Tema_Escolhido", Valor_Checado_Ou_Nao_Do_Input);
           }}
+          aria-label="Alteração de tema"
         >
           <input
             type="checkbox"
@@ -165,6 +166,7 @@ export default function Mudar_Tema_Do_Site_Funcao() {
             onChange={(event) => {
               setValor_Checado_Ou_Nao_Do_Input(event.target.checked);
             }}
+            aria-label="Marcador de tema ativo e desativo"
           />
           <div className="Bola_De_Tema"></div>
         </button>
