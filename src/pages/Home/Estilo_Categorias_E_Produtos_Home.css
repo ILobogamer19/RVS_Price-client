@@ -1,7 +1,13 @@
 .Categorias {
   font-family: Arial, Helvetica, sans-serif;
 }
-.Categorias h1 {
+.Categorias .Nome_Do_Produto {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.Categorias h2 {
   display: block;
   text-align: center;
   justify-content: center;
@@ -15,12 +21,17 @@
 .Produtos:hover {
   overflow-x: scroll;
 }
-.Produtos div {
-  padding: 5px;
+
+.Produto_Individual_Estilo_Generalizado {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
+  margin: 5px 10px 10px 5px;
+  padding: 15px;
+  border-radius: 15%;
 }
+
 .Produtos div .Imagem_Do_Produto_Home {
   width: auto;
   height: 20vh;
@@ -32,4 +43,9 @@
 }
 .Produtos div p {
   margin: 0px;
+}
+.Botao_De_Adicao_De_Produto_No_Carrinho {
+  background-color: red;
+  border-radius: 10px 10px;
+  border: 0px solid black;
 }

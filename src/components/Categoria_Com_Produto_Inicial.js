@@ -65,13 +65,17 @@ export default function Categoria_Com_Produto_Inicial() {
             className={"Categorias Categoria_" + item.Categoria}
             key={item.Categoria}
           >
-            <h1 key={item.Categoria + 1}>{item.Categoria}</h1>
+            <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
             <div className="Produtos">
               {Produtos_Da_Categoria_Selecionada[index]
                 ? Produtos_Da_Categoria_Selecionada[index].map((Categoria) => {
                     return (
                       <div
-                        className={"Produto_" + Categoria.Id_Produtos}
+                        className={
+                          "Produto_" +
+                          Categoria.Id_Produtos +
+                          " Produto_Individual_Estilo_Generalizado"
+                        }
                         key={Categoria.Nome}
                       >
                         {Inserir_Etiqueta_Do_Mercado(
@@ -83,8 +87,12 @@ export default function Categoria_Com_Produto_Inicial() {
                           className="Imagem_Do_Produto_Home"
                           alt={"Produto " + Categoria.Nome}
                         />
-                        <h3>{Categoria.Nome}</h3>
-                        <p>{Categoria.Preco}</p>
+                        <p className="Nome_Do_Produto">{Categoria.Nome}</p>
+                        <p className="Preco_Do_Produto">{Categoria.Preco}</p>
+                        <p>★★★★☆</p>
+                        <button className="Botao_De_Adicao_De_Produto_No_Carrinho">
+                          Adicionar ao Carrinho
+                        </button>
                       </div>
                     );
                   })

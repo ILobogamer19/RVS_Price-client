@@ -30,6 +30,7 @@ export default function Mudar_Tema_Do_Site_Funcao() {
     Letras_Do_Site: "rgb(255,255,255)",
     Linha_De_Separacao: "rgb(113,113,113)",
     Opacidade_Itens: "0.7",
+    Cor_Da_Borda_Do_Produto: "white",
   };
 
   const Tema_Claro = {
@@ -43,6 +44,7 @@ export default function Mudar_Tema_Do_Site_Funcao() {
     Letras_Do_Site: "rgb(0,0,0)",
     Linha_De_Separacao: "rgb(0,0,0)",
     Opacidade_Itens: "1",
+    Cor_Da_Borda_Do_Produto: "black",
   };
   //#endregion
 
@@ -75,12 +77,11 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       .forEach((item) => {
         item.style.borderColor = Tema_Escolhido.Linha_De_Separacao;
       });
-
-    // document
-    //   .querySelectorAll(".Opacidade_De_Itens_Para_Temas")
-    //   .forEach((item) => {
-    //     item.style.opacity = Tema_Escolhido.Opacidade_Itens;
-    //   });
+    document
+      .querySelectorAll(".Produto_Individual_Estilo_Generalizado")
+      .forEach((item) => {
+        item.style.borderColor = Tema_Escolhido.Cor_Da_Borda_Do_Produto;
+      });
   };
   //#endregion
 
