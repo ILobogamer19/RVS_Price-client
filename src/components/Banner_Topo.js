@@ -12,6 +12,6 @@ export default function Banner_Topo() {
         </div>
         <Mudar_Tema_Do_Site_Funcao />
       </div>
-    <header/>
+    </header>
   );
 }
