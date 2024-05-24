@@ -81,6 +81,7 @@ export default function Categoria_Com_Produto_Inicial() {
                         <img
                           src={Categoria.Imagem}
                           className="Imagem_Do_Produto_Home"
+                          alt={"Produto " + Categoria.Nome}
                         />
                         <h3>{Categoria.Nome}</h3>
                         <p>{Categoria.Preco}</p>
@@ -95,25 +96,3 @@ export default function Categoria_Com_Produto_Inicial() {
     </>
   );
 }
-
-//  return (
-//   <>
-//   {Categoria_Produto.map((Categoria) => (
-//     <div className={"Categorias Categoria_" + Categoria} key={Categoria}>
-//       <h1 key={Categoria + 1}>{Categoria}</h1>
-//       <div className="Produtos">
-//         {Categoria_Produto_Objeto[Categoria].map((Categoria) => (
-//           <div
-//             className={"Produto_" + Categoria.Produto}
-//             key={Categoria.Produto}
-//           >
-//             <img src={Categoria.Imagem} />
-//             <h3>{Categoria.Produto}</h3>
-//             <p>R$ {Categoria.Preco.toFixed(2)}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   ))}
-// </>
-// );

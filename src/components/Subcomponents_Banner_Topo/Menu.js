@@ -33,6 +33,7 @@ export default function Menu() {
                   src={item.Imagem}
                   className="Imagem_Inicial"
                   key={item.Imagem}
+                  alt={"Icon de " + item.Texto}
                 />
                 {item.Texto}
               </a>
@@ -54,7 +55,11 @@ export default function Menu() {
               <span>|</span>
             </p>
             <a href="/admin-painel" className="Link_De_Navegacao_Com_Imagem">
-              <img src={Admin_Painel} className="Imagem_Inicial" />
+              <img
+                src={Admin_Painel}
+                className="Imagem_Inicial"
+                alt="Painel de Administração"
+              />
               Painel Admin
             </a>
           </div>
@@ -67,6 +72,7 @@ export default function Menu() {
           document.querySelector(".Links_Navegacao_Responsivel").style.display =
             "flex";
         }}
+        alt="Menu de Opções"
       />
       <span className="Links_Navegacao_Responsivel">
         <p
@@ -91,6 +97,7 @@ export default function Menu() {
                   src={item.Imagem}
                   className="Imagem_Inicial"
                   key={item.Imagem}
+                  alt={"Icon de " + item.Texto}
                 />
                 {item.Texto}
               </a>
@@ -110,7 +117,11 @@ export default function Menu() {
             className="Link_De_Navegacao_Com_Imagem"
             style={{}}
           >
-            <img src={Admin_Painel} className="Imagem_Inicial" />
+            <img
+              src={Admin_Painel}
+              className="Imagem_Inicial"
+              alt="Painel de Administração"
+            />
             Painel Admin
           </a>
           <button

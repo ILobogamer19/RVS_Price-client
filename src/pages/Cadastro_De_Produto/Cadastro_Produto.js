@@ -321,6 +321,7 @@ export default function Cadastro_Produto() {
             <img
               src={Imagem_Produto_Pre_Cadastro}
               className="Imagem_Do_Pre_Produto_Cadastrado"
+              alt="Imagem do produto pre cadastrado"
             />
             {Inserir_Etiqueta_Do_Mercado(
               Nome_Mercado,
@@ -358,7 +359,11 @@ export default function Cadastro_Produto() {
             </div>
             <div className="Div_Imagem_Do_Produto">
               <div className="Diminuidor_De_Tamanho">
-                <img src={Imagem_Produto} className="Imagem_Do_Produto" />
+                <img
+                  src={Imagem_Produto}
+                  className="Imagem_Do_Produto"
+                  alt="Imagem do Produto a Cadastrar"
+                />
               </div>
             </div>
           </div>
@@ -462,6 +467,7 @@ export default function Cadastro_Produto() {
               <img
                 src={Sem_Imagem}
                 className="Imagem_Do_Ultimo_Produto_Cadastrado"
+                alt="Imagem do ultimo produto cadastrado"
               />
               <h3 className="Nome_Do_Ultimo_Produto_Cadastrado">
                 Nome Produto

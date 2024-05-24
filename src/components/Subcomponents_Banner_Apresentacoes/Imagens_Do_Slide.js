@@ -21,7 +21,15 @@ export default function Imagens_Do_Slide() {
             className={"Slide" + (item.Id === 1 ? " Primeiro_Slide" : "")}
             key={item.Imagem}
           >
-            <img src={item.Imagem} />
+            <img
+              src={item.Imagem}
+              alt={
+                "Slide com " +
+                item.Imagem.replace("img/", "")
+                  .replace(".webp", "")
+                  .replace("_", " ")
+              }
+            />
           </Div_Slide>
         );
       })}
