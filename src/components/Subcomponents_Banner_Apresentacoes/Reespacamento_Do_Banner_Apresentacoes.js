@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Div_Espacamento = styled.div`
-  height: 55vh;
+  height: 36vw;
   width: 100%;
   display: flex;
   flex-direction: column-reverse;

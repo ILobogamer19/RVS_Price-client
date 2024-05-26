@@ -78,21 +78,27 @@ export default function Categoria_Com_Produto_Inicial() {
                         }
                         key={Categoria.Nome}
                       >
-                        {Inserir_Etiqueta_Do_Mercado(
-                          Categoria.Mercado,
-                          "Logo_Mercado_Produtos_Home"
-                        )}
-                        <img
-                          src={Categoria.Imagem}
-                          className="Imagem_Do_Produto_Home"
-                          alt={"Produto " + Categoria.Nome}
-                        />
-                        <p className="Nome_Do_Produto">{Categoria.Nome}</p>
-                        <p className="Preco_Do_Produto">{Categoria.Preco}</p>
-                        <p>★★★★☆</p>
-                        <button className="Botao_De_Adicao_De_Produto_No_Carrinho">
-                          Adicionar ao Carrinho
-                        </button>
+                        <div className="Div_Logo_Imagem_Nome_Preco_Avaliacao_Do_Produto">
+                          {Inserir_Etiqueta_Do_Mercado(
+                            Categoria.Mercado,
+                            "Logo_Mercado_Produtos_Home"
+                          )}
+                          <div className="Div_De_Imagem_Do_Produto_Home">
+                            <img
+                              src={Categoria.Imagem}
+                              className="Imagem_Do_Produto_Home"
+                              alt={"Produto " + Categoria.Nome}
+                            />
+                          </div>
+                          <p className="Nome_Do_Produto">{Categoria.Nome}</p>
+                          <p className="Preco_Do_Produto">{Categoria.Preco}</p>
+                          <p>★★★★☆</p>
+                        </div>
+                        <div className="Div_Do_Botao_De_Carrinho">
+                          <button className="Botao_De_Adicao_De_Produto_No_Carrinho">
+                            Adicionar ao Carrinho
+                          </button>
+                        </div>
                       </div>
                     );
                   })

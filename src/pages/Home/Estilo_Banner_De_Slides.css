@@ -1,7 +1,7 @@
 /* Seção de Estilização do Banner de Apresentações */
 .Imagens_De_Apresentacoes {
-  height: 50vh;
-  width: 97vw;
+  height: 32.24vw;
+  width: 96.46vw;
   border-radius: 3vw;
   overflow: hidden;
   position: absolute;
@@ -14,21 +14,21 @@
 }
 .Botao_Slide_Anterior {
   position: absolute;
-  left: -32vw;
-  top: -47vh;
+  left: -40vw;
+  top: -30vw;
   width: 4vw;
-  height: 51vh;
+  height: 30vw;
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
   font-size: 5vw;
 }
 .Botao_Proximo_Slide {
   position: absolute;
-  right: -32vw;
+  right: -40vw;
   border-radius: 0 2vw 2vw 0;
-  top: -47vh;
+  top: -30vw;
   width: 4vw;
-  height: 51vh;
+  height: 30vw;
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
   font-size: 5vw;
