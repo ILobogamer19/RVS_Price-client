@@ -10,4 +10,5 @@
 .Div_Mercado_Individual {
   display: flex;
   flex-direction: column;
+  width: 212px;
 }
