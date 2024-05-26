@@ -322,6 +322,7 @@ export default function Cadastro_Produto() {
               src={Imagem_Produto_Pre_Cadastro}
               className="Imagem_Do_Pre_Produto_Cadastrado"
               alt="Imagem do produto pre cadastrado"
+              loading="lazy"
             />
             {Inserir_Etiqueta_Do_Mercado(
               Nome_Mercado,
@@ -363,6 +364,7 @@ export default function Cadastro_Produto() {
                   src={Imagem_Produto}
                   className="Imagem_Do_Produto"
                   alt="Imagem do Produto a Cadastrar"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -459,7 +461,12 @@ export default function Cadastro_Produto() {
             Cadastrar
           </button>
           <br />
-          <button onClick={Excluir_Pre_Cadastro} aria-label="Excluir dados do produto salvo">Excluir</button>
+          <button
+            onClick={Excluir_Pre_Cadastro}
+            aria-label="Excluir dados do produto salvo"
+          >
+            Excluir
+          </button>
         </div>
         {Produto_Cadastrado && (
           <div className="Painel_Ultimo_Cadastro">
@@ -469,6 +476,7 @@ export default function Cadastro_Produto() {
                 src={Sem_Imagem}
                 className="Imagem_Do_Ultimo_Produto_Cadastrado"
                 alt="Imagem do ultimo produto cadastrado"
+                loading="lazy"
               />
               <h3 className="Nome_Do_Ultimo_Produto_Cadastrado">
                 Nome Produto

@@ -88,6 +88,7 @@ export default function Categoria_Com_Produto_Inicial() {
                               src={Categoria.Imagem}
                               className="Imagem_Do_Produto_Home"
                               alt={"Produto " + Categoria.Nome}
+                              loading="lazy"
                             />
                           </div>
                           <p className="Nome_Do_Produto">{Categoria.Nome}</p>

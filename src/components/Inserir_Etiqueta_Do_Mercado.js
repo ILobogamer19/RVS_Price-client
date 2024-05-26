@@ -16,6 +16,7 @@ export default function Verificar_Qual_Mercado_Pertence_O_Produto(
         src={Logo_Correia}
         className={Nome_Da_Classe}
         alt={"Logo do " + Nome_Do_Mercado_Do_Produto}
+        loading="lazy"
       />
     );
   } else if (
@@ -27,6 +28,7 @@ export default function Verificar_Qual_Mercado_Pertence_O_Produto(
         src={Logo_Bom_Jesus}
         className={Nome_Da_Classe}
         alt={"Logo do " + Nome_Do_Mercado_Do_Produto}
+        loading="lazy"
       />
     );
   } else if (Nome_Do_Mercado_Do_Produto.includes("TCA")) {
@@ -35,6 +37,7 @@ export default function Verificar_Qual_Mercado_Pertence_O_Produto(
         src={Logo_TCA}
         className={Nome_Da_Classe}
         alt={"Logo do " + Nome_Do_Mercado_Do_Produto}
+        loading="lazy"
       />
     );
   } else if (
@@ -46,6 +49,7 @@ export default function Verificar_Qual_Mercado_Pertence_O_Produto(
         src={Logo_Super_M}
         className={Nome_Da_Classe}
         alt={"Logo do " + Nome_Do_Mercado_Do_Produto}
+        loading="lazy"
       />
     );
   } else if (Nome_Do_Mercado_Do_Produto == "") {
@@ -56,6 +60,7 @@ export default function Verificar_Qual_Mercado_Pertence_O_Produto(
         src={Logo_Sem_Imagem}
         className={Nome_Da_Classe}
         alt={"Logo do " + Nome_Do_Mercado_Do_Produto}
+        loading="lazy"
       />
     );
   }
