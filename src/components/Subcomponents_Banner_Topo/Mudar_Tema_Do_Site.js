@@ -155,7 +155,9 @@ export default function Mudar_Tema_Do_Site_Funcao() {
               .forEach((item) => {
                 item.checked = !Valor_Checado_Ou_Nao_Do_Input;
               });
-            Cookies.set("Tema_Escolhido", Valor_Checado_Ou_Nao_Do_Input);
+            Cookies.set("Tema_Escolhido", Valor_Checado_Ou_Nao_Do_Input, {
+              expires: 60,
+            });
           }}
           aria-label="Alteração de tema"
         >
