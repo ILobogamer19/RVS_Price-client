@@ -1,6 +1,8 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
-import Inserir_Etiqueta_Do_Mercado from "../components/Inserir_Etiqueta_Do_Mercado";
+import Cookies from "js-cookie";
+import Inserir_Etiqueta_Do_Mercado from "./Ferramentas/Inserir_Etiqueta_Do_Mercado";
+import Estrelas_Do_Produto_Teste from "./Ferramentas/Estrelas_Do_Produto_Veridicacao";
 
 const Categoria_Produto_Json = await fetch(
   "./data/Categorias_Para_Aparecer_Na_Home.json"
@@ -9,11 +11,15 @@ const Categoria_Produto_Objeto = await Categoria_Produto_Json.json();
 
 const Categoria_Produto = Categoria_Produto_Objeto;
 
-export default function Categoria_Com_Produto_Inicial() {
+var Primeira_Adicao_Carrinho = 0;
+
+export default function Categoria_Com_Produto_Inicial(Atributos) {
   const [
     Produtos_Da_Categoria_Selecionada,
     setProdutos_Da_Categoria_Selecionada,
   ] = useState([]);
+
+  const [Produtos_No_Carrinho, setProdutos_No_Carrinho] = useState([]);
 
   //#region Envio de Categoria e resultado
   const Enviar_Dados_De_Cadastro_Para_Servidor = (
@@ -24,7 +30,12 @@ export default function Categoria_Com_Produto_Inicial() {
       // "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
       // "http://localhost:5000/pesquisa-categoria-produto",
       "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
-      { Categoria_Para_Pesquisa: Categoria_Pesquisada },
+      Atributos.Filtro
+        ? {
+            Categoria_Para_Pesquisa: Categoria_Pesquisada,
+            Filtro_De_Pesquisa: Atributos.Filtro,
+          }
+        : { Categoria_Para_Pesquisa: Categoria_Pesquisada },
       {
         headers: {
           "Content-Type": "application/json",
@@ -51,11 +62,96 @@ export default function Categoria_Com_Produto_Inicial() {
   };
   //#endregion
 
+  //#region Adicionar itens ao carrinho
+  const Adicionar_Itens_Ao_Carrinho = (Informacoes_Do_Item) => {
+    //#region Notificações de carrinho
+    var Div_De_Notificacao_De_Carrinho = document.querySelector(
+      ".Bola_Que_Informa_Quantos_Produtos_Tem_No_Carrinho"
+    );
+    var Teste_De_Igualdade = 0;
+    var Quantia_De_Produtos_Adicionados_No_Carrinho = Cookies.get(
+      "Quantia_De_Produtos_Adicionados_No_Carrinho"
+    );
+
+    if (Primeira_Adicao_Carrinho == 0) {
+      if (
+        Quantia_De_Produtos_Adicionados_No_Carrinho &&
+        Quantia_De_Produtos_Adicionados_No_Carrinho !== "undefined"
+      ) {
+        Div_De_Notificacao_De_Carrinho.style.display = "flex";
+
+        Primeira_Adicao_Carrinho = 1;
+        Teste_De_Igualdade = 1;
+
+        Div_De_Notificacao_De_Carrinho.innerHTML =
+          Quantia_De_Produtos_Adicionados_No_Carrinho;
+      } else {
+        Div_De_Notificacao_De_Carrinho.style.display = "flex";
+
+        Primeira_Adicao_Carrinho = 1;
+
+        Div_De_Notificacao_De_Carrinho.innerHTML = 1;
+
+        Cookies.set("Quantia_De_Produtos_Adicionados_No_Carrinho", 1, {
+          expires: 30,
+        });
+      }
+    } else {
+      var Itens_No_Carrinho =
+        parseFloat(Div_De_Notificacao_De_Carrinho.innerHTML) + 1;
+
+      Cookies.set(
+        "Quantia_De_Produtos_Adicionados_No_Carrinho",
+        Itens_No_Carrinho,
+        { expires: 30 }
+      );
+
+      Div_De_Notificacao_De_Carrinho.innerHTML = Itens_No_Carrinho;
+    }
+    //#endregion
+
+    //#region Itens no carrinho
+    if (Produtos_No_Carrinho[0]) {
+      Produtos_No_Carrinho.forEach((Produto_Existente) => {
+        if (Produto_Existente.Id_Produtos) {
+          if (
+            Produto_Existente.Id_Produtos == Informacoes_Do_Item.Id_Produtos
+          ) {
+            Teste_De_Igualdade = 1;
+          }
+        }
+      });
+    }
+
+    if (Teste_De_Igualdade == 0) {
+      setProdutos_No_Carrinho((prevState) => [
+        ...prevState,
+        Informacoes_Do_Item,
+      ]);
+    }
+
+    //#endregion
+  };
+  //#endregion
+
+  //#region useEffect
   useEffect(() => {
     Categoria_Produto.map((item, index) => {
       Enviar_Dados_De_Cadastro_Para_Servidor(item.Categoria, index);
     });
+
+    if (Cookies.get("Quantia_De_Produtos_Adicionados_No_Carrinho")) {
+      Adicionar_Itens_Ao_Carrinho();
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "Produtos_No_Carrinho",
+      JSON.stringify(Produtos_No_Carrinho)
+    );
+  }, [Produtos_No_Carrinho]);
+  //#endregion
 
   return (
     <>
@@ -93,10 +189,17 @@ export default function Categoria_Com_Produto_Inicial() {
                           </div>
                           <p className="Nome_Do_Produto">{Categoria.Nome}</p>
                           <p className="Preco_Do_Produto">{Categoria.Preco}</p>
-                          <p>★★★★☆</p>
+                          {Estrelas_Do_Produto_Teste(
+                            Math.floor(Math.random() * 6)
+                          )}
                         </div>
                         <div className="Div_Do_Botao_De_Carrinho">
-                          <button className="Botao_De_Adicao_De_Produto_No_Carrinho">
+                          <button
+                            className="Botao_De_Adicao_De_Produto_No_Carrinho"
+                            onClick={() => {
+                              Adicionar_Itens_Ao_Carrinho(Categoria);
+                            }}
+                          >
                             Adicionar ao Carrinho
                           </button>
                         </div>

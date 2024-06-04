@@ -16,12 +16,11 @@ export default function HomePage() {
   return (
     <div className="Corpo_Site">
       <Banner_Topo />
-      <Banner_Apresentacoes />
+      <Banner_Apresentacoes Banco_De_Banners="RVS_Price" />
       <Mercados_Proprios />
       <div className="Secao_Categorias_Com_Produtos Opacidade_De_Itens_Para_Temas">
         <Categoria_Com_Produto_Inicial />
       </div>
-     
     </div>
   );
 }

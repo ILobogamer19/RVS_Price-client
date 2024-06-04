@@ -8,14 +8,32 @@ const Imagens_de_Slide = await Imagens_de_Slide_Json.json();
 //#endregion
 
 //#region Aplicação de navegação de slides
-export default function Navegacao_Entre_Slides() {
+export default function Navegacao_Entre_Slides(Atributos) {
   //#region Função que Avança para o proximo slide quando clicar em um botão ou quando o tempo do temporizador acaba
   function Avancar_Slide() {
     setTemporizador_Para_Troca_Automatica(10);
     var Proximo_Input_Radio;
-    const Atual_Input_Radio_Selecionado = document.querySelector(
-      "input[name='Slides_Control']:checked"
-    );
+    var Primeiro_Slide_Existente = 99999999999;
+    var Atual_Input_Radio_Selecionado;
+
+    Imagens_de_Slide.map((item) => {
+      if (
+        Primeiro_Slide_Existente > item.Id &&
+        Atributos.Banco_De_Banners == item.Banco_De_Banners
+      ) {
+        Primeiro_Slide_Existente = item.Id;
+      }
+    });
+
+    if (document.querySelector("input[name='Slides_Control']:checked")) {
+      var Atual_Input_Radio_Selecionado = document.querySelector(
+        "input[name='Slides_Control']:checked"
+      );
+    } else {
+      var Atual_Input_Radio_Selecionado = document.getElementById(
+        "Barra_De_Pesquisa_" + Primeiro_Slide_Existente
+      );
+    }
 
     const Numero_Do_Id_Ativo = Atual_Input_Radio_Selecionado.value;
 
@@ -28,7 +46,9 @@ export default function Navegacao_Entre_Slides() {
         "Barra_De_Pesquisa_" + Numero_Do_Id_Para_Ativar
       );
     } else {
-      Proximo_Input_Radio = document.getElementById("Barra_De_Pesquisa_" + 1);
+      Proximo_Input_Radio = document.getElementById(
+        "Barra_De_Pesquisa_" + Primeiro_Slide_Existente
+      );
     }
     Proximo_Input_Radio.click();
   }
@@ -92,45 +112,52 @@ export default function Navegacao_Entre_Slides() {
   //#endregion
 
   //#region Retorno JSX
+
   return (
     <div className="Navegacao_Entre_Slides">
-      <button onClick={Voltar_Slide} className="Botao_Slide_Anterior" aria-label="Botão de voltar slide">
+      <button
+        onClick={Voltar_Slide}
+        className="Botao_Slide_Anterior"
+        aria-label="Botão de voltar slide"
+      >
         {"<"}
       </button>
       {Imagens_de_Slide.map((item) => {
-        return (
-          <label
-            className="Barra_De_Navegacao_De_Imagem"
-            htmlFor={"Slide_" + item.Id}
-            key={item.Id + item.Imagem}
-            id={"Barra_De_Pesquisa_" + item.Id}
-            style={
-              item.Id === 1
-                ? { backgroundColor: "rgb(29, 29, 29)" }
-                : { backgroundColor: "" }
-            }
-            onClick={() => {
-              setTemporizador_Para_Troca_Automatica(10);
-              setTimeout(() => {
-                var Todos_Os_Input_Radio_De_Navegacao =
-                  document.querySelectorAll(
-                    ".Input_Tipo_Radio_Alteracao_Slide"
-                  );
+        if (Atributos.Banco_De_Banners == item.Banco_De_Banners) {
+          return (
+            <label
+              className="Barra_De_Navegacao_De_Imagem"
+              htmlFor={"Slide_" + item.Id}
+              key={item.Id + item.Imagem}
+              id={"Barra_De_Pesquisa_" + item.Id}
+              style={
+                item.Id === 1
+                  ? { backgroundColor: "rgb(29, 29, 29)" }
+                  : { backgroundColor: "" }
+              }
+              onClick={() => {
+                setTemporizador_Para_Troca_Automatica(10);
+                setTimeout(() => {
+                  var Todos_Os_Input_Radio_De_Navegacao =
+                    document.querySelectorAll(
+                      ".Input_Tipo_Radio_Alteracao_Slide"
+                    );
 
-                Todos_Os_Input_Radio_De_Navegacao.forEach((item) => {
-                  var Label_Correspondente = document.getElementById(
-                    "Barra_De_Pesquisa_" + item.value
-                  );
-                  Label_Correspondente.style.backgroundColor = "";
-                  if (item.checked) {
-                    Label_Correspondente.style.backgroundColor =
-                      "rgb(29, 29, 29)";
-                  }
-                });
-              }, 50);
-            }}
-          ></label>
-        );
+                  Todos_Os_Input_Radio_De_Navegacao.forEach((item) => {
+                    var Label_Correspondente = document.getElementById(
+                      "Barra_De_Pesquisa_" + item.value
+                    );
+                    Label_Correspondente.style.backgroundColor = "";
+                    if (item.checked) {
+                      Label_Correspondente.style.backgroundColor =
+                        "rgb(29, 29, 29)";
+                    }
+                  });
+                }, 50);
+              }}
+            ></label>
+          );
+        }
       })}
       <button
         onClick={Avancar_Slide}
@@ -142,6 +169,7 @@ export default function Navegacao_Entre_Slides() {
       </button>
     </div>
   );
+
   //#endregion
 }
 //#endregion

@@ -55,12 +55,3 @@
 .Barra_De_Navegacao_De_Imagem:hover {
   background-color: rgb(255, 255, 255);
 }
-#Slide_1:checked ~ .Primeiro_Slide {
-  margin-left: 0;
-}
-#Slide_2:checked ~ .Primeiro_Slide {
-  margin-left: -34%;
-}
-#Slide_3:checked ~ .Primeiro_Slide {
-  margin-left: -68%;
-}

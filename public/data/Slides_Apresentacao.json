@@ -1,14 +1,32 @@
 [
   {
     "Id": 1,
-    "Imagem": "img/Oferta_Relampago.webp"
+    "Imagem": "img/Oferta_Relampago.webp",
+    "Banco_De_Banners": "RVS_Price"
   },
   {
     "Id": 2,
-    "Imagem": "img/Super_Promocao.webp"
+    "Imagem": "img/Super_Promocao.webp",
+    "Banco_De_Banners": "RVS_Price"
   },
   {
     "Id": 3,
-    "Imagem": "img/Big_Oferta.webp"
+    "Imagem": "img/Big_Oferta.webp",
+    "Banco_De_Banners": "RVS_Price"
+  },
+  {
+    "Id": 4,
+    "Imagem": "img/Correia_Banner_1.webp",
+    "Banco_De_Banners": "Mercado_Correia"
+  },
+  {
+    "Id": 5,
+    "Imagem": "img/TCA_Banner_1.webp",
+    "Banco_De_Banners": "Mercado_TCA"
+  },
+  {
+    "Id": 6,
+    "Imagem": "img/Bom_Jesus_Banner_1.webp",
+    "Banco_De_Banners": "Mercado_Bom_Jesus"
   }
 ]

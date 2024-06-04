@@ -4,34 +4,55 @@ const Imagens_de_Slide_Json = await fetch("./data/Slides_Apresentacao.json");
 
 const Imagens_de_Slide = await Imagens_de_Slide_Json.json();
 
-const Quantia_De_Imagens_Existentes = Object.keys(Imagens_de_Slide).length;
-const Slide_Ocupacao = Math.ceil(100 / Quantia_De_Imagens_Existentes);
+var Imagens_A_Serem_Exibidas = [];
+
+var Id_Primeiro_Slide = 9999999;
 
 const Div_Slide = styled.div`
-  width: ${Slide_Ocupacao}%;
   transition: 0.6s;
 `;
 
-export default function Imagens_Do_Slide() {
+export default function Imagens_Do_Slide(Atributos) {
+  Imagens_de_Slide.map((item) => {
+    if (Atributos.Banco_De_Banners == item.Banco_De_Banners) {
+      if (Id_Primeiro_Slide > item.Id) {
+        Id_Primeiro_Slide = item.Id;
+      }
+      Imagens_A_Serem_Exibidas = [...Imagens_A_Serem_Exibidas, item];
+    }
+  });
+
+  var Quantia_De_Imagens_Exibida = Imagens_A_Serem_Exibidas.length;
+
+  const Slide_Ocupacao = Math.ceil(100 / Quantia_De_Imagens_Exibida);
+
   return (
     <>
       {Imagens_de_Slide.map((item) => {
-        return (
-          <Div_Slide
-            className={"Slide" + (item.Id === 1 ? " Primeiro_Slide" : "")}
-            key={item.Imagem}
-          >
-            <img
-              src={item.Imagem}
-              alt={
-                "Slide com " +
-                item.Imagem.replace("img/", "")
-                  .replace(".webp", "")
-                  .replace("_", " ")
+        if (Atributos.Banco_De_Banners == item.Banco_De_Banners) {
+          return (
+            <Div_Slide
+              className={
+                "Slide" +
+                (item.Id === Id_Primeiro_Slide ? " Primeiro_Slide" : "")
               }
-            />
-          </Div_Slide>
-        );
+              key={item.Imagem}
+              style={{
+                width: Slide_Ocupacao + "%",
+              }}
+            >
+              <img
+                src={item.Imagem}
+                alt={
+                  "Slide com " +
+                  item.Imagem.replace("img/", "")
+                    .replace(".webp", "")
+                    .replace("_", " ")
+                }
+              />
+            </Div_Slide>
+          );
+        }
       })}
     </>
   );

@@ -1,3 +1,9 @@
+import Pagina_Padrao_Mercado from "../../components/Pagina_Padrao_Mercado";
+
 export default function Mercado_Correia_Home() {
-  return <h1>CORREIA</h1>;
+  return (
+    <div>
+      <Pagina_Padrao_Mercado Mercado="Correia" />
+    </div>
+  );
 }

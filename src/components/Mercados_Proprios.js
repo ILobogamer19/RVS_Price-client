@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import Verificar_Qual_Mercado_Pertence_O_Produto from "./Inserir_Etiqueta_Do_Mercado";
+import Verificar_Qual_Mercado_Pertence_O_Produto from "./Ferramentas/Inserir_Etiqueta_Do_Mercado";
 
 const Mercados_Json = await fetch("./data/Mercados.json");
 

@@ -10,7 +10,6 @@ import Mais_Opcoes from "../../img/Mais_Opcoes.webp";
 
 //#region Componentes da pagina
 import Mudar_Tema_Do_Site from "./Mudar_Tema_Do_Site";
-import Tela_Login_Responsivo from "./Tela_Login_Responsivo";
 //#endregion
 
 //#region Dados Importados
@@ -18,7 +17,7 @@ const Menu_Link_Imagem_Texto_Json = await fetch("./data/Menu.json");
 const Menu_Link_Imagem_Texto = await Menu_Link_Imagem_Texto_Json.json();
 //#endregion
 
-export default function Menu() {
+export default function Menu_Para_Ajuste_De_Tamanho() {
   const [Ver_Admin_Painel, setVer_Admin_Painel] = useState(false);
 
   useEffect(() => {
@@ -41,6 +40,7 @@ export default function Menu() {
                 var Dados_De_Itens_De_Carrinho_Convertido = JSON.parse(
                   localStorage.getItem("Produtos_No_Carrinho")
                 );
+                alert("Continue");
               }}
             >
               <a
@@ -196,14 +196,6 @@ export default function Menu() {
 
         <Mudar_Tema_Do_Site />
       </span>
-      <div
-        className="Tela_De_Login_Ativa_Desativa"
-        style={{
-          display: "none",
-        }}
-      >
-        <Tela_Login_Responsivo />
-      </div>
     </nav>
   );
 }

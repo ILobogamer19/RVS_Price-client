@@ -7,24 +7,37 @@ import styled from "styled-components";
 const Imagens_de_Slide_Json = await fetch("./data/Slides_Apresentacao.json");
 const Imagens_de_Slide = await Imagens_de_Slide_Json.json();
 
-const Quantia_De_Imagens_Existentes = Object.keys(Imagens_de_Slide).length;
-
-const Tamanho_Total_De_Largura = Quantia_De_Imagens_Existentes * 100;
-
 const Div_Slides = styled.div`
   display: flex;
-  width: ${Tamanho_Total_De_Largura}%;
   height: 100%;
 `;
 
-export default function Banner_Apresentacoes() {
+var Imagens_A_Serem_Exibidas = [];
+
+export default function Banner_Apresentacoes(Atributos) {
+  Imagens_de_Slide.map((item) => {
+    if (Atributos.Banco_De_Banners == item.Banco_De_Banners) {
+      Imagens_A_Serem_Exibidas = [...Imagens_A_Serem_Exibidas, item];
+    }
+  });
+
+  var Quantia_De_Imagens_Exibida = Imagens_A_Serem_Exibidas.length;
+
+  const Slide_Ocupacao = Math.ceil(100 * Quantia_De_Imagens_Exibida);
+
   return (
     <>
       <div className="Imagens_De_Apresentacoes Opacidade_De_Itens_Para_Temas">
-        <Div_Slides>
-          <Input_Tipo_Radio />
-          <Imagens_Do_Slide />
-          <Navegacao_Entre_Slides />
+        <Div_Slides
+          style={{
+            width: Slide_Ocupacao + "%",
+          }}
+        >
+          <Input_Tipo_Radio Banco_De_Banners={Atributos.Banco_De_Banners} />
+          <Imagens_Do_Slide Banco_De_Banners={Atributos.Banco_De_Banners} />
+          <Navegacao_Entre_Slides
+            Banco_De_Banners={Atributos.Banco_De_Banners}
+          />
         </Div_Slides>
       </div>
       <Reespacamento_Do_Banner_Apresentacoes />

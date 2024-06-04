@@ -1,7 +1,23 @@
+body {
+  overflow-x: hidden;
+}
+
 /* Itens do Banner em Geral */
 .Parte_Superior_Do_Site {
   display: block;
+  width: 141.9vw;
   align-items: center;
+  position: fixed;
+  z-index: 9999999999999999999;
+  zoom: 0.7;
+  overflow: hidden;
+}
+.Parte_Superior_Do_Site_Ocupar_Espaco {
+  display: block;
+  align-items: center;
+  visibility: hidden;
+  position: relative;
+  /* margin-bottom: 10vw; */
 }
 
 /* Estilo de barra de scroll */
@@ -128,4 +144,19 @@
 .Secao_Categorias_Com_Produtos {
   margin: 0 0 50px 0;
 }
-
+.Div_Com_Os_Links_De_Navegacao {
+  position: relative;
+}
+.Bola_Que_Informa_Quantos_Produtos_Tem_No_Carrinho {
+  width: 1.5vw;
+  background-color: red;
+  height: 1.5vw;
+  position: absolute;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  top: -1.2vw;
+  right: 0.5vw;
+}

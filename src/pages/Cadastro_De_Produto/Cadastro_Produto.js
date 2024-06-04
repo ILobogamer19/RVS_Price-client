@@ -14,7 +14,7 @@ import React, { useState, useEffect, useRef } from "react";
 //#endregion
 
 //#region Importações de componentes
-import Inserir_Etiqueta_Do_Mercado from "../../components/Inserir_Etiqueta_Do_Mercado";
+import Inserir_Etiqueta_Do_Mercado from "../../components/Ferramentas/Inserir_Etiqueta_Do_Mercado";
 import Opcoes_De_Cadastro_De_Mercados from "../../components/Opcoes_De_Cadastro_De_Mercados";
 //#endregion
 
@@ -140,18 +140,11 @@ export default function Cadastro_Produto() {
 
   //#region Conversor de Arquivo base64 do tipo png para WebP(Recomendado pelo Google)
   function Conversor_De_Base_64_Png_Para_WebP(Base64_Recebida) {
-    console.log("Função executada");
-    console.log("");
     return new Promise((resolve, reject) => {
-      console.log("Promise Executada");
-      console.log("");
-
       var Imagem_Com_Base_64_Png = new Image();
       Imagem_Com_Base_64_Png.src = Base64_Recebida;
 
       Imagem_Com_Base_64_Png.onload = () => {
-        console.log("Imagem onload");
-
         var Elemento_Canva_No_Document = document.createElement("canvas");
         Elemento_Canva_No_Document.width = Imagem_Com_Base_64_Png.width;
         Elemento_Canva_No_Document.height = Imagem_Com_Base_64_Png.height;
@@ -161,18 +154,12 @@ export default function Cadastro_Produto() {
 
         var WebP_Imagem_Url =
           Elemento_Canva_No_Document.toDataURL("image/webp");
-        console.log("Executado o toDataURL");
         resolve(WebP_Imagem_Url);
       };
 
       Imagem_Com_Base_64_Png.onerror = (error) => {
-        console.log("Erro: ");
-        console.log(error);
         reject(error);
       };
-
-      console.log("Promise terminada");
-      console.log("");
     });
   }
   //#endregion
