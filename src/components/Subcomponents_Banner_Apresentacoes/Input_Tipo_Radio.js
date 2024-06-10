@@ -65,7 +65,7 @@ export default function Input_Tipo_Radio(Atributos) {
                       ".Primeiro_Slide"
                     ).style.marginLeft =
                       "-" + Valor_De_Espaco_Que_O_Input_Dara + "%")
-                  : location.reload();
+                  : window.location.reload();
               }}
             />
           );
