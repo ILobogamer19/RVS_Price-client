@@ -16,17 +16,32 @@
   },
   {
     "Id": 4,
-    "Imagem": "img/Correia_Banner_1.webp",
+    "Imagem": "img/Banners_Correia/Correia_Banner_1.webp",
     "Banco_De_Banners": "Mercado_Correia"
   },
   {
     "Id": 5,
-    "Imagem": "img/TCA_Banner_1.webp",
-    "Banco_De_Banners": "Mercado_TCA"
+    "Imagem": "img/Banners_Correia/Correia_Banner_2.webp",
+    "Banco_De_Banners": "Mercado_Correia"
   },
   {
     "Id": 6,
-    "Imagem": "img/Bom_Jesus_Banner_1.webp",
-    "Banco_De_Banners": "Mercado_Bom_Jesus"
+    "Imagem": "img/Banners_Correia/Correia_Banner_3.webp",
+    "Banco_De_Banners": "Mercado_Correia"
+  },
+  {
+    "Id": 7,
+    "Imagem": "img/Banners_Correia/Correia_Banner_4.webp",
+    "Banco_De_Banners": "Mercado_Correia"
+  },
+  {
+    "Id": 8,
+    "Imagem": "img/Banners_Correia/Correia_Banner_5.webp",
+    "Banco_De_Banners": "Mercado_Correia"
+  },
+  {
+    "Id": 9,
+    "Imagem": "img/Banners_Correia/Correia_Banner_6.webp",
+    "Banco_De_Banners": "Mercado_Correia"
   }
 ]

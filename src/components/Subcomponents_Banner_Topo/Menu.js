@@ -51,14 +51,11 @@ export default function Menu() {
                 {item.Id == 5 && (
                   <div
                     onClick={() => {
-                      Cookies.set(
-                        "Quantia_De_Produtos_Adicionados_No_Carrinho",
-                        ""
+                      Cookies.remove(
+                        "Quantia_De_Produtos_Adicionados_No_Carrinho"
                       );
 
-                      var Dados_De_Itens_De_Carrinho_Convertido = JSON.parse(
-                        localStorage.getItem("Produtos_No_Carrinho")
-                      );
+                      localStorage.removeItem("Produtos_No_Carrinho");
                     }}
                     className="Bola_Que_Informa_Quantos_Produtos_Tem_No_Carrinho"
                     style={{ display: "none", zIndex: "9999999999999999999" }}
@@ -106,6 +103,15 @@ export default function Menu() {
         onClick={() => {
           document.querySelector(".Links_Navegacao_Responsivel").style.display =
             "flex";
+
+          document.querySelector(".Parte_Superior_Do_Site").style.height =
+            "100%";
+
+          document.querySelector(
+            ".Parte_Superior_Do_Site"
+          ).style.backgroundColor = "black";
+
+          document.querySelector(".Parte_Superior_Do_Site").style.opacity = "1";
         }}
         alt="Menu de Opções"
       />
@@ -116,6 +122,9 @@ export default function Menu() {
             document.querySelector(
               ".Links_Navegacao_Responsivel"
             ).style.display = "none";
+
+            document.querySelector(".Parte_Superior_Do_Site").style.height =
+              "inherit";
           }}
         >
           X

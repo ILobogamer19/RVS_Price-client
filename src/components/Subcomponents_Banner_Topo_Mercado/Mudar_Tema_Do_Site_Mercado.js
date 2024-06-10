@@ -20,9 +20,10 @@ export default function Mudar_Tema_Do_Site_Funcao_Mercado() {
 
   //#region Configurações de temas
   const Tema_Escuro = {
-    Header_Em_Cima: "rgb(91, 0, 0)",
+    Header_Em_Cima: "rgb(45,107,0)",
     Pesquisa_Header: "rgb(0,0,0)",
     Imagem_Pesquisa: "invert(100%)",
+    Notificacao_Do_Carrinho: "invert(0%)",
     Borda_Do_Header: "rgb(0,0,0)",
     Links_De_Navegacao: "invert(0%)",
     Fundo_Site: "rgb(33,33,33)",
@@ -37,6 +38,7 @@ export default function Mudar_Tema_Do_Site_Funcao_Mercado() {
     Header_Em_Cima: "rgb(130,199,82)",
     Pesquisa_Header: "rgb(255,255,255)",
     Imagem_Pesquisa: "invert(0%)",
+    Notificacao_Do_Carrinho: "invert(100%)",
     Borda_Do_Header: "rgb(0,0,0)",
     Links_De_Navegacao: "invert(100%)",
     Fundo_Site: "rgb(255,255,255)",
@@ -60,6 +62,9 @@ export default function Mudar_Tema_Do_Site_Funcao_Mercado() {
       Tema_Escolhido.Borda_Do_Header;
     document.querySelector(".Links_Navegacao").style.filter =
       Tema_Escolhido.Links_De_Navegacao;
+    document.querySelector(
+      ".Bola_Que_Informa_Quantos_Produtos_Tem_No_Carrinho"
+    ).style.filter = Tema_Escolhido.Notificacao_Do_Carrinho;
     // document.querySelector(".Menu_Responsivo_Para_Telas_Menores").style.filter =
     //   Tema_Escolhido.Links_De_Navegacao;
     document.querySelector("body").style.backgroundColor =
@@ -72,16 +77,8 @@ export default function Mudar_Tema_Do_Site_Funcao_Mercado() {
         item.style.backgroundColor = Tema_Escolhido.Botao_De_Alteracao_De_Tema;
       });
     document.querySelector("body").style.color = Tema_Escolhido.Letras_Do_Site;
-    // document
-    //   .querySelectorAll(".Hr_Demarcacao_De_Separacao_Banners_Produtos")
-    //   .forEach((item) => {
-    //     item.style.borderColor = Tema_Escolhido.Linha_De_Separacao;
-    //   });
-    // document
-    //   .querySelectorAll(".Produto_Individual_Estilo_Generalizado")
-    //   .forEach((item) => {
-    //     item.style.borderColor = Tema_Escolhido.Cor_Da_Borda_Do_Produto;
-    //   });
+    document.querySelector("#Input_De_Pesquisa").style.color =
+      Tema_Escolhido.Letras_Do_Site;
   };
   //#endregion
 

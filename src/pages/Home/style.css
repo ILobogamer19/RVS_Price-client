@@ -5,7 +5,7 @@ body {
 /* Itens do Banner em Geral */
 .Parte_Superior_Do_Site {
   display: block;
-  width: 141.9vw;
+  width: 100%;
   align-items: center;
   position: fixed;
   z-index: 9999999999999999999;
@@ -102,6 +102,7 @@ body {
   padding: 1vw 5vw 1vw 0.8vw;
   width: 20vw;
   font-size: 1vw;
+  box-shadow: 1px 1px 8px 9px;
 }
 .Img_Lupa {
   position: relative;

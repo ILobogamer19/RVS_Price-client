@@ -1,8 +1,8 @@
-import Logo from "../img/RVS_Price.webp";
 import Lupa from "../img/Lupa.webp";
 import Home from "../img/Home.webp";
 import Mudar_Tema_Do_Site_Funcao_Mercado from "./Subcomponents_Banner_Topo_Mercado/Mudar_Tema_Do_Site_Mercado";
 import Inserir_Etiqueta_Do_Mercado from "./Ferramentas/Inserir_Etiqueta_Do_Mercado";
+import Cookies from "js-cookie";
 
 export default function Banner_Topo_Mercado(Atributos) {
   return (
@@ -14,9 +14,6 @@ export default function Banner_Topo_Mercado(Atributos) {
               src={Inserir_Etiqueta_Do_Mercado(Atributos.Mercado, "", "Site")}
               className="Logo_Site"
               alt="Logo do Site"
-              onClick={() => {
-                console.log(Atributos.Mercado);
-              }}
             />
             <input
               type="text"
@@ -36,7 +33,12 @@ export default function Banner_Topo_Mercado(Atributos) {
           </div>
           <nav>
             <div className="Links_Navegacao">
-              <div className="Div_Com_Os_Links_De_Navegacao">
+              <div
+                className="Div_Com_Os_Links_De_Navegacao"
+                style={{
+                  margin: "0px",
+                }}
+              >
                 <a href="/" className="Link_De_Navegacao_Com_Imagem">
                   <img
                     src={Home}
@@ -45,6 +47,53 @@ export default function Banner_Topo_Mercado(Atributos) {
                   />
                   Home
                 </a>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <p>|</p>
+                  <p>|</p>
+                  <p>|</p>
+                </div>
+                <div
+                  className="Div_Com_Os_Links_De_Navegacao"
+                  onClick={(e) => {
+                    var Dados_De_Itens_De_Carrinho_Convertido = JSON.parse(
+                      localStorage.getItem("Produtos_No_Carrinho")
+                    );
+                  }}
+                  style={{
+                    margin: "0px",
+                  }}
+                >
+                  <a href="/Correia" className="Link_De_Navegacao_Com_Imagem">
+                    <div
+                      onClick={() => {
+                        Cookies.set(
+                          "Quantia_De_Produtos_Adicionados_No_Carrinho",
+                          ""
+                        );
+
+                        var Dados_De_Itens_De_Carrinho_Convertido = JSON.parse(
+                          localStorage.getItem("Produtos_No_Carrinho")
+                        );
+                      }}
+                      className="Bola_Que_Informa_Quantos_Produtos_Tem_No_Carrinho"
+                      style={{ display: "none", zIndex: "9999999999999999999" }}
+                    ></div>
+                    <img
+                      src="img/Carrinho.webp"
+                      className="Imagem_Inicial"
+                      alt="Imagem do Carrinho"
+                    />
+                    Carrinho
+                  </a>
+                </div>
               </div>
             </div>
           </nav>
@@ -58,9 +107,6 @@ export default function Banner_Topo_Mercado(Atributos) {
               src={Inserir_Etiqueta_Do_Mercado(Atributos.Mercado, "", "Site")}
               className="Logo_Site"
               alt="Logo do Site"
-              onClick={() => {
-                console.log(Atributos.Mercado);
-              }}
             />
             <input
               type="text"

@@ -19,6 +19,12 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
     setProdutos_Da_Categoria_Selecionada,
   ] = useState([]);
 
+  if (localStorage.getItem("Produtos_No_Carrinho")) {
+    var Produtos_No_Carrinho_Inicial = JSON.parse(
+      localStorage.getItem("Produtos_No_Carrinho")
+    );
+  }
+
   const [Produtos_No_Carrinho, setProdutos_No_Carrinho] = useState([]);
 
   //#region Envio de Categoria e resultado
@@ -76,15 +82,22 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
     if (Primeira_Adicao_Carrinho == 0) {
       if (
         Quantia_De_Produtos_Adicionados_No_Carrinho &&
-        Quantia_De_Produtos_Adicionados_No_Carrinho !== "undefined"
+        Quantia_De_Produtos_Adicionados_No_Carrinho !== "undefined" &&
+        Quantia_De_Produtos_Adicionados_No_Carrinho !== "NaN"
       ) {
         Div_De_Notificacao_De_Carrinho.style.display = "flex";
 
         Primeira_Adicao_Carrinho = 1;
         Teste_De_Igualdade = 1;
 
+        if (localStorage.getItem("Produtos_No_Carrinho")) {
+          setProdutos_No_Carrinho(Produtos_No_Carrinho_Inicial);
+        }
+
         Div_De_Notificacao_De_Carrinho.innerHTML =
           Quantia_De_Produtos_Adicionados_No_Carrinho;
+      } else if (Quantia_De_Produtos_Adicionados_No_Carrinho == "NaN") {
+        Cookies.remove("Quantia_De_Produtos_Adicionados_No_Carrinho");
       } else {
         Div_De_Notificacao_De_Carrinho.style.display = "flex";
 
@@ -111,7 +124,7 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
     //#endregion
 
     //#region Itens no carrinho
-    if (Produtos_No_Carrinho[0]) {
+    if (Produtos_No_Carrinho[0] && Teste_De_Igualdade == 0) {
       Produtos_No_Carrinho.forEach((Produto_Existente) => {
         if (Produto_Existente.Id_Produtos) {
           if (
@@ -136,6 +149,8 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
 
   //#region useEffect
   useEffect(() => {
+    Primeira_Adicao_Carrinho = 0;
+
     Categoria_Produto.map((item, index) => {
       Enviar_Dados_De_Cadastro_Para_Servidor(item.Categoria, index);
     });

@@ -193,8 +193,6 @@ export default function Menu_Para_Ajuste_De_Tamanho() {
             Login
           </button>
         </div>
-
-        <Mudar_Tema_Do_Site />
       </span>
     </nav>
   );

@@ -58,9 +58,21 @@ export default function Navegacao_Entre_Slides(Atributos) {
   function Voltar_Slide() {
     setTemporizador_Para_Troca_Automatica(10);
     var Anterior_Input_Radio;
+
     const Atual_Input_Radio_Selecionado = document.querySelector(
       "input[name='Slides_Control']:checked"
     );
+
+    var Ultimo_Slide_Existente = 0;
+
+    Imagens_de_Slide.map((item) => {
+      if (
+        Ultimo_Slide_Existente < item.Id &&
+        Atributos.Banco_De_Banners == item.Banco_De_Banners
+      ) {
+        Ultimo_Slide_Existente = item.Id;
+      }
+    });
 
     const Numero_Do_Id_Ativo = Atual_Input_Radio_Selecionado.value;
 
@@ -73,14 +85,9 @@ export default function Navegacao_Entre_Slides(Atributos) {
         "Barra_De_Pesquisa_" + Numero_Do_Id_Para_Ativar
       );
     } else {
-      for (var i = 5; i >= 1; i--) {
-        if (document.getElementById("Barra_De_Pesquisa_" + i)) {
-          Anterior_Input_Radio = document.getElementById(
-            "Barra_De_Pesquisa_" + i
-          );
-          break;
-        }
-      }
+      Anterior_Input_Radio = document.getElementById(
+        "Barra_De_Pesquisa_" + Ultimo_Slide_Existente
+      );
     }
 
     Anterior_Input_Radio.click();

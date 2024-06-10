@@ -34,7 +34,7 @@ export default function Imagens_Do_Slide(Atributos) {
             <Div_Slide
               className={
                 "Slide" +
-                (item.Id === Id_Primeiro_Slide ? " Primeiro_Slide" : "")
+                (item.Id == Id_Primeiro_Slide ? " Primeiro_Slide" : "")
               }
               key={item.Imagem}
               style={{

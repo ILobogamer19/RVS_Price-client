@@ -6,8 +6,6 @@ const Imagens_de_Slide = await Imagens_de_Slide_Json.json();
 
 var Imagens_A_Serem_Exibidas = [];
 
-var Quantia_Restante_Para_Completar = 0;
-
 export default function Input_Tipo_Radio(Atributos) {
   const [Input_Radio_Selecionado, setInput_Radio_Selecionado] = useState(1);
 
@@ -57,15 +55,17 @@ export default function Input_Tipo_Radio(Atributos) {
               key={item.Id}
               className="Input_Tipo_Radio_Alteracao_Slide"
               onClick={() => {
-                document.querySelector(".Primeiro_Slide").style.marginLeft =
-                  "-" + Quantia_Restante_Para_Completar + "%";
-
-                Quantia_Restante_Para_Completar +=
+                console.log("Executado");
+                var Valor_De_Espaco_Que_O_Input_Dara =
+                  (item.Id - Primeiro_Slide_Existente) *
                   Numero_Fixo_Ocupacao_Individual_Do_Slide;
 
-                if (Quantia_Restante_Para_Completar >= 100) {
-                  Quantia_Restante_Para_Completar = 0;
-                }
+                document.querySelector(".Primeiro_Slide")
+                  ? (document.querySelector(
+                      ".Primeiro_Slide"
+                    ).style.marginLeft =
+                      "-" + Valor_De_Espaco_Que_O_Input_Dara + "%")
+                  : location.reload();
               }}
             />
           );
