@@ -8,7 +8,7 @@ export default function Mercado_Home(Atributos) {
       <Banner_Topo_Mercado Mercado={Atributos.Mercado} />
       <Banner_Apresentacoes Banco_De_Banners={"Mercado_" + Atributos.Mercado} />
       <div className="Secao_Categorias_Com_Produtos Opacidade_De_Itens_Para_Temas">
-        <Categoria_Com_Produto_Inicial Filtro="Correia" />
+        <Categoria_Com_Produto_Inicial Filtro={Atributos.Mercado} />
       </div>
     </div>
   );

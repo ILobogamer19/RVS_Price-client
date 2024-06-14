@@ -33,14 +33,7 @@ export default function Verificar_Qual_Mercado_Pertence_O_Produto(
       (Nome_Do_Mercado_Do_Produto.includes("Imporio") &&
         Nome_Do_Mercado_Do_Produto.includes("Portugues"))
     ) {
-      return (
-        <img
-          src={Logo_Emporio_Do_Portugues}
-          className={Nome_Da_Classe}
-          alt={"Logo do " + Logo_Emporio_Do_Portugues}
-          loading="lazy"
-        />
-      );
+      return Logo_Emporio_Do_Portugues;
     } else if (Nome_Do_Mercado_Do_Produto == "") {
       return;
     } else {

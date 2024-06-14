@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
 
+import Paleta_De_Cores_De_Mercados from "../Ferramentas/Paleta_De_Cores_De_Mercados";
+
 var Contador_De_Vezes = 0;
 var Teste_De_Modo = 0;
 
-export default function Mudar_Tema_Do_Site_Funcao_Mercado() {
+export default function Mudar_Tema_Do_Site_Funcao_Mercado(Atributos) {
   //#region Puxando Cookies
   var Busca_De_Tema_Ja_Escolhido = Cookies.get("Tema_Escolhido");
   //#endregion
@@ -19,35 +21,11 @@ export default function Mudar_Tema_Do_Site_Funcao_Mercado() {
   //#endregion
 
   //#region Configurações de temas
-  const Tema_Escuro = {
-    Header_Em_Cima: "rgb(45,107,0)",
-    Pesquisa_Header: "rgb(0,0,0)",
-    Imagem_Pesquisa: "invert(100%)",
-    Notificacao_Do_Carrinho: "invert(0%)",
-    Borda_Do_Header: "rgb(0,0,0)",
-    Links_De_Navegacao: "invert(0%)",
-    Fundo_Site: "rgb(33,33,33)",
-    Botao_De_Alteracao_De_Tema: "rgb(0,0,0)",
-    Letras_Do_Site: "rgb(255,255,255)",
-    Linha_De_Separacao: "rgb(113,113,113)",
-    Opacidade_Itens: "0.7",
-    Cor_Da_Borda_Do_Produto: "white",
-  };
+  const Temas = Paleta_De_Cores_De_Mercados(Atributos.Mercado);
 
-  const Tema_Claro = {
-    Header_Em_Cima: "rgb(130,199,82)",
-    Pesquisa_Header: "rgb(255,255,255)",
-    Imagem_Pesquisa: "invert(0%)",
-    Notificacao_Do_Carrinho: "invert(100%)",
-    Borda_Do_Header: "rgb(0,0,0)",
-    Links_De_Navegacao: "invert(100%)",
-    Fundo_Site: "rgb(255,255,255)",
-    Botao_De_Alteracao_De_Tema: "rgb(255,255,255)",
-    Letras_Do_Site: "rgb(0,0,0)",
-    Linha_De_Separacao: "rgb(0,0,0)",
-    Opacidade_Itens: "1",
-    Cor_Da_Borda_Do_Produto: "black",
-  };
+  const Tema_Escuro = Temas.Escuro;
+
+  const Tema_Claro = Temas.Claro;
   //#endregion
 
   //#region Função que retorna os items a serem modificados

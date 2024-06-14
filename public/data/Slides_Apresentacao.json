@@ -43,5 +43,25 @@
     "Id": 9,
     "Imagem": "img/Banners_Correia/Correia_Banner_6.webp",
     "Banco_De_Banners": "Mercado_Correia"
+  },
+  {
+    "Id": 10,
+    "Imagem": "img/Banners_TCA/TCA_Banner_1.webp",
+    "Banco_De_Banners": "Mercado_TCA"
+  },
+  {
+    "Id": 11,
+    "Imagem": "img/Banners_Bom_Jesus/Bom_Jesus_Banner_1.webp",
+    "Banco_De_Banners": "Mercado_Bom_Jesus"
+  },
+  {
+    "Id": 12,
+    "Imagem": "img/Banners_Super_M/Super_M_Banner_1.webp",
+    "Banco_De_Banners": "Mercado_Super_M"
+  },
+  {
+    "Id": 13,
+    "Imagem": "img/Banners_Emporio_Do_Portugues/Emporio_Do_Portugues_Banner_1.webp",
+    "Banco_De_Banners": "Mercado_Emporio_Do_Portugues"
   }
 ]

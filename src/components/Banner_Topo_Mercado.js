@@ -29,7 +29,6 @@ export default function Banner_Topo_Mercado(Atributos) {
               }
               alt="Lupa de pesquisa"
             />
-            {/* <Login /> */}
           </div>
           <nav>
             <div className="Links_Navegacao">
@@ -98,7 +97,7 @@ export default function Banner_Topo_Mercado(Atributos) {
             </div>
           </nav>
         </div>
-        <Mudar_Tema_Do_Site_Funcao_Mercado />
+        <Mudar_Tema_Do_Site_Funcao_Mercado Mercado={Atributos.Mercado} />
       </div>
       <div className="Parte_Superior_Do_Site Parte_Superior_Do_Site_Ocupar_Espaco">
         <div className="Banner_Topo" id="Banner_Topo">

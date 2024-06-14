@@ -85,12 +85,12 @@ export default function Tela_Login_Responsivo() {
                 margin: "0",
               }}
             >
-              <label htmlFor="Input_De_Login_Senha">Senha:</label>
+              <label htmlFor="Input_De_Login_Senha_Responsivo">Senha:</label>
               <input
                 type="password"
                 placeholder="Senha"
-                id="Input_De_Login_Senha"
-                name="Input_De_Login_Senha"
+                id="Input_De_Login_Senha_Responsivo"
+                name="Input_De_Login_Senha_Responsivo"
                 value={Input_Senha}
                 onChange={(e) => {
                   setInput_Senha(e.target.value);
