@@ -5,6 +5,7 @@ import Logo_Bom_Jesus from "../../img/Logo_Bom_Jesus.webp";
 import Logo_TCA from "../../img/Logo_TCA.webp";
 import Logo_Super_M from "../../img/Logo_Super_M.webp";
 import Logo_Emporio_Do_Portugues from "../../img/Logo_Emporio_Do_Portugues.webp";
+import Logo_Cofepaes from "../../img/Logo_Cofepaes.webp";
 
 //#endregion
 
@@ -92,6 +93,15 @@ export default function Verificar_Qual_Mercado_Pertence_O_Produto(
           src={Logo_Emporio_Do_Portugues}
           className={Nome_Da_Classe}
           alt={"Logo do " + Logo_Emporio_Do_Portugues}
+          loading="lazy"
+        />
+      );
+    } else if (Nome_Do_Mercado_Do_Produto.includes("Cofepaes")) {
+      return (
+        <img
+          src={Logo_Cofepaes}
+          className={Nome_Da_Classe}
+          alt={"Logo do " + Logo_Cofepaes}
           loading="lazy"
         />
       );

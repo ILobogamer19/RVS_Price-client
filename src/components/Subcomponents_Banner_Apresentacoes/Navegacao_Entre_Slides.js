@@ -8,10 +8,15 @@ const Imagens_de_Slide = await Imagens_de_Slide_Json.json();
 //#endregion
 
 //#region Aplicação de navegação de slides
-export default function Navegacao_Entre_Slides(Atributos) {
+export default function Navegacao_Entre_Slides({
+  setTemporizador_Para_Troca_Automatica,
+  Temporizador_Para_Troca_Automatica,
+  Tempo_Padrao_Troca_De_Slide,
+  Banco_De_Banners,
+}) {
   //#region Função que Avança para o proximo slide quando clicar em um botão ou quando o tempo do temporizador acaba
   function Avancar_Slide() {
-    setTemporizador_Para_Troca_Automatica(10);
+    setTemporizador_Para_Troca_Automatica(Tempo_Padrao_Troca_De_Slide);
     var Proximo_Input_Radio;
     var Primeiro_Slide_Existente = 99999999999;
     var Atual_Input_Radio_Selecionado;
@@ -19,7 +24,7 @@ export default function Navegacao_Entre_Slides(Atributos) {
     Imagens_de_Slide.map((item) => {
       if (
         Primeiro_Slide_Existente > item.Id &&
-        Atributos.Banco_De_Banners == item.Banco_De_Banners
+        Banco_De_Banners == item.Banco_De_Banners
       ) {
         Primeiro_Slide_Existente = item.Id;
       }
@@ -54,65 +59,25 @@ export default function Navegacao_Entre_Slides(Atributos) {
   }
   //#endregion
 
-  //#region Função que Volta para o slide anterior quando clicar em um botão
-  function Voltar_Slide() {
-    setTemporizador_Para_Troca_Automatica(10);
-    var Anterior_Input_Radio;
-
-    const Atual_Input_Radio_Selecionado = document.querySelector(
-      "input[name='Slides_Control']:checked"
-    );
-
-    var Ultimo_Slide_Existente = 0;
-
-    Imagens_de_Slide.map((item) => {
-      if (
-        Ultimo_Slide_Existente < item.Id &&
-        Atributos.Banco_De_Banners == item.Banco_De_Banners
-      ) {
-        Ultimo_Slide_Existente = item.Id;
-      }
-    });
-
-    const Numero_Do_Id_Ativo = Atual_Input_Radio_Selecionado.value;
-
-    var Numero_Do_Id_Para_Ativar = parseInt(Numero_Do_Id_Ativo) - 1;
-
-    if (
-      document.getElementById("Barra_De_Pesquisa_" + Numero_Do_Id_Para_Ativar)
-    ) {
-      Anterior_Input_Radio = document.getElementById(
-        "Barra_De_Pesquisa_" + Numero_Do_Id_Para_Ativar
-      );
-    } else {
-      Anterior_Input_Radio = document.getElementById(
-        "Barra_De_Pesquisa_" + Ultimo_Slide_Existente
-      );
-    }
-
-    Anterior_Input_Radio.click();
-  }
-  //#endregion
-
   //#region Timer de avanço de slide após 10 segundos
-  const [
-    Temporizador_Para_Troca_Automatica,
-    setTemporizador_Para_Troca_Automatica,
-  ] = useState(10);
 
   useEffect(() => {
     const Intervalo_De_Troca_De_Slide = setInterval(() => {
-      setTemporizador_Para_Troca_Automatica((Valor_Antigo) => Valor_Antigo - 1);
+      if (Temporizador_Para_Troca_Automatica) {
+        setTemporizador_Para_Troca_Automatica(
+          (Valor_Antigo) => Valor_Antigo - 1
+        );
+      }
     }, 1000);
 
     return () => clearInterval(Intervalo_De_Troca_De_Slide);
   }, []);
 
   useEffect(() => {
-    if (Temporizador_Para_Troca_Automatica === 0) {
+    if (Temporizador_Para_Troca_Automatica == 0) {
       document.getElementById("Botao_De_Avancar_Para_O_Proximo_Slide").click();
-      if (Temporizador_Para_Troca_Automatica === 0) {
-        setTemporizador_Para_Troca_Automatica(10);
+      if (Temporizador_Para_Troca_Automatica == 0) {
+        setTemporizador_Para_Troca_Automatica(Tempo_Padrao_Troca_De_Slide);
       }
     }
   }, [Temporizador_Para_Troca_Automatica]);
@@ -122,15 +87,8 @@ export default function Navegacao_Entre_Slides(Atributos) {
 
   return (
     <div className="Navegacao_Entre_Slides">
-      <button
-        onClick={Voltar_Slide}
-        className="Botao_Slide_Anterior"
-        aria-label="Botão de voltar slide"
-      >
-        {"<"}
-      </button>
       {Imagens_de_Slide.map((item) => {
-        if (Atributos.Banco_De_Banners == item.Banco_De_Banners) {
+        if (Banco_De_Banners == item.Banco_De_Banners) {
           return (
             <label
               className="Barra_De_Navegacao_De_Imagem"
@@ -138,12 +96,14 @@ export default function Navegacao_Entre_Slides(Atributos) {
               key={item.Id + item.Imagem}
               id={"Barra_De_Pesquisa_" + item.Id}
               style={
-                item.Id === 1
+                item.Id == 1
                   ? { backgroundColor: "rgb(29, 29, 29)" }
                   : { backgroundColor: "" }
               }
               onClick={() => {
-                setTemporizador_Para_Troca_Automatica(10);
+                // setTemporizador_Para_Troca_Automatica(
+                //   Tempo_Padrao_Troca_De_Slide
+                // );
                 setTimeout(() => {
                   var Todos_Os_Input_Radio_De_Navegacao =
                     document.querySelectorAll(
@@ -171,9 +131,7 @@ export default function Navegacao_Entre_Slides(Atributos) {
         className="Botao_Proximo_Slide"
         id="Botao_De_Avancar_Para_O_Proximo_Slide"
         aria-label="Botão de avançar slide"
-      >
-        {">"}
-      </button>
+      ></button>
     </div>
   );
 

@@ -27,7 +27,7 @@ export default function Input_Tipo_Radio(Atributos) {
 
   var Quantia_De_Imagens_Exibida = Imagens_A_Serem_Exibidas.length;
 
-  const Slide_Ocupacao = Math.ceil(100 / Quantia_De_Imagens_Exibida);
+  const Slide_Ocupacao = Math.ceil(100);
 
   const [
     Numero_Fixo_Ocupacao_Individual_Do_Slide,
@@ -50,21 +50,21 @@ export default function Input_Tipo_Radio(Atributos) {
               name="Slides_Control"
               id={"Slide_" + item.Id}
               value={item.Id}
-              checked={Input_Radio_Selecionado === item.Id}
+              checked={Input_Radio_Selecionado == item.Id}
               onChange={Atualizar_O_Input_Selecionado}
               key={item.Id}
               className="Input_Tipo_Radio_Alteracao_Slide"
               onClick={() => {
-                console.log("Executado");
                 var Valor_De_Espaco_Que_O_Input_Dara =
                   (item.Id - Primeiro_Slide_Existente) *
                   Numero_Fixo_Ocupacao_Individual_Do_Slide;
 
-                document.querySelector(".Primeiro_Slide")
+                document.querySelector(
+                  ".Conjunto_De_Imagens_Para_Navegacao_E_Controle"
+                )
                   ? (document.querySelector(
-                      ".Primeiro_Slide"
-                    ).style.marginLeft =
-                      "-" + Valor_De_Espaco_Que_O_Input_Dara + "%")
+                      ".Conjunto_De_Imagens_Para_Navegacao_E_Controle"
+                    ).style.left = "-" + Valor_De_Espaco_Que_O_Input_Dara + "%")
                   : window.location.reload();
               }}
             />
