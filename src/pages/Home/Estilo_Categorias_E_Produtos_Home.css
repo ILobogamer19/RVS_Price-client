@@ -19,7 +19,7 @@
   overflow: auto;
 }
 .Produtos:hover {
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 }
 .Logo_Mercado_Produtos_Home {
   z-index: 999999;

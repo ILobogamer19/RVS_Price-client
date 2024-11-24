@@ -5,7 +5,7 @@
   overflow: auto;
 }
 .Mercados_Juntos:hover {
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 }
 .Div_Mercado_Individual {
   display: flex;
