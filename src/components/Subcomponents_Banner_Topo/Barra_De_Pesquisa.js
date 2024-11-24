@@ -59,9 +59,9 @@ export default function Barra_De_Pesquisa() {
           onFocus={() => {
             setVisualizacao_De_Itens_Correspondentes(true);
           }}
-          // onBlur={() => {
-          //   setVisualizacao_De_Itens_Correspondentes(false);
-          // }}
+          onBlur={() => {
+            setVisualizacao_De_Itens_Correspondentes(false);
+          }}
           id="Input_De_Pesquisa"
         />
         {Visualizacao_De_Itens_Correspondentes && (
