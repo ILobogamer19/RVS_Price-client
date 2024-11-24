@@ -21,6 +21,19 @@ const Menu_Link_Imagem_Texto = await Menu_Link_Imagem_Texto_Json.json();
 export default function Menu() {
   const [Ver_Admin_Painel, setVer_Admin_Painel] = useState(false);
 
+  function Desativar_Menu() {
+    document.querySelector(".Links_Navegacao_Responsivel").style.display =
+      "none";
+
+    document.querySelector(".Banner_Topo").style.backgroundColor =
+      "rgb(255, 33, 33)";
+
+    document.querySelector(".Barra_De_Pesquisa_Logo_Pesquisa").style.opacity =
+      "1";
+
+    document.querySelector(".Parte_Superior_Do_Site").style.height = "inherit";
+  }
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setVer_Admin_Painel(true);
@@ -30,7 +43,7 @@ export default function Menu() {
   }, []);
 
   return (
-    <nav>
+    <nav className="Nav_Estilizacao">
       <div className="Links_Navegacao">
         {Menu_Link_Imagem_Texto.map((item) => {
           return (
@@ -109,26 +122,49 @@ export default function Menu() {
 
           document.querySelector(
             ".Parte_Superior_Do_Site"
-          ).style.backgroundColor = "black";
+          ).style.backgroundColor = "rgba(0, 0, 0, 0.79)";
+
+          document.querySelector(".Banner_Topo").style.backgroundColor =
+            "rgba(76,0,0,79%)";
+
+          document.querySelector(
+            ".Barra_De_Pesquisa_Logo_Pesquisa"
+          ).style.opacity = "0.5";
 
           document.querySelector(".Parte_Superior_Do_Site").style.opacity = "1";
+
+          document
+            .querySelector(".Parte_Superior_Do_Site")
+            .addEventListener("click", Desativar_Menu);
         }}
         alt="Menu de Opções"
       />
       <span className="Links_Navegacao_Responsivel">
-        <p
-          className="Fechador_De_Menu"
-          onClick={() => {
-            document.querySelector(
-              ".Links_Navegacao_Responsivel"
-            ).style.display = "none";
-
-            document.querySelector(".Parte_Superior_Do_Site").style.height =
-              "inherit";
-          }}
-        >
+        {/* <p className="Fechador_De_Menu" onClick={Desativar_Menu}>
           X
-        </p>
+        </p> */}
+        <div style={{ display: Ver_Admin_Painel ? "none" : "flex" }}>
+          <div
+            style={{
+              width: "29.19px",
+              height: "10.85px",
+            }}
+          ></div>
+          <button
+            className="Login_Botao"
+            style={{ fontSize: "20px" }}
+            onClick={() => {
+              document.querySelector(
+                ".Tela_De_Login_Ativa_Desativa"
+              ).style.display = "flex";
+
+              document.querySelector("#Input_De_Login_User_Tela").focus();
+            }}
+            aria-label="Botão de Login"
+          >
+            <span className="Apresentacao_Menu">Login</span>
+          </button>
+        </div>
         {Menu_Link_Imagem_Texto.map((item) => {
           return (
             <div key={item.Id + item.Link}>
@@ -176,30 +212,7 @@ export default function Menu() {
             }}
             aria-label="Botão de Loggout"
           >
-            Loggout
-          </button>
-        </div>
-
-        <div style={{ display: Ver_Admin_Painel ? "none" : "flex" }}>
-          <div
-            style={{
-              width: "29.19px",
-              height: "10.85px",
-            }}
-          ></div>
-          <button
-            className="Login_Botao"
-            style={{ fontSize: "20px" }}
-            onClick={() => {
-              document.querySelector(
-                ".Tela_De_Login_Ativa_Desativa"
-              ).style.display = "flex";
-
-              document.querySelector("#Input_De_Login_User_Tela").focus();
-            }}
-            aria-label="Botão de Login"
-          >
-            Login
+            <span className="Apresentacao_Menu">Olá, Usuario</span>
           </button>
         </div>
 

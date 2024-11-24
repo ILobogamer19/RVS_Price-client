@@ -1,14 +1,16 @@
 .Links_Navegacao_Responsivel {
-  background-color: grey;
+  background-color: white;
   position: absolute;
-  right: 0;
-  top: 25px;
+  right: -20px;
+  top: calc((-1 * var(--Tamanho_Do_Espaco_Do_Menu)) + 60px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
   justify-content: center;
   z-index: 99999;
-  padding: 5px 5px 30px 5px;
+  align-items: flex-start;
+  padding: 30px;
   zoom: 2.5;
 }
 .Links_Navegacao_Responsivel div {
@@ -20,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   color: black;
 }
 .Links_Navegacao_Responsivel a img {
@@ -31,9 +33,21 @@
   zoom: 0.4;
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 0;
+  height: 50px;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+  background-color: rgb(255, 33, 33);
+  outline: none;
+  border: none;
   right: initial;
 }
+
+.Apresentacao_Menu {
+  margin-left: 5px;
+}
+
 .Links_Navegacao_Responsivel div div button {
   display: flex;
   zoom: 0.2;

@@ -33,9 +33,10 @@
   border: 1px solid black;
   margin: 5px 10px 10px 5px;
   padding: 15px;
-  border-radius: 15%;
+  border-radius: 5%;
   width: 204px;
   /* min-height: 296px; */
+  background-color: #f4f4f4;
 }
 
 .Div_Logo_Imagem_Nome_Preco_Avaliacao_Do_Produto {
@@ -69,6 +70,7 @@
 
 .Botao_De_Adicao_De_Produto_No_Carrinho {
   background-color: red;
-  border-radius: 10px 10px;
+  padding: 5px;
+
   border: 0px solid black;
 }

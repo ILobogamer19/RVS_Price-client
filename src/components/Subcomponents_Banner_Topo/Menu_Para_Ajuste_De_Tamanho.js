@@ -29,7 +29,7 @@ export default function Menu_Para_Ajuste_De_Tamanho() {
   }, []);
 
   return (
-    <nav>
+    <nav className="Nav_Estilizacao">
       <div className="Links_Navegacao">
         {Menu_Link_Imagem_Texto.map((item) => {
           return (

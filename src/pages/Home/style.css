@@ -9,8 +9,7 @@ body {
   align-items: center;
   position: fixed;
   z-index: 9999999999999999999;
-  zoom: 0.7;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .Parte_Superior_Do_Site_Ocupar_Espaco {
   display: block;
@@ -20,19 +19,73 @@ body {
   /* margin-bottom: 10vw; */
 }
 
+.Conjunto_Barra_De_Pesquisa_Com_Escolhas {
+  display: flex;
+  flex-direction: column;
+}
+
+.Resultados_A_Escolher_Conjunto {
+  background-color: white;
+  width: 15vw;
+  max-height: 20vh;
+  overflow-x: none;
+  overflow-y: scroll;
+  border: 1px solid black;
+  border-top: none;
+  position: absolute;
+  top: 2.95vw;
+  display: initial !important;
+  margin: 0 !important;
+  font-size: 0.7vw !important;
+}
+
+.Resultados_A_Escolher_Conjunto .Item_Do_Resultado_Da_Busca:hover {
+  background-color: rgb(192, 192, 192);
+}
+
+.Resultados_A_Escolher_Conjunto .Item_Do_Resultado_Da_Busca {
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Controle_De_Imagem_De_Pesquisa {
+  position: relative;
+  width: 20px;
+  display: flex;
+  margin-right: 5px !important;
+  justify-content: center;
+  height: 20px;
+}
+
+.Logo_Mercado_Resultados {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 8px;
+}
+
+.Imagem_do_Produto_no_Resultado {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 /* Estilo de barra de scroll */
 ::-webkit-scrollbar {
-  height: 25px;
-  padding: 50px;
+  height: var(--Tamanho_Da_Barra_De_Scroll_Segundo);
+  padding: var(--Tamanho_Da_Barra_De_Scroll);
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgb(85, 85, 85);
-  border-radius: 50px;
+  border-radius: var(--Tamanho_Da_Barra_De_Scroll);
 }
 ::-webkit-scrollbar-track {
   background-color: darkgray;
-  padding: 50px;
-  border-radius: 50px;
+  padding: var(--Tamanho_Da_Barra_De_Scroll);
+  border-radius: var(--Tamanho_Da_Barra_De_Scroll);
 }
 
 .Banner_Topo {
@@ -101,8 +154,10 @@ body {
   justify-content: flex-start;
   padding: 1vw 5vw 1vw 0.8vw;
   width: 20vw;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 20px;
   font-size: 1vw;
-  box-shadow: 1px 1px 8px 9px;
 }
 .Img_Lupa {
   position: relative;
@@ -121,14 +176,6 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: serif;
-}
-.Links_Navegacao a:hover {
-  color: white;
-  font-size: 1.3vw;
-}
-.Link_De_Navegacao_Com_Imagem:hover .Imagem_Inicial {
-  filter: invert(100%);
-  width: 4vw;
 }
 .Imagem_Inicial {
   display: flex;

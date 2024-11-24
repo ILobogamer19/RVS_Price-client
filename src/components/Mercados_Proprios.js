@@ -36,7 +36,7 @@ export default function Marcados_Pagina_Propria() {
         })}
       </div>
 
-      <Hr_Marcacao_Limite className="Hr_Demarcacao_De_Separacao_Banners_Produtos" />
+      {/* <Hr_Marcacao_Limite className="Hr_Demarcacao_De_Separacao_Banners_Produtos" /> */}
     </>
   );
 }
