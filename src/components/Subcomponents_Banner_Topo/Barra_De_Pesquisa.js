@@ -1,6 +1,7 @@
 import Axios from "axios";
 import Inserir_Etiqueta_Do_Mercado from "../Ferramentas/Inserir_Etiqueta_Do_Mercado";
 import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 import Logo from "../../img/RVS_Price.webp";
 import Lupa from "../../img/Lupa.webp";
@@ -20,16 +21,12 @@ export default function Barra_De_Pesquisa() {
     Enviar_Dados_De_Cadastro_Para_Servidor();
   }, []);
 
-  useEffect(() => {
-    console.log(Produtos_Catalogados_Achados[5]);
-  }, [Produtos_Catalogados_Achados]);
-
   //#region Envio de Categoria e resultado
   const Enviar_Dados_De_Cadastro_Para_Servidor = () => {
     Axios.post(
       // "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
       // "http://localhost:5000/pesquisa-categoria-produto",
-      "https://zvfmwc2c-5000.brs.devtunnels.ms/produtos-cadastrados",
+      "https://rvspriceserver.serveo.net/produtos-cadastrados",
       {
         headers: {
           "Content-Type": "application/json",
@@ -37,15 +34,25 @@ export default function Barra_De_Pesquisa() {
       }
     ).then((Resposta) => {
       setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
-
-      console.log(Resposta.data.produtos_achados);
     });
   };
   //#endregion
 
   return (
     <div className="Barra_De_Pesquisa_Logo_Pesquisa">
-      <img src={Logo} className="Logo_Site" alt="Logo do Site" />
+      {Cookies.get("Pagina_De_Mercado") ? (
+        <img
+          src={Inserir_Etiqueta_Do_Mercado(
+            Cookies.get("Pagina_De_Mercado"),
+            "",
+            "Site"
+          )}
+          className="Logo_Site"
+          alt="Logo do Site"
+        />
+      ) : (
+        <img src={Logo} className="Logo_Site" alt="Logo do Site" />
+      )}
       <div className="Conjunto_Barra_De_Pesquisa_Com_Escolhas">
         <input
           type="text"
@@ -85,6 +92,7 @@ export default function Barra_De_Pesquisa() {
                     }}
                     onMouseDown={() => {
                       setTexto_Digitado_Para_Pesquisa(item.Nome);
+                      setVisualizacao_De_Itens_Correspondentes(false);
                     }}
                   >
                     <div className="Controle_De_Imagem_De_Pesquisa">

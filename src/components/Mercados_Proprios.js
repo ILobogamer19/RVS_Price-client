@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 import Verificar_Qual_Mercado_Pertence_O_Produto from "./Ferramentas/Inserir_Etiqueta_Do_Mercado";
 
 const Mercados_Json = await fetch("./data/Mercados.json");
@@ -24,6 +25,12 @@ export default function Marcados_Pagina_Propria() {
               className="Div_Mercado_Individual"
               onClick={() => {
                 url("/" + item.Mercado);
+
+                Cookies.set(
+                  "Pagina_De_Mercado",
+                  item.Mercado.replace(/-/g, "_"),
+                  { expires: 60 }
+                );
               }}
               key={item.Mercado}
             >

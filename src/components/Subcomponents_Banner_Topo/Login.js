@@ -26,7 +26,7 @@ export default function Login() {
       Axios.post(
         // "https://rvsprice-server.vercel.app/validar",
         // "http://localhost:5000/validar",
-        "https://zvfmwc2c-5000.brs.devtunnels.ms/validar",
+        "https://rvspriceserver.serveo.net/validar",
 
         {
           User: Input_User,
@@ -79,6 +79,7 @@ export default function Login() {
               <input
                 type="password"
                 placeholder="Senha"
+                current-password="true"
                 id="Input_De_Login_Senha"
                 name="Input_De_Login_Senha"
                 value={Input_Senha}

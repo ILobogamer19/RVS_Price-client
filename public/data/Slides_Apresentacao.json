@@ -29,21 +29,7 @@
     "Imagem": "img/Banners_Correia/Correia_Banner_3.webp",
     "Banco_De_Banners": "Mercado_Correia"
   },
-  {
-    "Id": 7,
-    "Imagem": "img/Banners_Correia/Correia_Banner_4.webp",
-    "Banco_De_Banners": "Mercado_Correia"
-  },
-  {
-    "Id": 8,
-    "Imagem": "img/Banners_Correia/Correia_Banner_5.webp",
-    "Banco_De_Banners": "Mercado_Correia"
-  },
-  {
-    "Id": 9,
-    "Imagem": "img/Banners_Correia/Correia_Banner_6.webp",
-    "Banco_De_Banners": "Mercado_Correia"
-  },
+
   {
     "Id": 10,
     "Imagem": "img/Banners_TCA/TCA_Banner_1.webp",

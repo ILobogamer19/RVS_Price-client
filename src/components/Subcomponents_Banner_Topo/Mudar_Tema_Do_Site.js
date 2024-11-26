@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Paleta_De_Cores_De_Mercados from "../Ferramentas/Paleta_De_Cores_De_Mercados";
 import Cookies from "js-cookie";
 
 var Contador_De_Vezes = 0;
 var Teste_De_Modo = 0;
 
 export default function Mudar_Tema_Do_Site_Funcao() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname == "/" && Cookies.get("Pagina_De_Mercado")) {
+      Cookies.remove("Pagina_De_Mercado");
+      Cookies.set("Refresh_Na_Pagina", "true");
+    }
+    Alterador_De_Tema_Do_Site();
+  }, []);
+
   //#region Puxando Cookies
   var Busca_De_Tema_Ja_Escolhido = Cookies.get("Tema_Escolhido");
   //#endregion
@@ -18,37 +30,49 @@ export default function Mudar_Tema_Do_Site_Funcao() {
     useState(false);
   //#endregion
 
-  //#region Configurações de temas
-  const Tema_Escuro = {
-    Header_Em_Cima: "rgb(91, 0, 0)",
-    Pesquisa_Header: "rgb(0,0,0)",
-    Imagem_Pesquisa: "invert(100%)",
-    Notificacao_Do_Carrinho: "invert(0%)",
-    Borda_Do_Header: "rgb(0,0,0)",
-    Links_De_Navegacao: "invert(0%)",
-    Fundo_Site: "rgb(33,33,33)",
-    Botao_De_Alteracao_De_Tema: "rgb(0,0,0)",
-    Letras_Do_Site: "rgb(255,255,255)",
-    Linha_De_Separacao: "rgb(113,113,113)",
-    Opacidade_Itens: "0.7",
-    Cor_Da_Borda_Do_Produto: "white",
-  };
+  var Temas;
+  var Tema_Escuro;
+  var Tema_Claro;
 
-  const Tema_Claro = {
-    Header_Em_Cima: "rgb(255, 33, 33)",
-    Pesquisa_Header: "rgb(255,255,255)",
-    Imagem_Pesquisa: "invert(0%)",
-    Notificacao_Do_Carrinho: "invert(100%)",
-    Borda_Do_Header: "rgb(0,0,0)",
-    Links_De_Navegacao: "invert(100%)",
-    Fundo_Site: "rgb(255,255,255)",
-    Botao_De_Alteracao_De_Tema: "rgb(255,255,255)",
-    Letras_Do_Site: "rgb(0,0,0)",
-    Linha_De_Separacao: "rgb(0,0,0)",
-    Opacidade_Itens: "1",
-    Cor_Da_Borda_Do_Produto: "black",
-  };
-  //#endregion
+  if (Cookies.get("Pagina_De_Mercado")) {
+    Temas = Paleta_De_Cores_De_Mercados(Cookies.get("Pagina_De_Mercado"));
+
+    Tema_Escuro = Temas.Escuro;
+
+    Tema_Claro = Temas.Claro;
+  } else {
+    //#region Configurações de temas
+    Tema_Escuro = {
+      Header_Em_Cima: "rgb(91, 0, 0)",
+      Pesquisa_Header: "rgb(0,0,0)",
+      Imagem_Pesquisa: "invert(100%)",
+      Notificacao_Do_Carrinho: "invert(0%)",
+      Borda_Do_Header: "rgb(0,0,0)",
+      Links_De_Navegacao: "invert(0%)",
+      Fundo_Site: "rgb(33,33,33)",
+      Botao_De_Alteracao_De_Tema: "rgb(0,0,0)",
+      Letras_Do_Site: "rgb(255,255,255)",
+      Linha_De_Separacao: "rgb(113,113,113)",
+      Opacidade_Itens: "0.7",
+      Cor_Da_Borda_Do_Produto: "white",
+    };
+
+    Tema_Claro = {
+      Header_Em_Cima: "rgb(255, 33, 33)",
+      Pesquisa_Header: "rgb(255,255,255)",
+      Imagem_Pesquisa: "invert(0%)",
+      Notificacao_Do_Carrinho: "invert(100%)",
+      Borda_Do_Header: "rgb(0,0,0)",
+      Links_De_Navegacao: "invert(100%)",
+      Fundo_Site: "rgb(255,255,255)",
+      Botao_De_Alteracao_De_Tema: "rgb(255,255,255)",
+      Letras_Do_Site: "rgb(0,0,0)",
+      Linha_De_Separacao: "rgb(0,0,0)",
+      Opacidade_Itens: "1",
+      Cor_Da_Borda_Do_Produto: "black",
+    };
+    //#endregion
+  }
 
   //#region Função que retorna os items a serem modificados
   const Itens_Para_Modificacao = () => {

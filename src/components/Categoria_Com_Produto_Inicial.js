@@ -35,7 +35,7 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
     Axios.post(
       // "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
       // "http://localhost:5000/pesquisa-categoria-produto",
-      "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
+      "https://rvspriceserver.serveo.net/pesquisa-categoria-produto",
       Atributos.Filtro
         ? {
             Categoria_Para_Pesquisa: Categoria_Pesquisada,
