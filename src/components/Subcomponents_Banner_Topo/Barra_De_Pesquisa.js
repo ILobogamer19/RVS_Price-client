@@ -1,6 +1,7 @@
 import Axios from "axios";
 import Inserir_Etiqueta_Do_Mercado from "../Ferramentas/Inserir_Etiqueta_Do_Mercado";
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 
 import Logo from "../../img/RVS_Price.webp";
@@ -8,6 +9,9 @@ import Lupa from "../../img/Lupa.webp";
 import Login from "./Login";
 
 export default function Barra_De_Pesquisa() {
+  const url = useNavigate();
+  const location = useLocation();
+
   const [Texto_Digitado_Para_Pesquisa, setTexto_Digitado_Para_Pesquisa] =
     useState("");
   const [Produtos_Catalogados_Achados, setProdutos_Catalogados_Achados] =
@@ -21,7 +25,7 @@ export default function Barra_De_Pesquisa() {
     Enviar_Dados_De_Cadastro_Para_Servidor();
   }, []);
 
-  //#region Envio de Categoria e resultado
+  //#region Pesquisa de produtos cadastrados
   const Enviar_Dados_De_Cadastro_Para_Servidor = () => {
     Axios.post(
       // "https://rvsprice-server.vercel.app/pesquisa-categoria-produto",
@@ -32,9 +36,24 @@ export default function Barra_De_Pesquisa() {
           "Content-Type": "application/json",
         },
       }
-    ).then((Resposta) => {
-      setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
-    });
+    )
+      .then((Resposta) => {
+        setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
+      })
+      .catch((error) => {
+        if (error.code == "ERR_NETWORK") {
+          Axios.post(
+            "https://willing-catfish-proven.ngrok-free.app/produtos-cadastrados",
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          ).then((Resposta) => {
+            setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
+          });
+        }
+      });
   };
   //#endregion
 
@@ -48,10 +67,20 @@ export default function Barra_De_Pesquisa() {
             "Site"
           )}
           className="Logo_Site"
-          alt="Logo do Site"
+          alt="Logo do Mercado"
+          onClick={() => {
+            url("/");
+          }}
         />
       ) : (
-        <img src={Logo} className="Logo_Site" alt="Logo do Site" />
+        <img
+          src={Logo}
+          className="Logo_Site"
+          onClick={() => {
+            url("/");
+          }}
+          alt="Logo do Site"
+        />
       )}
       <div className="Conjunto_Barra_De_Pesquisa_Com_Escolhas">
         <input
@@ -59,7 +88,15 @@ export default function Barra_De_Pesquisa() {
           value={Texto_Digitado_Para_Pesquisa}
           onChange={(e) => {
             setTexto_Digitado_Para_Pesquisa(e.target.value);
+            Cookies.set(
+              "Valor_Da_Pesquisa_Digitado",
+              e.target.value.replace(/ /g, "---"),
+              {
+                expires: 10,
+              }
+            );
           }}
+          autoComplete="off"
           list="Produtos_Catalogados"
           placeholder="Buscar produtos, mercados, e muito mais"
           className="Pesquisa"
@@ -69,11 +106,19 @@ export default function Barra_De_Pesquisa() {
           onBlur={() => {
             setVisualizacao_De_Itens_Correspondentes(false);
           }}
+          onKeyDown={(e) => {
+            if (e.key == "Enter" && Texto_Digitado_Para_Pesquisa) {
+              if (location.pathname == "/Resultados_Obtidos") {
+                window.location.reload();
+              }
+              url("/Resultados_Obtidos");
+            }
+          }}
           id="Input_De_Pesquisa"
         />
         {Visualizacao_De_Itens_Correspondentes && (
           <div className="Resultados_A_Escolher_Conjunto">
-            {Produtos_Catalogados_Achados.map((item) => {
+            {Produtos_Catalogados_Achados.map((item, index) => {
               if (
                 item.Nome.normalize("NFD")
                   .replace(/[\u0300-\u036f]/g, "")
@@ -86,16 +131,27 @@ export default function Barra_De_Pesquisa() {
               ) {
                 return (
                   <p
+                    key={item + index}
                     className="Item_Do_Resultado_Da_Busca"
-                    onClick={() => {
-                      setTexto_Digitado_Para_Pesquisa(item.Nome);
-                    }}
                     onMouseDown={() => {
                       setTexto_Digitado_Para_Pesquisa(item.Nome);
-                      setVisualizacao_De_Itens_Correspondentes(false);
+                      Cookies.set(
+                        "Valor_Da_Pesquisa_Digitado",
+                        item.Nome.replace(/ /g, "---"),
+                        {
+                          expires: 10,
+                        }
+                      );
+
+                      setTimeout(() => {
+                        if (location.pathname == "/Resultados_Obtidos") {
+                          window.location.reload();
+                        }
+                        url("/Resultados_Obtidos");
+                      }, 500);
                     }}
                   >
-                    <div className="Controle_De_Imagem_De_Pesquisa">
+                    <span className="Controle_De_Imagem_De_Pesquisa">
                       {Inserir_Etiqueta_Do_Mercado(
                         item.Mercado,
                         "Logo_Mercado_Resultados"
@@ -104,7 +160,7 @@ export default function Barra_De_Pesquisa() {
                         src={item.Imagem}
                         className="Imagem_do_Produto_no_Resultado"
                       />
-                    </div>
+                    </span>
                     {item.Nome}
                   </p>
                 );
@@ -116,7 +172,13 @@ export default function Barra_De_Pesquisa() {
       <img
         src={Lupa}
         className="Img_Lupa"
-        onClick={() => document.querySelector("#Input_De_Pesquisa").focus()}
+        onClick={() =>
+          Texto_Digitado_Para_Pesquisa
+            ? location.pathname == "/Resultados_Obtidos"
+              ? window.location.reload()
+              : url("/Resultados_Obtidos")
+            : alert("Pesquisa vazia")
+        }
         alt="Lupa de pesquisa"
       />
       <Login />

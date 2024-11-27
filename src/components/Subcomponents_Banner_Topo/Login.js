@@ -37,23 +37,57 @@ export default function Login() {
             "Content-Type": "application/json",
           },
         }
-      ).then((Resposta) => {
-        if (Resposta.data.token) {
-          var token = Resposta.data.token;
-          localStorage.setItem("token", token);
-          setVisibilidade(false);
-          window.location.reload();
-          alert("Logado com sucesso");
-        } else {
-          console.log("Erro: " + Resposta);
-          console.log(Resposta);
-          console.log("Enviados: " + Input_User + " , " + Input_Senha);
-          console.log(Resposta.data);
-          console.log("Data extratida: " + Resposta.data);
-          console.log("Permissão: " + Resposta.data.permitir);
-          alert("Falha no login");
-        }
-      });
+      )
+        .then((Resposta) => {
+          if (Resposta.data.token) {
+            var token = Resposta.data.token;
+            localStorage.setItem("token", token);
+            setVisibilidade(false);
+            window.location.reload();
+            alert("Logado com sucesso");
+          } else {
+            console.log("Erro: " + Resposta);
+            console.log(Resposta);
+            console.log("Enviados: " + Input_User + " , " + Input_Senha);
+            console.log(Resposta.data);
+            console.log("Data extratida: " + Resposta.data);
+            console.log("Permissão: " + Resposta.data.permitir);
+            alert("Falha no login");
+          }
+        })
+        .catch((error) => {
+          if (error.code == "ERR_NETWORK") {
+            Axios.post(
+              "https://willing-catfish-proven.ngrok-free.app/validar",
+
+              {
+                User: Input_User,
+                Senha: Input_Senha,
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            ).then((Resposta) => {
+              if (Resposta.data.token) {
+                var token = Resposta.data.token;
+                localStorage.setItem("token", token);
+                setVisibilidade(false);
+                window.location.reload();
+                alert("Logado com sucesso");
+              } else {
+                console.log("Erro: " + Resposta);
+                console.log(Resposta);
+                console.log("Enviados: " + Input_User + " , " + Input_Senha);
+                console.log(Resposta.data);
+                console.log("Data extratida: " + Resposta.data);
+                console.log("Permissão: " + Resposta.data.permitir);
+                alert("Falha no login");
+              }
+            });
+          }
+        });
     }, 1000);
   }
   return (
@@ -80,6 +114,7 @@ export default function Login() {
                 type="password"
                 placeholder="Senha"
                 current-password="true"
+                autoComplete="on"
                 id="Input_De_Login_Senha"
                 name="Input_De_Login_Senha"
                 value={Input_Senha}

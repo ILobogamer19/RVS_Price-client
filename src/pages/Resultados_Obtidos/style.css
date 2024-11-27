@@ -1,0 +1,42 @@
+.Corpo_Principal_Dos_Resultados {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Corpo_Dos_Resultados {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.Titulo_Com_Quantia_De_Itens_Encontrados {
+  display: flex;
+  flex-direction: column;
+}
+
+.Titulo_Com_Quantia_De_Itens_Encontrados > h1 {
+  margin-bottom: 0;
+}
+
+.Titulo_Com_Quantia_De_Itens_Encontrados > h4 {
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 0;
+  align-self: flex-end;
+}
+
+.Itens_Obtidos_Da_Busca {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  margin: 0 5%;
+}
+
+.Produto_Dentro_Da_Pesquisa {
+  position: relative;
+}

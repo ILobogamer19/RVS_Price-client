@@ -1,4 +1,3 @@
-import Banner_Topo_Mercado from "./Banner_Topo_Mercado";
 import Banner_Topo from "./Banner_Topo";
 import Banner_Apresentacoes from "./Banner_Apresentacoes";
 import Categoria_Com_Produto_Inicial from "./Categoria_Com_Produto_Inicial";

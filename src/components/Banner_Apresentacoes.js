@@ -67,7 +67,12 @@ export default function Banner_Apresentacoes(Atributos) {
           />
         </div>
       </div>
-      <div className="Espaco_De_Separacao_De_Banner">.</div>
+      <div
+        className="Espaco_De_Separacao_De_Banner"
+        id="Conjunto_De_Paginas_De_Mercado_Para_Orientacao"
+      >
+        .
+      </div>
     </>
   );
 }

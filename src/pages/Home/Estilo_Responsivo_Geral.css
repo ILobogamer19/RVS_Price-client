@@ -27,7 +27,8 @@
   display: block;
 }
 
-.Banner_Topo div {
+.Banner_Topo div,
+.Controle_De_Imagem_De_Pesquisa {
   zoom: 1.5;
   margin: 4px 0 0 0;
 }
@@ -132,7 +133,8 @@
   .Banner_Topo {
     display: block;
   }
-  .Banner_Topo div {
+  .Banner_Topo div,
+  .Controle_De_Imagem_De_Pesquisa {
     zoom: 2;
     margin: 4px 0 0 0;
   }
@@ -178,7 +180,8 @@
     zoom: 2;
     top: 18px;
   }
-  .Banner_Topo div {
+  .Banner_Topo div,
+  .Controle_De_Imagem_De_Pesquisa {
     zoom: 2.2;
   }
   .Links_Navegacao_Responsivel div div button {
@@ -213,7 +216,8 @@
   .Resultados_A_Escolher_Conjunto {
     top: 3.7vw;
   }
-  .Banner_Topo div {
+  .Banner_Topo div,
+  .Controle_De_Imagem_De_Pesquisa {
     zoom: 1.9;
   }
   .Tela_De_Login_Geral div .Login {
@@ -251,7 +255,8 @@
     zoom: 1;
     top: 30px;
   }
-  .Banner_Topo div {
+  .Banner_Topo div,
+  .Controle_De_Imagem_De_Pesquisa {
     zoom: 1;
   }
   .Links_Navegacao_Responsivel div div button {

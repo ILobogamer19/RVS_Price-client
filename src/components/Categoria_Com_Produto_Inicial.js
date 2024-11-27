@@ -47,24 +47,60 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
           "Content-Type": "application/json",
         },
       }
-    ).then((Resposta) => {
-      if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {
-        setProdutos_Da_Categoria_Selecionada((prevState) => ({
-          ...prevState,
-          [Numero_Categoria]: Resposta.data.produtos_achados,
-        }));
-      } else {
-        setProdutos_Da_Categoria_Selecionada((prevState) => ({
-          ...prevState,
-          [Numero_Categoria]: [
-            ...prevState[Numero_Categoria],
-            Resposta.data.produtos_achados,
-          ],
-        }));
-      }
+    )
+      .then((Resposta) => {
+        if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {
+          setProdutos_Da_Categoria_Selecionada((prevState) => ({
+            ...prevState,
+            [Numero_Categoria]: Resposta.data.produtos_achados,
+          }));
+        } else {
+          setProdutos_Da_Categoria_Selecionada((prevState) => ({
+            ...prevState,
+            [Numero_Categoria]: [
+              ...prevState[Numero_Categoria],
+              Resposta.data.produtos_achados,
+            ],
+          }));
+        }
 
-      return Resposta.data.produtos_achados;
-    });
+        return Resposta.data.produtos_achados;
+      })
+      .catch((error) => {
+        if (error.code == "ERR_NETWORK") {
+          Axios.post(
+            "https://willing-catfish-proven.ngrok-free.app/pesquisa-categoria-produto",
+            Atributos.Filtro
+              ? {
+                  Categoria_Para_Pesquisa: Categoria_Pesquisada,
+                  Filtro_De_Pesquisa: Atributos.Filtro,
+                }
+              : { Categoria_Para_Pesquisa: Categoria_Pesquisada },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          ).then((Resposta) => {
+            if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {
+              setProdutos_Da_Categoria_Selecionada((prevState) => ({
+                ...prevState,
+                [Numero_Categoria]: Resposta.data.produtos_achados,
+              }));
+            } else {
+              setProdutos_Da_Categoria_Selecionada((prevState) => ({
+                ...prevState,
+                [Numero_Categoria]: [
+                  ...prevState[Numero_Categoria],
+                  Resposta.data.produtos_achados,
+                ],
+              }));
+            }
+
+            return Resposta.data.produtos_achados;
+          });
+        }
+      });
   };
   //#endregion
 
@@ -171,60 +207,72 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
   return (
     <>
       {Categoria_Produto.map((item, index) => {
-        return (
-          <div
-            className={"Categorias Categoria_" + item.Categoria}
-            key={item.Categoria}
-          >
-            <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
-            <div className="Produtos">
-              {Produtos_Da_Categoria_Selecionada[index]
-                ? Produtos_Da_Categoria_Selecionada[index].map((Categoria) => {
-                    return (
-                      <div
-                        className={
-                          "Produto_" +
-                          Categoria.Id_Produtos +
-                          " Produto_Individual_Estilo_Generalizado"
-                        }
-                        key={Categoria.Nome}
-                      >
-                        <div className="Div_Logo_Imagem_Nome_Preco_Avaliacao_Do_Produto">
-                          {Inserir_Etiqueta_Do_Mercado(
-                            Categoria.Mercado,
-                            "Logo_Mercado_Produtos_Home"
-                          )}
-                          <div className="Div_De_Imagem_Do_Produto_Home">
-                            <img
-                              src={Categoria.Imagem}
-                              className="Imagem_Do_Produto_Home"
-                              alt={"Produto " + Categoria.Nome}
-                              loading="lazy"
-                            />
-                          </div>
-                          <p className="Nome_Do_Produto">{Categoria.Nome}</p>
-                          <p className="Preco_Do_Produto">{Categoria.Preco}</p>
-                          {Estrelas_Do_Produto_Teste(
-                            Math.floor(Math.random() * 6)
-                          )}
-                        </div>
-                        <div className="Div_Do_Botao_De_Carrinho">
-                          <button
-                            className="Botao_De_Adicao_De_Produto_No_Carrinho"
-                            onClick={() => {
-                              Adicionar_Itens_Ao_Carrinho(Categoria);
-                            }}
+        if (
+          Produtos_Da_Categoria_Selecionada[index] &&
+          Produtos_Da_Categoria_Selecionada[index].length > 0
+        ) {
+          return (
+            <div
+              className={"Categorias Categoria_" + item.Categoria}
+              key={item.Categoria}
+            >
+              <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
+              <div className="Produtos">
+                {console.log(Produtos_Da_Categoria_Selecionada[index])}
+                {Produtos_Da_Categoria_Selecionada[index]
+                  ? Produtos_Da_Categoria_Selecionada[index].map(
+                      (Categoria) => {
+                        return (
+                          <div
+                            className={
+                              "Produto_" +
+                              Categoria.Id_Produtos +
+                              " Produto_Individual_Estilo_Generalizado"
+                            }
+                            key={Categoria.Nome}
                           >
-                            Adicionar ao Carrinho
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })
-                : ""}
+                            <div className="Div_Logo_Imagem_Nome_Preco_Avaliacao_Do_Produto">
+                              {Inserir_Etiqueta_Do_Mercado(
+                                Categoria.Mercado,
+                                "Logo_Mercado_Produtos_Home"
+                              )}
+                              <div className="Div_De_Imagem_Do_Produto_Home">
+                                <img
+                                  src={Categoria.Imagem}
+                                  className="Imagem_Do_Produto_Home"
+                                  alt={"Produto " + Categoria.Nome}
+                                  loading="lazy"
+                                />
+                              </div>
+                              <p className="Nome_Do_Produto">
+                                {Categoria.Nome}
+                              </p>
+                              <p className="Preco_Do_Produto">
+                                {Categoria.Preco}
+                              </p>
+                              {Estrelas_Do_Produto_Teste(
+                                Math.floor(Math.random() * 6)
+                              )}
+                            </div>
+                            <div className="Div_Do_Botao_De_Carrinho">
+                              <button
+                                className="Botao_De_Adicao_De_Produto_No_Carrinho"
+                                onClick={() => {
+                                  Adicionar_Itens_Ao_Carrinho(Categoria);
+                                }}
+                              >
+                                Adicionar ao Carrinho
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      }
+                    )
+                  : ""}
+              </div>
             </div>
-          </div>
-        );
+          );
+        }
       })}
     </>
   );

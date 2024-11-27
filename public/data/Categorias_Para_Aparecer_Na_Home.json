@@ -3,9 +3,21 @@
     "Categoria": "Cesta Basica"
   },
   {
+    "Categoria": "Limpeza"
+  },
+  {
     "Categoria": "Doce"
   },
   {
-    "Categoria": "Limpeza"
+    "Categoria": "Bebidas"
+  },
+  {
+    "Categoria": "Higiene Pessoal"
+  },
+  {
+    "Categoria": "Servicos"
+  },
+  {
+    "Categoria": "Snacks"
   }
 ]

@@ -137,7 +137,8 @@ body {
   font-family: "consolas";
   padding: 4px 0px 4px 0;
 }
-.Banner_Topo div {
+.Banner_Topo div,
+.Controle_De_Imagem_De_Pesquisa {
   font-size: 1vw;
   display: flex;
   align-items: center;
@@ -148,6 +149,7 @@ body {
 .Logo_Site {
   width: 8vw;
   margin: 0 1vw 0 0;
+  cursor: pointer;
 }
 .Pesquisa {
   align-items: flex-start;
@@ -163,6 +165,7 @@ body {
   position: relative;
   width: 1.5vw;
   right: 2vw;
+  cursor: pointer;
 }
 
 /* Links para navegar no site */

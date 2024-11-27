@@ -11,6 +11,7 @@ import Mercado_Correia_Home from "./pages/Mercado_Correia/Pagina_Mercado";
 import Mercado_TCA_Home from "./pages/Mercado_TCA/Pagina_Mercado";
 import Mercado_Bom_Jesus_Home from "./pages/Mercado_Bom_Jesus/Pagina_Mercado";
 import Mercado_Super_M_Home from "./pages/Mercado_Super_M/Pagina_Mercado";
+import Resultados_Obtidos from "./pages/Resultados_Obtidos/Resultados_Obtidos";
 import Mercado_Emporio_Do_Portugues_Home from "./pages/Mercado_Emporio_Do_Portugues/Pagina_Mercado";
 import Rota_Privada from "./routes/Rota_Privada";
 //#endregion
@@ -29,6 +30,7 @@ export default function CorpoSite() {
         <Route path="/tca" element={<Mercado_TCA_Home />} />
         <Route path="/bom-jesus" element={<Mercado_Bom_Jesus_Home />} />
         <Route path="/super-m" element={<Mercado_Super_M_Home />} />
+        <Route path="/Resultados_Obtidos" element={<Resultados_Obtidos />} />
         <Route
           path="/emporio-do-portugues"
           element={<Mercado_Emporio_Do_Portugues_Home />}

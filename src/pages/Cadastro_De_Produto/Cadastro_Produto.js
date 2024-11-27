@@ -24,6 +24,8 @@ export default function Cadastro_Produto() {
   //#region Envio de cadastro para o servidor
   function Enviar_Dados_De_Cadastro_Para_Servidor() {
     setTimeout(() => {
+      console.log(Dados_Cadastrados);
+
       Axios.post(
         // "https://rvsprice-server.vercel.app/cadastrar",
         // "http://localhost:5000/cadastrar",
@@ -34,24 +36,55 @@ export default function Cadastro_Produto() {
             "Content-Type": "application/json",
           },
         }
-      ).then((Resposta) => {
-        if (Resposta.data.cadastro_realizado) {
-          alert("Cadastrado com sucesso");
-        } else {
-          alert("Falha no cadastro");
-          if (Resposta.data.imagem) {
-            console.error("imagem: " + Resposta.data.imagem);
-          } else if (Resposta.data.nome) {
-            console.error("nome: " + Resposta.data.nome);
-          } else if (Resposta.data.valor) {
-            console.error("valor: " + Resposta.data.valor);
-          } else if (Resposta.data.mercado) {
-            console.error("mercado: " + Resposta.data.mercado);
-          } else if (Resposta.data.categoria) {
-            console.error("categoria: " + Resposta.data.categoria);
+      )
+        .then((Resposta) => {
+          if (Resposta.data.cadastro_realizado) {
+            alert("Cadastrado com sucesso");
+          } else {
+            alert("Falha no cadastro");
+            if (Resposta.data.imagem) {
+              console.error("imagem: " + Resposta.data.imagem);
+            } else if (Resposta.data.nome) {
+              console.error("nome: " + Resposta.data.nome);
+            } else if (Resposta.data.valor) {
+              console.error("valor: " + Resposta.data.valor);
+            } else if (Resposta.data.mercado) {
+              console.error("mercado: " + Resposta.data.mercado);
+            } else if (Resposta.data.categoria) {
+              console.error("categoria: " + Resposta.data.categoria);
+            }
           }
-        }
-      });
+        })
+        .catch((error) => {
+          if (error.code == "ERR_NETWORK") {
+            Axios.post(
+              "https://willing-catfish-proven.ngrok-free.app/cadastrar",
+              Dados_Cadastrados,
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            ).then((Resposta) => {
+              if (Resposta.data.cadastro_realizado) {
+                alert("Cadastrado com sucesso");
+              } else {
+                alert("Falha no cadastro");
+                if (Resposta.data.imagem) {
+                  console.error("imagem: " + Resposta.data.imagem);
+                } else if (Resposta.data.nome) {
+                  console.error("nome: " + Resposta.data.nome);
+                } else if (Resposta.data.valor) {
+                  console.error("valor: " + Resposta.data.valor);
+                } else if (Resposta.data.mercado) {
+                  console.error("mercado: " + Resposta.data.mercado);
+                } else if (Resposta.data.categoria) {
+                  console.error("categoria: " + Resposta.data.categoria);
+                }
+              }
+            });
+          }
+        });
     }, 1000);
   }
   //#endregion
