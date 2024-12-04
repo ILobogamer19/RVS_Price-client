@@ -108,10 +108,10 @@ export default function Barra_De_Pesquisa() {
           }}
           onKeyDown={(e) => {
             if (e.key == "Enter" && Texto_Digitado_Para_Pesquisa) {
-              if (location.pathname == "/Resultados_Obtidos") {
+              if (location.pathname == "/resultados-obtidos") {
                 window.location.reload();
               }
-              url("/Resultados_Obtidos");
+              url("/resultados-obtidos");
             }
           }}
           id="Input_De_Pesquisa"
@@ -144,10 +144,10 @@ export default function Barra_De_Pesquisa() {
                       );
 
                       setTimeout(() => {
-                        if (location.pathname == "/Resultados_Obtidos") {
+                        if (location.pathname == "/resultados-obtidos") {
                           window.location.reload();
                         }
-                        url("/Resultados_Obtidos");
+                        url("/resultados-obtidos");
                       }, 500);
                     }}
                   >
@@ -174,9 +174,9 @@ export default function Barra_De_Pesquisa() {
         className="Img_Lupa"
         onClick={() =>
           Texto_Digitado_Para_Pesquisa
-            ? location.pathname == "/Resultados_Obtidos"
+            ? location.pathname == "/resultados-obtidos"
               ? window.location.reload()
-              : url("/Resultados_Obtidos")
+              : url("/resultados-obtidos")
             : alert("Pesquisa vazia")
         }
         alt="Lupa de pesquisa"

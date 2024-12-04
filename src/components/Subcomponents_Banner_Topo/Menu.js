@@ -20,13 +20,16 @@ const Menu_Link_Imagem_Texto = await Menu_Link_Imagem_Texto_Json.json();
 
 export default function Menu() {
   const [Ver_Admin_Painel, setVer_Admin_Painel] = useState(false);
+  var Cor_De_Fundo_Do_Banner_Topo;
 
   function Desativar_Menu() {
+    console.log(Cor_De_Fundo_Do_Banner_Topo);
+
     document.querySelector(".Links_Navegacao_Responsivel").style.display =
       "none";
 
     document.querySelector(".Banner_Topo").style.backgroundColor =
-      "rgb(255, 33, 33)";
+      Cor_De_Fundo_Do_Banner_Topo;
 
     document.querySelector(".Barra_De_Pesquisa_Logo_Pesquisa").style.opacity =
       "1";
@@ -124,8 +127,13 @@ export default function Menu() {
             ".Parte_Superior_Do_Site"
           ).style.backgroundColor = "rgba(0, 0, 0, 0.79)";
 
+          Cor_De_Fundo_Do_Banner_Topo =
+            document.querySelector(".Banner_Topo").style.backgroundColor;
+
           document.querySelector(".Banner_Topo").style.backgroundColor =
-            "rgba(76,0,0,79%)";
+            document
+              .querySelector(".Banner_Topo")
+              .style.backgroundColor.replace(")", ", 77%)");
 
           document.querySelector(
             ".Barra_De_Pesquisa_Logo_Pesquisa"

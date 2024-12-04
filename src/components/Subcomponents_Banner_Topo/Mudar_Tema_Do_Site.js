@@ -10,9 +10,13 @@ export default function Mudar_Tema_Do_Site_Funcao() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname == "/" && Cookies.get("Pagina_De_Mercado")) {
+    if (
+      (location.pathname == "/" ||
+        location.pathname == "/carrinho-gerenciar") &&
+      Cookies.get("Pagina_De_Mercado")
+    ) {
       Cookies.remove("Pagina_De_Mercado");
-      Cookies.set("Refresh_Na_Pagina", "true");
+      window.location.reload();
     }
     Alterador_De_Tema_Do_Site();
   }, []);

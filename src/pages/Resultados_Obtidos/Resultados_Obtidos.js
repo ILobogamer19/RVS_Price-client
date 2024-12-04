@@ -110,6 +110,23 @@ export default function Resultados_Obtidos() {
   };
   //#endregion
 
+  //#region useEffect
+  useEffect(() => {
+    Primeira_Adicao_Carrinho = 0;
+
+    if (Cookies.get("Quantia_De_Produtos_Adicionados_No_Carrinho")) {
+      Adicionar_Itens_Ao_Carrinho();
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "Produtos_No_Carrinho",
+      JSON.stringify(Produtos_No_Carrinho)
+    );
+  }, [Produtos_No_Carrinho]);
+  //#endregion
+
   //#region Pesquisa de produtos cadastrados
   const Enviar_Dados_De_Cadastro_Para_Servidor = () => {
     Axios.post(
@@ -182,15 +199,14 @@ export default function Resultados_Obtidos() {
           {Produtos_Catalogados_Achados ? (
             Produtos_Catalogados_Achados.map((item) => {
               if (
-                true == true
-                // item.Nome.normalize("NFD")
-                //   .replace(/[\u0300-\u036f]/g, "")
-                //   .toLowerCase()
-                //   .includes(
-                //     Pesquisa_Realizada.normalize("NFD")
-                //       .replace(/[\u0300-\u036f]/g, "")
-                //       .toLowerCase()
-                //   )
+                item.Nome.normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "")
+                  .toLowerCase()
+                  .includes(
+                    Pesquisa_Realizada.normalize("NFD")
+                      .replace(/[\u0300-\u036f]/g, "")
+                      .toLowerCase()
+                  )
               ) {
                 return (
                   <div

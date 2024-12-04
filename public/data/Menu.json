@@ -25,7 +25,7 @@
   },
   {
     "Id": 5,
-    "Link": "",
+    "Link": "/carrinho-gerenciar",
     "Imagem": "img/Carrinho.webp",
     "Texto": "Seu Carrinho"
   }

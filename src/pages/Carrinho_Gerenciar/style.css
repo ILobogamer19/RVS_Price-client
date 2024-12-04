@@ -1,0 +1,90 @@
+.Itens_Do_Carrinho_Do_Mercado {
+  margin: 30px;
+}
+
+.Conjunto_De_Titulo_E_Links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Titulo_Do_Conjunto_De_Itens_Do_Carrinho {
+  position: relative;
+  padding-right: 65px;
+}
+
+.Estilizacao_De_Carrinho_Do_Produto {
+  top: -10px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.Conjunto_De_Ferramentas {
+  position: relative;
+}
+
+.Botao_Do_WhatsApp {
+  position: absolute;
+  left: -100px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 10px 10px;
+  background-color: green;
+  transition: transform 0.2s linear;
+}
+.Botao_Do_WhatsApp:hover {
+  transform: scale(1.2);
+}
+
+.Excluir_Mercado_Do_Carrinho {
+  cursor: pointer;
+  margin-left: 20px;
+  color: red;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 10px 10px;
+  background-color: white;
+  transition: transform 0.2s linear;
+}
+.Excluir_Mercado_Do_Carrinho:hover {
+  transform: scale(1.2);
+}
+
+.Conjunto_De_Itens_Do_Carrinho_Do_Mercado {
+  max-height: 50vh;
+  border: 1px solid black;
+  padding: 10px;
+  overflow: auto;
+}
+
+.Imagem_Nome_E_Dados_Dos_Itens_Do_Carrinho {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+  border-bottom: 1px solid gray;
+}
+
+.Imagem_Nome_Do_Item_Do_Carrinho {
+  display: flex;
+  align-items: center;
+}
+
+.Imagem_Demostrativa_no_Carrinho {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.Preco_Do_Item {
+  display: flex;
+  align-items: flex-end;
+  font-size: 18px;
+}
+
+.Valor_Total_Da_Compra_Do_Mercado {
+  display: flex;
+  justify-content: center;
+}
