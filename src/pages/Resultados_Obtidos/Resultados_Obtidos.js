@@ -10,17 +10,48 @@ import Banner_Topo from "../../components/Banner_Topo";
 
 var Primeira_Adicao_Carrinho = 0;
 
+var Boleano_De_Repeticao = true;
+
 export default function Resultados_Obtidos() {
   const [Produtos_Catalogados_Achados, setProdutos_Catalogados_Achados] =
     useState();
   const [Pesquisa_Realizada, setPesquisa_Realizada] = useState();
+  const [Pontos_De_Carregamento, setPontos_De_Carregamento] = useState(".");
 
   useEffect(() => {
     Enviar_Dados_De_Cadastro_Para_Servidor();
+
+    return () => {
+      Boleano_De_Repeticao = true;
+    };
   }, []);
 
   useEffect(() => {
     console.log(Produtos_Catalogados_Achados);
+    function Funcao_De_Interval() {
+      setPontos_De_Carregamento((prev) => {
+        console.log(prev.length);
+
+        return prev.length == 3 ? "." : prev + ".";
+      });
+
+      if (!Boleano_De_Repeticao) {
+        clearInterval(Intervalo_De_Carregamento_De_Pontos);
+      }
+    }
+
+    const Intervalo_De_Carregamento_De_Pontos = setInterval(
+      Funcao_De_Interval,
+      500
+    );
+
+    console.log(Produtos_Catalogados_Achados);
+
+    if (Produtos_Catalogados_Achados) {
+      console.log("Ativo");
+
+      Boleano_De_Repeticao = false;
+    }
   }, [Produtos_Catalogados_Achados]);
 
   if (localStorage.getItem("Produtos_No_Carrinho")) {
@@ -250,7 +281,7 @@ export default function Resultados_Obtidos() {
               }
             })
           ) : (
-            <p>Carregando...</p>
+            <p>Carregando{Pontos_De_Carregamento}</p>
           )}
         </div>
       </div>

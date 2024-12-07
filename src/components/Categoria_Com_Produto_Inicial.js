@@ -13,11 +13,17 @@ const Categoria_Produto = Categoria_Produto_Objeto;
 
 var Primeira_Adicao_Carrinho = 0;
 
+var Boleano_De_Repeticao = true;
+
 export default function Categoria_Com_Produto_Inicial(Atributos) {
   const [
     Produtos_Da_Categoria_Selecionada,
     setProdutos_Da_Categoria_Selecionada,
   ] = useState([]);
+
+  const [Pontos_De_Carregamento, setPontos_De_Carregamento] = useState(".");
+
+  const [Loading_Das_Categorias, setLoading_Das_Categorias] = useState(true);
 
   if (localStorage.getItem("Produtos_No_Carrinho")) {
     var Produtos_No_Carrinho_Inicial = JSON.parse(
@@ -64,6 +70,10 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
           }));
         }
 
+        setLoading_Das_Categorias(false);
+
+        localStorage.setItem("");
+
         return Resposta.data.produtos_achados;
       })
       .catch((error) => {
@@ -96,6 +106,8 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
                 ],
               }));
             }
+
+            setLoading_Das_Categorias(false);
 
             return Resposta.data.produtos_achados;
           });
@@ -185,6 +197,18 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
 
   //#region useEffect
   useEffect(() => {
+    if (
+      localStorage.getItem("Produtos_Ja_Encontrados_Anteriormente") &&
+      !Atributos.Filtro
+    ) {
+      setProdutos_Da_Categoria_Selecionada(
+        JSON.parse(
+          localStorage.getItem("Produtos_Ja_Encontrados_Anteriormente")
+        )
+      );
+      setLoading_Das_Categorias(false);
+    }
+
     Primeira_Adicao_Carrinho = 0;
 
     Categoria_Produto.map((item, index) => {
@@ -197,30 +221,73 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
   }, []);
 
   useEffect(() => {
+    function Funcao_De_Interval() {
+      setPontos_De_Carregamento((prev) => {
+        console.log(prev.length);
+
+        return prev.length == 3 ? "." : prev + ".";
+      });
+
+      if (!Boleano_De_Repeticao) {
+        clearInterval(Intervalo_De_Carregamento_De_Pontos);
+      }
+    }
+
+    const Intervalo_De_Carregamento_De_Pontos = setInterval(
+      Funcao_De_Interval,
+      500
+    );
+
+    if (
+      !Loading_Das_Categorias ||
+      localStorage.getItem("Produtos_Ja_Encontrados_Anteriormente")
+    ) {
+      Boleano_De_Repeticao = false;
+    }
+  }, [Loading_Das_Categorias]);
+
+  useEffect(() => {
+    if (
+      !Atributos.Filtro &&
+      Object.keys(Produtos_Da_Categoria_Selecionada).length > 0
+    ) {
+      localStorage.setItem(
+        "Produtos_Ja_Encontrados_Anteriormente",
+        JSON.stringify(Produtos_Da_Categoria_Selecionada)
+      );
+    }
+  }, [Produtos_Da_Categoria_Selecionada]);
+
+  useEffect(() => {
     localStorage.setItem(
       "Produtos_No_Carrinho",
       JSON.stringify(Produtos_No_Carrinho)
     );
   }, [Produtos_No_Carrinho]);
+
   //#endregion
+
+  if (Loading_Das_Categorias) {
+    return <h1>Carregando Categorias{Pontos_De_Carregamento}</h1>;
+  }
 
   return (
     <>
       {Categoria_Produto.map((item, index) => {
-        if (
-          Produtos_Da_Categoria_Selecionada[index] &&
-          Produtos_Da_Categoria_Selecionada[index].length > 0
-        ) {
-          return (
-            <div
-              className={"Categorias Categoria_" + item.Categoria}
-              key={item.Categoria}
-            >
-              <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
-              <div className="Produtos">
-                {console.log(Produtos_Da_Categoria_Selecionada[index])}
-                {Produtos_Da_Categoria_Selecionada[index]
-                  ? Produtos_Da_Categoria_Selecionada[index].map(
+        if (Atributos.Filtro) {
+          if (
+            Produtos_Da_Categoria_Selecionada[index] &&
+            Produtos_Da_Categoria_Selecionada[index].length > 0
+          ) {
+            return (
+              <div
+                className={"Categorias Categoria_" + item.Categoria}
+                key={item.Categoria}
+              >
+                <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
+                <div className="Produtos">
+                  {Produtos_Da_Categoria_Selecionada[index] ? (
+                    Produtos_Da_Categoria_Selecionada[index].map(
                       (Categoria) => {
                         return (
                           <div
@@ -268,11 +335,72 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
                         );
                       }
                     )
-                  : ""}
+                  ) : (
+                    <h3>Carregando produtos{Pontos_De_Carregamento}</h3>
+                  )}
+                </div>
               </div>
-            </div>
-          );
+            );
+          } else {
+            return;
+          }
         }
+        return (
+          <div
+            className={"Categorias Categoria_" + item.Categoria}
+            key={item.Categoria}
+          >
+            <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
+            <div className="Produtos">
+              {Produtos_Da_Categoria_Selecionada[index] ? (
+                Produtos_Da_Categoria_Selecionada[index].map((Categoria) => {
+                  return (
+                    <div
+                      className={
+                        "Produto_" +
+                        Categoria.Id_Produtos +
+                        " Produto_Individual_Estilo_Generalizado"
+                      }
+                      key={Categoria.Nome}
+                    >
+                      <div className="Div_Logo_Imagem_Nome_Preco_Avaliacao_Do_Produto">
+                        {Inserir_Etiqueta_Do_Mercado(
+                          Categoria.Mercado,
+                          "Logo_Mercado_Produtos_Home"
+                        )}
+                        <div className="Div_De_Imagem_Do_Produto_Home">
+                          <img
+                            src={Categoria.Imagem}
+                            className="Imagem_Do_Produto_Home"
+                            alt={"Produto " + Categoria.Nome}
+                            loading="lazy"
+                          />
+                        </div>
+                        <p className="Nome_Do_Produto">{Categoria.Nome}</p>
+                        <p className="Preco_Do_Produto">{Categoria.Preco}</p>
+                        {Estrelas_Do_Produto_Teste(
+                          Math.floor(Math.random() * 6)
+                        )}
+                      </div>
+                      <div className="Div_Do_Botao_De_Carrinho">
+                        <button
+                          className="Botao_De_Adicao_De_Produto_No_Carrinho"
+                          onClick={() => {
+                            Adicionar_Itens_Ao_Carrinho(Categoria);
+                          }}
+                        >
+                          Adicionar ao Carrinho
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <h3>Carregando produtos{Pontos_De_Carregamento}</h3>
+              )}
+            </div>
+          </div>
+        );
       })}
     </>
   );
