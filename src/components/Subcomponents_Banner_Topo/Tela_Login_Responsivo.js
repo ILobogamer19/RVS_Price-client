@@ -59,22 +59,57 @@ export default function Tela_Login_Responsivo() {
                   "Content-Type": "application/json",
                 },
               }
-            ).then((Resposta) => {
-              if (Resposta.data.token) {
-                var token = Resposta.data.token;
-                localStorage.setItem("token", token);
-                window.location.reload();
-                alert("Logado com sucesso");
-              } else {
-                console.log("Erro: " + Resposta);
-                console.log(Resposta);
-                console.log("Enviados: " + Input_User + " , " + Input_Senha);
-                console.log(Resposta.data);
-                console.log("Data extratida: " + Resposta.data);
-                console.log("Permissão: " + Resposta.data.permitir);
-                alert("Falha no login");
-              }
-            });
+            )
+              .then((Resposta) => {
+                if (Resposta.data.token) {
+                  var token = Resposta.data.token;
+                  localStorage.setItem("token", token);
+                  window.location.reload();
+                  alert("Logado com sucesso");
+                } else {
+                  console.log("Erro: " + Resposta);
+                  console.log(Resposta);
+                  console.log("Enviados: " + Input_User + " , " + Input_Senha);
+                  console.log(Resposta.data);
+                  console.log("Data extratida: " + Resposta.data);
+                  console.log("Permissão: " + Resposta.data.permitir);
+                  alert("Falha no login");
+                }
+              })
+              .catch((secund_error) => {
+                if (secund_error.code == "ERR_NETWORK") {
+                  Axios.post(
+                    "https://zvfmwc2c-5000.brs.devtunnels.ms/validar",
+
+                    {
+                      User: Input_User,
+                      Senha: Input_Senha,
+                    },
+                    {
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                    }
+                  ).then((Resposta) => {
+                    if (Resposta.data.token) {
+                      var token = Resposta.data.token;
+                      localStorage.setItem("token", token);
+                      window.location.reload();
+                      alert("Logado com sucesso");
+                    } else {
+                      console.log("Erro: " + Resposta);
+                      console.log(Resposta);
+                      console.log(
+                        "Enviados: " + Input_User + " , " + Input_Senha
+                      );
+                      console.log(Resposta.data);
+                      console.log("Data extratida: " + Resposta.data);
+                      console.log("Permissão: " + Resposta.data.permitir);
+                      alert("Falha no login");
+                    }
+                  });
+                }
+              });
           }
         });
     }, 1000);

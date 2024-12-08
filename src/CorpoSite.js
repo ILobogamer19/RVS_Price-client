@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import HomePage from "./pages/Home/HomePage";
 import Admin_Painel from "./pages/Admin_Painel/Admin_Painel";
 import Cadastro_Produto from "./pages/Cadastro_De_Produto/Cadastro_Produto";
+import Pesquisa_De_Produto from "./pages/Pesquisa_De_Produto/Pesquisa_De_Produto";
+import Remocao_Produto from "./pages/Remocao_De_Produto/Remocao_Produto";
 import Error_404_Pagina_Nao_Encontrada from "./pages/Pagina_404/404";
 import Mercado_Correia_Home from "./pages/Mercado_Correia/Pagina_Mercado";
 import Mercado_TCA_Home from "./pages/Mercado_TCA/Pagina_Mercado";
@@ -42,12 +44,17 @@ export default function CorpoSite() {
             path="/emporio-do-portugues"
             element={<Mercado_Emporio_Do_Portugues_Home />}
           />
-          <Route path="admin-painel" element={<Rota_Privada />}>
+          <Route path="/admin-painel" element={<Rota_Privada />}>
             <Route index element={<Admin_Painel />} />
           </Route>
           <Route path="/cadastrar-produto" element={<Rota_Privada />}>
             <Route index element={<Cadastro_Produto />} />
-            <Route path="/cadastrar-produto" element={<Cadastro_Produto />} />
+          </Route>
+          <Route path="/pesquisar-produto" element={<Rota_Privada />}>
+            <Route index element={<Pesquisa_De_Produto />} />
+          </Route>
+          <Route path="/excluir-produto" element={<Rota_Privada />}>
+            <Route index element={<Remocao_Produto />} />
           </Route>
         </Routes>
       </BrowserRouter>

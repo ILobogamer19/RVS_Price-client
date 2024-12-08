@@ -194,13 +194,37 @@ export default function Resultados_Obtidos() {
                 "Content-Type": "application/json",
               },
             }
-          ).then((Resposta) => {
-            setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
+          )
+            .then((Resposta) => {
+              setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
 
-            setPesquisa_Realizada(
-              Cookies.get("Valor_Da_Pesquisa_Digitado").replace(/---/g, " ")
-            );
-          });
+              setPesquisa_Realizada(
+                Cookies.get("Valor_Da_Pesquisa_Digitado").replace(/---/g, " ")
+              );
+            })
+            .catch((secund_error) => {
+              if (secund_error.code == "ERR_NETWORK") {
+                Axios.post(
+                  "https://zvfmwc2c-5000.brs.devtunnels.ms/produtos-cadastrados",
+                  {
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  }
+                ).then((Resposta) => {
+                  setProdutos_Catalogados_Achados(
+                    Resposta.data.produtos_achados
+                  );
+
+                  setPesquisa_Realizada(
+                    Cookies.get("Valor_Da_Pesquisa_Digitado").replace(
+                      /---/g,
+                      " "
+                    )
+                  );
+                });
+              }
+            });
         }
       });
   };

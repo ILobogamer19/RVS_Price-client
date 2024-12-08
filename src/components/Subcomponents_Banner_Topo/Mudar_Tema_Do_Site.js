@@ -18,12 +18,7 @@ export default function Mudar_Tema_Do_Site_Funcao() {
       Cookies.remove("Pagina_De_Mercado");
       window.location.reload();
     } else {
-      if (Valor_Checado_Ou_Nao_Do_Input) {
-        Tema_Escolhido = Tema_Claro;
-      } else {
-        Tema_Escolhido = Tema_Escuro;
-      }
-      Itens_Para_Modificacao();
+      Alterador_De_Tema_Do_Site();
     }
   }, []);
 
@@ -39,6 +34,15 @@ export default function Mudar_Tema_Do_Site_Funcao() {
   const [Valor_Checado_Ou_Nao_Do_Input, setValor_Checado_Ou_Nao_Do_Input] =
     useState(false);
   //#endregion
+
+  // useEffect(() => {
+  //   if (Valor_Checado_Ou_Nao_Do_Input) {
+  //     Tema_Escolhido = Tema_Claro;
+  //   } else {
+  //     Tema_Escolhido = Tema_Escuro;
+  //   }
+  //   Itens_Para_Modificacao();
+  // }, [Valor_Checado_Ou_Nao_Do_Input]);
 
   var Temas;
   var Tema_Escuro;

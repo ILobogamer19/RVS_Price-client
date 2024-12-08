@@ -65,24 +65,55 @@ export default function Cadastro_Produto() {
                   "Content-Type": "application/json",
                 },
               }
-            ).then((Resposta) => {
-              if (Resposta.data.cadastro_realizado) {
-                alert("Cadastrado com sucesso");
-              } else {
-                alert("Falha no cadastro");
-                if (Resposta.data.imagem) {
-                  console.error("imagem: " + Resposta.data.imagem);
-                } else if (Resposta.data.nome) {
-                  console.error("nome: " + Resposta.data.nome);
-                } else if (Resposta.data.valor) {
-                  console.error("valor: " + Resposta.data.valor);
-                } else if (Resposta.data.mercado) {
-                  console.error("mercado: " + Resposta.data.mercado);
-                } else if (Resposta.data.categoria) {
-                  console.error("categoria: " + Resposta.data.categoria);
+            )
+              .then((Resposta) => {
+                if (Resposta.data.cadastro_realizado) {
+                  alert("Cadastrado com sucesso");
+                } else {
+                  alert("Falha no cadastro");
+                  if (Resposta.data.imagem) {
+                    console.error("imagem: " + Resposta.data.imagem);
+                  } else if (Resposta.data.nome) {
+                    console.error("nome: " + Resposta.data.nome);
+                  } else if (Resposta.data.valor) {
+                    console.error("valor: " + Resposta.data.valor);
+                  } else if (Resposta.data.mercado) {
+                    console.error("mercado: " + Resposta.data.mercado);
+                  } else if (Resposta.data.categoria) {
+                    console.error("categoria: " + Resposta.data.categoria);
+                  }
                 }
-              }
-            });
+              })
+              .catch((secund_error) => {
+                if (secund_error.code == "ERR_NETWORK") {
+                  Axios.post(
+                    "https://zvfmwc2c-5000.brs.devtunnels.ms/cadastrar",
+                    Dados_Cadastrados,
+                    {
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                    }
+                  ).then((Resposta) => {
+                    if (Resposta.data.cadastro_realizado) {
+                      alert("Cadastrado com sucesso");
+                    } else {
+                      alert("Falha no cadastro");
+                      if (Resposta.data.imagem) {
+                        console.error("imagem: " + Resposta.data.imagem);
+                      } else if (Resposta.data.nome) {
+                        console.error("nome: " + Resposta.data.nome);
+                      } else if (Resposta.data.valor) {
+                        console.error("valor: " + Resposta.data.valor);
+                      } else if (Resposta.data.mercado) {
+                        console.error("mercado: " + Resposta.data.mercado);
+                      } else if (Resposta.data.categoria) {
+                        console.error("categoria: " + Resposta.data.categoria);
+                      }
+                    }
+                  });
+                }
+              });
           }
         });
     }, 1000);

@@ -244,9 +244,12 @@
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 380px) {
   .Resultados_A_Escolher_Conjunto {
     top: 5vw;
+  }
+  .Painel {
+    zoom: 0.7;
   }
 }
 

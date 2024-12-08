@@ -92,26 +92,64 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
                 "Content-Type": "application/json",
               },
             }
-          ).then((Resposta) => {
-            if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {
-              setProdutos_Da_Categoria_Selecionada((prevState) => ({
-                ...prevState,
-                [Numero_Categoria]: Resposta.data.produtos_achados,
-              }));
-            } else {
-              setProdutos_Da_Categoria_Selecionada((prevState) => ({
-                ...prevState,
-                [Numero_Categoria]: [
-                  ...prevState[Numero_Categoria],
-                  Resposta.data.produtos_achados,
-                ],
-              }));
-            }
+          )
+            .then((Resposta) => {
+              if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {
+                setProdutos_Da_Categoria_Selecionada((prevState) => ({
+                  ...prevState,
+                  [Numero_Categoria]: Resposta.data.produtos_achados,
+                }));
+              } else {
+                setProdutos_Da_Categoria_Selecionada((prevState) => ({
+                  ...prevState,
+                  [Numero_Categoria]: [
+                    ...prevState[Numero_Categoria],
+                    Resposta.data.produtos_achados,
+                  ],
+                }));
+              }
 
-            setLoading_Das_Categorias(false);
+              setLoading_Das_Categorias(false);
 
-            return Resposta.data.produtos_achados;
-          });
+              return Resposta.data.produtos_achados;
+            })
+            .catch((secund_error) => {
+              if (secund_error.code == "ERR_NETWORK") {
+                Axios.post(
+                  "https://zvfmwc2c-5000.brs.devtunnels.ms/pesquisa-categoria-produto",
+                  Atributos.Filtro
+                    ? {
+                        Categoria_Para_Pesquisa: Categoria_Pesquisada,
+                        Filtro_De_Pesquisa: Atributos.Filtro,
+                      }
+                    : { Categoria_Para_Pesquisa: Categoria_Pesquisada },
+                  {
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  }
+                ).then((Resposta) => {
+                  if (!Produtos_Da_Categoria_Selecionada[Numero_Categoria]) {
+                    setProdutos_Da_Categoria_Selecionada((prevState) => ({
+                      ...prevState,
+                      [Numero_Categoria]: Resposta.data.produtos_achados,
+                    }));
+                  } else {
+                    setProdutos_Da_Categoria_Selecionada((prevState) => ({
+                      ...prevState,
+                      [Numero_Categoria]: [
+                        ...prevState[Numero_Categoria],
+                        Resposta.data.produtos_achados,
+                      ],
+                    }));
+                  }
+
+                  setLoading_Das_Categorias(false);
+
+                  return Resposta.data.produtos_achados;
+                });
+              }
+            });
         }
       });
   };

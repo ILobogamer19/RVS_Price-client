@@ -49,9 +49,26 @@ export default function Barra_De_Pesquisa() {
                 "Content-Type": "application/json",
               },
             }
-          ).then((Resposta) => {
-            setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
-          });
+          )
+            .then((Resposta) => {
+              setProdutos_Catalogados_Achados(Resposta.data.produtos_achados);
+            })
+            .catch((secund_error) => {
+              if (secund_error.code == "ERR_NETWORK") {
+                Axios.post(
+                  "https://zvfmwc2c-5000.brs.devtunnels.ms/produtos-cadastrados",
+                  {
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  }
+                ).then((Resposta) => {
+                  setProdutos_Catalogados_Achados(
+                    Resposta.data.produtos_achados
+                  );
+                });
+              }
+            });
         }
       });
   };
