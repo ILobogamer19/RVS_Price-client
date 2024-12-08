@@ -3,6 +3,7 @@ import Inserir_Etiqueta_Do_Mercado from "../../components/Ferramentas/Inserir_Et
 import Estrelas_Do_Produto_Teste from "../../components/Ferramentas/Estrelas_Do_Produto_Veridicacao";
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 
 import "./style.css";
 
@@ -72,8 +73,11 @@ export default function Resultados_Obtidos() {
     var Quantia_De_Produtos_Adicionados_No_Carrinho = Cookies.get(
       "Quantia_De_Produtos_Adicionados_No_Carrinho"
     );
+    var Primeira_Execucao_Para_Aviso = true;
 
     if (Primeira_Adicao_Carrinho == 0) {
+      Primeira_Execucao_Para_Aviso = false;
+
       if (
         Quantia_De_Produtos_Adicionados_No_Carrinho &&
         Quantia_De_Produtos_Adicionados_No_Carrinho !== "undefined" &&
@@ -135,6 +139,10 @@ export default function Resultados_Obtidos() {
         ...prevState,
         Informacoes_Do_Item,
       ]);
+      toast.success("Salvo no carrinho");
+    }
+    if (Teste_De_Igualdade !== 0 && Primeira_Execucao_Para_Aviso) {
+      toast.warn("Item já está no carrinho");
     }
 
     //#endregion

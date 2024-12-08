@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import Inserir_Etiqueta_Do_Mercado from "./Ferramentas/Inserir_Etiqueta_Do_Mercado";
 import Estrelas_Do_Produto_Teste from "./Ferramentas/Estrelas_Do_Produto_Veridicacao";
+import { toast } from "react-toastify";
 
 const Categoria_Produto_Json = await fetch(
   "./data/Categorias_Para_Aparecer_Na_Home.json"
@@ -126,8 +127,11 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
     var Quantia_De_Produtos_Adicionados_No_Carrinho = Cookies.get(
       "Quantia_De_Produtos_Adicionados_No_Carrinho"
     );
+    var Primeira_Execucao_Para_Aviso = true;
 
     if (Primeira_Adicao_Carrinho == 0) {
+      Primeira_Execucao_Para_Aviso = false;
+
       if (
         Quantia_De_Produtos_Adicionados_No_Carrinho &&
         Quantia_De_Produtos_Adicionados_No_Carrinho !== "undefined" &&
@@ -189,6 +193,10 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
         ...prevState,
         Informacoes_Do_Item,
       ]);
+      toast.success("Salvo no carrinho");
+    }
+    if (Teste_De_Igualdade !== 0 && Primeira_Execucao_Para_Aviso) {
+      toast.warn("Item já está no carrinho");
     }
 
     //#endregion
@@ -284,7 +292,12 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
                 className={"Categorias Categoria_" + item.Categoria}
                 key={item.Categoria}
               >
-                <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
+                <h2
+                  key={item.Categoria + 1}
+                  className="Nome_Da_Categoria_Do_Produto_Para_Correcao_De_Cor"
+                >
+                  {item.Categoria}
+                </h2>
                 <div className="Produtos">
                   {Produtos_Da_Categoria_Selecionada[index] ? (
                     Produtos_Da_Categoria_Selecionada[index].map(
@@ -350,7 +363,12 @@ export default function Categoria_Com_Produto_Inicial(Atributos) {
             className={"Categorias Categoria_" + item.Categoria}
             key={item.Categoria}
           >
-            <h2 key={item.Categoria + 1}>{item.Categoria}</h2>
+            <h2
+              key={item.Categoria + 1}
+              className="Nome_Da_Categoria_Do_Produto_Para_Correcao_De_Cor"
+            >
+              {item.Categoria}
+            </h2>
             <div className="Produtos">
               {Produtos_Da_Categoria_Selecionada[index] ? (
                 Produtos_Da_Categoria_Selecionada[index].map((Categoria) => {

@@ -22,7 +22,7 @@
   /* overflow-x: scroll; */
 }
 .Logo_Mercado_Produtos_Home {
-  z-index: 999999;
+  z-index: 9;
 }
 
 .Produto_Individual_Estilo_Generalizado {
@@ -44,6 +44,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: black !important;
 }
 
 .Div_Logo_Imagem_Nome_Preco_Avaliacao_Do_Produto

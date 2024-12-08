@@ -8,7 +8,7 @@ body {
   width: 100%;
   align-items: center;
   position: fixed;
-  z-index: 9999999999999999999;
+  z-index: 10;
   /* overflow: hidden; */
 }
 .Parte_Superior_Do_Site_Ocupar_Espaco {

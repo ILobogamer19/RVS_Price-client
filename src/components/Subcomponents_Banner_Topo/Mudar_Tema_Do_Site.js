@@ -17,8 +17,14 @@ export default function Mudar_Tema_Do_Site_Funcao() {
     ) {
       Cookies.remove("Pagina_De_Mercado");
       window.location.reload();
+    } else {
+      if (Valor_Checado_Ou_Nao_Do_Input) {
+        Tema_Escolhido = Tema_Claro;
+      } else {
+        Tema_Escolhido = Tema_Escuro;
+      }
+      Itens_Para_Modificacao();
     }
-    Alterador_De_Tema_Do_Site();
   }, []);
 
   //#region Puxando Cookies
@@ -105,8 +111,6 @@ export default function Mudar_Tema_Do_Site_Funcao() {
         item.style.backgroundColor = Tema_Escolhido.Botao_De_Alteracao_De_Tema;
       });
     document.querySelector("body").style.color = Tema_Escolhido.Letras_Do_Site;
-    document.querySelector("#Input_De_Pesquisa").style.color =
-      Tema_Escolhido.Letras_Do_Site;
     document
       .querySelectorAll(".Hr_Demarcacao_De_Separacao_Banners_Produtos")
       .forEach((item) => {
